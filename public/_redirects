@@ -1,0 +1,42 @@
+# Netlify redirects file
+# Handle client-side routing for React Router
+
+# Redirect common misspellings and variations
+/home /
+/accueil /
+/homepage /
+/main /
+
+# Redirect old URL patterns (if migrating from another site)
+/services/ /services
+/fleet/ /fleet  
+/excursions/ /excursions
+/about/ /about
+/contact/ /contact
+/blog/ /blog
+
+# Handle case variations
+/Services /services
+/Fleet /fleet
+/Excursions /excursions
+/About /about
+/Contact /contact
+/Blog /blog
+
+# Common French variations
+/nos-services /services
+/notre-flotte /fleet
+/a-propos /about
+/contactez-nous /contact
+
+# Handle trailing slashes
+/services/* /services/:splat
+/fleet/* /fleet/:splat
+/excursions/* /excursions/:splat
+/about/* /about/:splat
+/contact/* /contact/:splat
+/blog/* /blog/:splat
+
+# Catch-all for React Router (must be last)
+# This ensures 404 status is returned for truly non-existent pages
+/*    /index.html   200

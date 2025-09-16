@@ -1,0 +1,47 @@
+User-agent: *
+Allow: /
+
+# Allow all main pages for indexing
+Allow: /services
+Allow: /fleet  
+Allow: /excursions
+Allow: /about
+Allow: /contact
+Allow: /blog
+
+# Block unnecessary files and directories
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: *.js.map
+Disallow: *.css.map
+Disallow: /vite.config.*
+Disallow: /package*.json
+Disallow: /tsconfig*.json
+Disallow: /.bolt/
+Disallow: /.git/
+Disallow: /.gitignore
+
+# Block development and build files
+Disallow: /dist/
+Disallow: /build/
+Disallow: /.env*
+Disallow: /tailwind.config.*
+Disallow: /postcss.config.*
+Disallow: /eslint.config.*
+
+# Allow media files and assets
+Allow: /images/
+Allow: /assets/
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+Allow: *.ico
+
+# Sitemap reference
+Sitemap: https://location-bus.be/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

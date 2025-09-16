@@ -1,0 +1,229 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Phone, Menu, X, Mail, ChevronDown } from 'lucide-react';
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openSubMenuId, setOpenSubMenuId] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navigation = [
+    { name: 'Accueil', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'Flotte', href: '/fleet' },
+    { name: 'Excursions', href: '/excursions' },
+    { 
+     name: 'Contact', 
+     href: '/contact',
+      children: [
+       { name: 'Propos', href: '/about' }
+      ]
+    },
+    { name: 'Blog', href: '/blog' },
+  ];
+
+  const toggleSubMenu = (menuName: string) => {
+    setOpenSubMenuId(openSubMenuId === menuName ? null : menuName);
+  };
+
+  const isActiveRoute = (href: string, children?: any[]) => {
+    if (location.pathname === href) return true;
+    if (children) {
+      return children.some(child => location.pathname === child.href);
+    }
+    return false;
+  };
+
+  return (
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-4'
+    }`}>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0">
+            <img 
+              src="https://ik.imagekit.io/by733ltn6/location-bus/cropped-Logo-Location_bus-1.png?updatedAt=1757933964171" 
+              alt="Location Bus Belgique - Logo officiel service transport bus avec chauffeur à Bruxelles"
+              className={`transition-all duration-300 ${
+                isScrolled ? 'h-12' : 'h-16'
+              }`}
+            />
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navigation.map((item) => (
+              <div key={item.name} className="relative group">
+                {item.children ? (
+                  // Parent menu item with dropdown
+                  <div className="flex items-center">
+                    <Link
+                      to={item.href}
+                      className={`font-medium transition-colors duration-200 hover:text-teal-500 flex items-center ${
+                        isActiveRoute(item.href, item.children)
+                          ? 'text-teal-500 border-b-2 border-teal-500' 
+                          : 'text-gray-700'
+                      }`}
+                    >
+                      {item.name}
+                      <ChevronDown size={16} className="ml-1 transition-transform group-hover:rotate-180" />
+                    </Link>
+                    
+                    {/* Dropdown menu */}
+                    <div className="absolute top-full left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                      <div className="bg-white rounded-lg shadow-lg border py-2 min-w-48">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            to={child.href}
+                            className={`block px-4 py-2 text-sm transition-colors hover:bg-gray-50 hover:text-teal-500 ${
+                              location.pathname === child.href ? 'text-teal-500 bg-gray-50' : 'text-gray-700'
+                            }`}
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  // Regular menu item
+                  <Link
+                    to={item.href}
+                    className={`font-medium transition-colors duration-200 hover:text-teal-500 ${
+                      location.pathname === item.href 
+                        ? 'text-teal-500 border-b-2 border-teal-500' 
+                        : 'text-gray-700'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
+
+          {/* Contact Info */}
+          <div className="hidden md:flex items-center space-x-4">
+            <a 
+              href="mailto:info@location-bus.be"
+              className="flex items-center text-gray-600 hover:text-teal-500 transition-colors"
+            >
+              <Mail size={18} className="mr-2" />
+              <span className="text-sm font-bold">info@location-bus.be</span>
+            </a>
+            <a 
+              href="tel:+3223420734"
+              className="flex items-center bg-teal-400 hover:bg-teal-500 text-gray-900 px-4 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
+            >
+              <Phone size={18} className="mr-2" />
+              +32 2 342 07 34
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t">
+            <nav className="py-4">
+              {navigation.map((item) => (
+                <div key={item.name}>
+                  {item.children ? (
+                    // Parent menu item with expandable submenu
+                    <div>
+                      <div className="flex items-center justify-between px-4 py-3">
+                        <Link
+                          to={item.href}
+                          className={`font-medium transition-colors hover:text-teal-500 ${
+                            isActiveRoute(item.href, item.children) ? 'text-teal-500' : 'text-gray-700'
+                          }`}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                        <button
+                          onClick={() => toggleSubMenu(item.name)}
+                          className="p-1 hover:bg-gray-100 rounded transition-colors"
+                          aria-label={`Toggle ${item.name} submenu`}
+                        >
+                          <ChevronDown 
+                            size={20} 
+                            className={`transition-transform ${
+                              openSubMenuId === item.name ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+                      </div>
+                      
+                      {/* Expandable submenu */}
+                      <div className={`overflow-hidden transition-all duration-300 ${
+                        openSubMenuId === item.name ? 'max-h-96' : 'max-h-0'
+                      }`}>
+                        <div className="bg-gray-50 border-t">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.name}
+                              to={child.href}
+                              className={`block px-8 py-2 text-sm transition-colors hover:bg-gray-100 hover:text-teal-500 ${
+                                location.pathname === child.href ? 'text-teal-500 bg-gray-100' : 'text-gray-600'
+                              }`}
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {child.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    // Regular menu item
+                    <Link
+                      to={item.href}
+                      className={`block px-4 py-3 font-medium transition-colors hover:bg-gray-50 hover:text-teal-500 ${
+                        location.pathname === item.href ? 'text-teal-500 bg-gray-50' : 'text-gray-700'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <div className="px-4 py-3 border-t mt-4">
+                <a 
+                  href="tel:+3223420734"
+                  className="flex items-center justify-center bg-teal-400 hover:bg-teal-500 text-gray-900 px-4 py-3 rounded-lg font-semibold transition-colors w-full"
+                >
+                  <Phone size={18} className="mr-2" />
+                  +32 2 342 07 34
+                </a>
+              </div>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;

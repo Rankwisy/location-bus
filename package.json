@@ -1,0 +1,59 @@
+{
+  "name": "vite-react-typescript-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "build:prod": "npm run type-check && npm run build"
+  },
+  "keywords": [
+    "location bus belgique",
+    "transport bus bruxelles",
+    "chauffeur professionnel",
+    "transfert aeroport",
+    "excursion touristique",
+    "minibus avec chauffeur",
+    "voyage entreprise",
+    "transport premium",
+    "brussels transport service",
+    "belgian bus rental"
+  ],
+  "author": "Location Bus Belgique",
+  "description": "Location de bus et minibus avec chauffeur professionnel à Bruxelles. Services premium pour transferts aéroport, excursions touristiques et transport d'entreprise.",
+  "homepage": "https://location-bus.be",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/location-bus-belgique.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/location-bus-belgique/issues"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
+    "lucide-react": "^0.344.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^9.9.1",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.11",
+    "globals": "^15.9.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.3.0",
+    "vite": "^5.4.2"
+  }
+}
