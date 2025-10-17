@@ -122,10 +122,10 @@ const ContactPage = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Contactez-nous
             </h1>
-            <p className="text-xl text-teal-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-teal-100 mb-8 max-w-3xl mx-auto leading-relaxed px-4">
               Notre équipe est à votre disposition pour vous accompagner dans vos projets 
               de transport. Devis gratuit et conseils personnalisés garantis !
             </p>
@@ -171,10 +171,10 @@ const ContactPage = () => {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8">
                 Demande de Devis Gratuit
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
                 Remplissez ce formulaire pour recevoir votre devis personnalisé sous 24h. 
                 Tous les champs marqués * sont obligatoires. Consultez nos <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">différents services</Link> pour mieux définir vos besoins.
               </p>
@@ -203,7 +203,7 @@ const ContactPage = () => {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors text-base min-h-[48px]"
                       placeholder="Votre nom et prénom"
                     />
                   </div>
@@ -219,7 +219,7 @@ const ContactPage = () => {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors text-base min-h-[48px]"
                       placeholder="votre@email.com"
                     />
                   </div>
@@ -238,7 +238,7 @@ const ContactPage = () => {
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors text-base min-h-[48px]"
                       placeholder="+32 xxx xx xx xx"
                     />
                   </div>
@@ -253,7 +253,7 @@ const ContactPage = () => {
                       required
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors text-base min-h-[48px]"
                     >
                       <option value="">Sélectionnez un service</option>
                       {services.map((service, index) => (
@@ -275,7 +275,7 @@ const ContactPage = () => {
                       name="date"
                       value={formData.date}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors text-base min-h-[48px]"
                       min={new Date().toISOString().split('T')[0]}
                     />
                   </div>
@@ -290,7 +290,7 @@ const ContactPage = () => {
                       name="passengers"
                       value={formData.passengers}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors text-base min-h-[48px]"
                       placeholder="Ex: 25"
                       min="1"
                       max="60"
@@ -310,14 +310,14 @@ const ContactPage = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors resize-vertical"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors resize-vertical text-base"
                     placeholder="Décrivez votre projet de transport : itinéraire, horaires, besoins spécifiques..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center"
+                  className="w-full bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center min-h-[48px]"
                 >
                   <Send className="mr-2" size={20} />
                   Envoyer ma Demande
@@ -405,10 +405,10 @@ const ContactPage = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Questions Fréquentes
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Retrouvez les réponses aux questions les plus courantes sur nos services
             </p>
           </div>

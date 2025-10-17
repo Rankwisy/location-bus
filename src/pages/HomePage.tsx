@@ -75,25 +75,25 @@ const HomePage = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Location Bus à
               <span className="block text-teal-400">Bruxelles</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto px-4">
               <strong>Transformez vos déplacements en expériences exceptionnelles !</strong> Découvrez notre service premium de transport en bus avec chauffeur professionnel - 
               l'alliance parfaite entre <em>luxe absolu</em>, <em>sécurité irréprochable</em> et <em>ponctualité garantie</em> pour tous vos voyages d\'affaires, excursions touristiques et événements privés.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="bg-teal-400 hover:bg-teal-500 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg flex items-center justify-center"
+                className="bg-teal-400 hover:bg-teal-500 text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg flex items-center justify-center min-h-[48px]"
               >
                 Devis Gratuit Immédiat
-                <ArrowRight className="ml-2" size={24} />
+                <ArrowRight className="ml-2" size={20} />
               </Link>
               <Link
                 to="/fleet"
-                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 flex items-center justify-center"
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 flex items-center justify-center min-h-[48px]"
               >
                 Voir Notre Flotte
               </Link>
@@ -107,10 +107,10 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12 items-start">
             <div className="lg:col-span-2">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Excellence & Confiance : Votre Partenaire Transport Premium à Bruxelles
               </h2>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
                 <strong>Plus de 15 ans d'expertise</strong> au service de votre mobilité. Découvrez pourquoi <strong>98% de nos clients</strong> nous recommandent et nous choisissent pour leurs déplacements les plus importants.
               </p>
               <div className="grid md:grid-cols-3 gap-8">
@@ -126,8 +126,8 @@ const HomePage = () => {
               </div>
             </div>
             <div className="lg:col-span-1">
-              <div className="bg-teal-400 p-8 rounded-2xl text-gray-900">
-                <h3 className="text-2xl font-bold mb-4">
+              <div className="bg-teal-400 p-6 sm:p-8 rounded-2xl text-gray-900">
+                <h3 className="text-xl sm:text-2xl font-bold mb-4">
                   🚌 Transport Sur-Mesure & Tarifs Imbattables
                 </h3>
                 <p className="mb-4">
@@ -153,10 +153,10 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Solutions Transport Professionnelles : Optimisez Vos Déplacements d'Entreprise
               </h2>
-              <p className="text-xl text-gray-600 mb-6">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6">
                 <strong>Concentrez-vous sur votre business</strong> pendant que nous gérons votre mobilité avec une précision chirurgicale. Nos solutions premium transforment chaque trajet en avantage concurrentiel.
               </p>
               <div className="space-y-6">
@@ -211,9 +211,9 @@ const HomePage = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-teal-600 font-bold mb-4 text-lg">🏆 RAPPORT QUALITÉ/PRIX IMBATTABLE EN BELGIQUE</p>
-            <h2 className="text-4xl font-bold text-gray-900">Votre Flotte Premium : Performance & Élégance</h2>
-            <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
+            <p className="text-teal-600 font-bold mb-4 text-base sm:text-lg">🏆 RAPPORT QUALITÉ/PRIX IMBATTABLE EN BELGIQUE</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Votre Flotte Premium : Performance & Élégance</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto px-4">
               Choisissez votre véhicule parmi notre collection exclusive de <strong>50+ autocars dernière génération</strong>. Du <Link to="/fleet" className="text-teal-600 hover:text-teal-700 font-semibold">minibus VIP 19 places</Link> à l'<Link to="/fleet" className="text-teal-600 hover:text-teal-700 font-semibold">autocar grand luxe 60 places</Link>, nous avons la solution parfaite pour chaque occasion.
             </p>
           </div>
@@ -298,8 +298,8 @@ const HomePage = () => {
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-teal-600 font-bold mb-4 uppercase tracking-wide text-lg">🗺️ TOURS EXCLUSIFS & EXCURSIONS PREMIUM</p>
-            <h2 className="text-4xl font-bold text-gray-900">
+            <p className="text-teal-600 font-bold mb-4 uppercase tracking-wide text-base sm:text-lg">🗺️ TOURS EXCLUSIFS & EXCURSIONS PREMIUM</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
               Explorez les Trésors Cachés de l'Europe avec Nos Guides Experts
             </h2>
             <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
@@ -368,10 +368,10 @@ const HomePage = () => {
               <span className="text-white font-bold">⭐ 4.9/5 sur Google | 1000+ Avis Clients</span>
             </div>
           </div>
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
             🚀 Votre Voyage Exceptionnel Commence Ici !
           </h2>
-          <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-teal-100 mb-8 max-w-2xl mx-auto px-4">
             <strong>Rejoignez les 10,000+ clients satisfaits</strong> qui nous font confiance pour leurs déplacements les plus importants. 
             Obtenez votre devis sur-mesure en moins de 2 minutes et découvrez pourquoi nous sommes le <em>N°1 du transport premium à Bruxelles</em> !
           </p>
@@ -392,14 +392,14 @@ const HomePage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center shadow-lg"
+              className="bg-white text-teal-600 hover:bg-gray-100 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center shadow-lg min-h-[48px]"
             >
               🎯 Mon Devis Gratuit & Immédiat
               <ArrowRight className="ml-2" size={20} />
             </Link>
             <a
               href="tel:+3223420734"
-              className="border-2 border-white text-white hover:bg-white hover:text-teal-600 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 inline-flex items-center justify-center shadow-lg"
+              className="border-2 border-white text-white hover:bg-white hover:text-teal-600 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 inline-flex items-center justify-center shadow-lg min-h-[48px]"
             >
               📞 Conseil Expert Immédiat
             </a>

@@ -46,17 +46,17 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-4'
+      isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-3 sm:py-4'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <img 
-              src="https://ik.imagekit.io/by733ltn6/location-bus/cropped-Logo-Location_bus-1.png?updatedAt=1757933964171" 
+            <img
+              src="https://ik.imagekit.io/by733ltn6/location-bus/cropped-Logo-Location_bus-1.png?updatedAt=1757933964171"
               alt="Location Bus Belgique - Logo officiel service transport bus avec chauffeur à Bruxelles"
               className={`transition-all duration-300 ${
-                isScrolled ? 'h-12' : 'h-16'
+                isScrolled ? 'h-10 sm:h-12' : 'h-12 sm:h-14 md:h-16'
               }`}
             />
           </Link>
@@ -135,7 +135,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-3 rounded-lg hover:bg-gray-100 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Toggle mobile menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -144,7 +144,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t max-h-[calc(100vh-80px)] overflow-y-auto">
             <nav className="py-4">
               {navigation.map((item) => (
                 <div key={item.name}>
@@ -199,7 +199,7 @@ const Header = () => {
                     // Regular menu item
                     <Link
                       to={item.href}
-                      className={`block px-4 py-3 font-medium transition-colors hover:bg-gray-50 hover:text-teal-500 ${
+                      className={`block px-4 py-4 font-medium transition-colors hover:bg-gray-50 hover:text-teal-500 min-h-[44px] flex items-center ${
                         location.pathname === item.href ? 'text-teal-500 bg-gray-50' : 'text-gray-700'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
@@ -209,12 +209,12 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <div className="px-4 py-3 border-t mt-4">
-                <a 
+              <div className="px-4 py-4 border-t mt-4">
+                <a
                   href="tel:+3223420734"
-                  className="flex items-center justify-center bg-teal-400 hover:bg-teal-500 text-gray-900 px-4 py-3 rounded-lg font-semibold transition-colors w-full"
+                  className="flex items-center justify-center bg-teal-400 hover:bg-teal-500 text-gray-900 px-6 py-4 rounded-lg font-semibold transition-colors w-full min-h-[48px]"
                 >
-                  <Phone size={18} className="mr-2" />
+                  <Phone size={20} className="mr-2" />
                   +32 2 342 07 34
                 </a>
               </div>

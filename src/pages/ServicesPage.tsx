@@ -159,11 +159,11 @@ const ServicesPage = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Nos Services de
               <span className="block text-teal-400">Transport Premium</span>
             </h1>
-            <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed px-4">
               Des solutions de transport personnalisées pour tous vos besoins professionnels 
               et privés avec un service d'excellence reconnu à Bruxelles.
             </p>
@@ -175,10 +175,10 @@ const ServicesPage = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Une Gamme Complète de Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Que ce soit pour un déplacement professionnel, un événement privé ou une excursion touristique, 
               nous avons la solution adaptée à vos besoins.
             </p>
@@ -269,14 +269,14 @@ const ServicesPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center"
+                className="bg-white text-teal-600 hover:bg-gray-100 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center min-h-[48px]"
               >
                 Demander un Devis
                 <ArrowRight className="ml-2" size={20} />
               </Link>
               <a
                 href="tel:+3223420734"
-                className="border-2 border-white text-white hover:bg-white hover:text-teal-600 px-8 py-4 rounded-lg font-bold transition-all duration-200 inline-flex items-center justify-center"
+                className="border-2 border-white text-white hover:bg-white hover:text-teal-600 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 inline-flex items-center justify-center min-h-[48px]"
               >
                 +32 2 342 07 34
               </a>
