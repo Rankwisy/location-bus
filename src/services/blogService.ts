@@ -1,8 +1,13 @@
-import { supabase } from '../lib/supabase';
+import { supabase, isSupabaseAvailable } from '../lib/supabase';
 import { BlogPost, BlogCategory, NewsletterSubscriber } from '../types/blog';
 
 export const blogService = {
   async getAllPosts(): Promise<BlogPost[]> {
+    if (!isSupabaseAvailable()) {
+      console.warn('Supabase is not available. Returning empty array.');
+      return [];
+    }
+
     const { data, error } = await supabase
       .from('blog_posts')
       .select(`
@@ -15,13 +20,18 @@ export const blogService = {
 
     if (error) {
       console.error('Error fetching blog posts:', error);
-      throw error;
+      return [];
     }
 
     return data || [];
   },
 
   async getPostBySlug(slug: string): Promise<BlogPost | null> {
+    if (!isSupabaseAvailable()) {
+      console.warn('Supabase is not available. Returning null.');
+      return null;
+    }
+
     const { data, error } = await supabase
       .from('blog_posts')
       .select(`
@@ -35,13 +45,18 @@ export const blogService = {
 
     if (error) {
       console.error('Error fetching blog post:', error);
-      throw error;
+      return null;
     }
 
     return data;
   },
 
   async getPostById(id: string): Promise<BlogPost | null> {
+    if (!isSupabaseAvailable()) {
+      console.warn('Supabase is not available. Returning null.');
+      return null;
+    }
+
     const { data, error } = await supabase
       .from('blog_posts')
       .select(`
@@ -55,13 +70,18 @@ export const blogService = {
 
     if (error) {
       console.error('Error fetching blog post:', error);
-      throw error;
+      return null;
     }
 
     return data;
   },
 
   async getPostsByCategory(categorySlug: string): Promise<BlogPost[]> {
+    if (!isSupabaseAvailable()) {
+      console.warn('Supabase is not available. Returning empty array.');
+      return [];
+    }
+
     const { data: category } = await supabase
       .from('blog_categories')
       .select('id')
@@ -85,13 +105,18 @@ export const blogService = {
 
     if (error) {
       console.error('Error fetching posts by category:', error);
-      throw error;
+      return [];
     }
 
     return data || [];
   },
 
   async getFeaturedPosts(): Promise<BlogPost[]> {
+    if (!isSupabaseAvailable()) {
+      console.warn('Supabase is not available. Returning empty array.');
+      return [];
+    }
+
     const { data, error } = await supabase
       .from('blog_posts')
       .select(`
@@ -106,13 +131,18 @@ export const blogService = {
 
     if (error) {
       console.error('Error fetching featured posts:', error);
-      throw error;
+      return [];
     }
 
     return data || [];
   },
 
   async getRelatedPosts(postId: string, categoryId: string, limit = 3): Promise<BlogPost[]> {
+    if (!isSupabaseAvailable()) {
+      console.warn('Supabase is not available. Returning empty array.');
+      return [];
+    }
+
     const { data, error } = await supabase
       .from('blog_posts')
       .select(`
@@ -128,13 +158,18 @@ export const blogService = {
 
     if (error) {
       console.error('Error fetching related posts:', error);
-      throw error;
+      return [];
     }
 
     return data || [];
   },
 
   async getAllCategories(): Promise<BlogCategory[]> {
+    if (!isSupabaseAvailable()) {
+      console.warn('Supabase is not available. Returning empty array.');
+      return [];
+    }
+
     const { data, error } = await supabase
       .from('blog_categories')
       .select('*')
@@ -142,13 +177,18 @@ export const blogService = {
 
     if (error) {
       console.error('Error fetching categories:', error);
-      throw error;
+      return [];
     }
 
     return data || [];
   },
 
   async incrementViewCount(postId: string): Promise<void> {
+    if (!isSupabaseAvailable()) {
+      console.warn('Supabase is not available. Cannot increment view count.');
+      return;
+    }
+
     const { error } = await supabase.rpc('increment_post_views', { post_id: postId });
 
     if (error) {
@@ -157,6 +197,10 @@ export const blogService = {
   },
 
   async subscribeToNewsletter(email: string): Promise<NewsletterSubscriber | null> {
+    if (!isSupabaseAvailable()) {
+      throw new Error('Le service de newsletter n\'est pas disponible pour le moment. Veuillez réessayer plus tard.');
+    }
+
     const { data, error } = await supabase
       .from('newsletter_subscribers')
       .insert({ email, is_active: true })

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, User, ArrowRight, Clock, Tag } from 'lucide-react';
+import { Calendar, User, ArrowRight, Clock, Tag, AlertCircle } from 'lucide-react';
 import { blogService } from '../services/blogService';
 import { BlogPost, BlogCategory } from '../types/blog';
+import { isSupabaseAvailable } from '../lib/supabase';
 
 const BlogPage = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
@@ -250,13 +251,23 @@ const BlogPage = () => {
             ))}
           </div>
 
-          {filteredPosts.length === 0 && (
+          {filteredPosts.length === 0 && !loading && (
             <div className="text-center py-16">
               <div className="text-gray-400 mb-4">
-                <Tag size={48} className="mx-auto" />
+                {!isSupabaseAvailable() ? (
+                  <AlertCircle size={48} className="mx-auto text-yellow-500" />
+                ) : (
+                  <Tag size={48} className="mx-auto" />
+                )}
               </div>
-              <h4 className="text-xl font-semibold text-gray-600 mb-2">Aucun article trouvé</h4>
-              <p className="text-gray-500">Essayez avec une autre catégorie ou revenez plus tard.</p>
+              <h4 className="text-xl font-semibold text-gray-600 mb-2">
+                {!isSupabaseAvailable() ? 'Service temporairement indisponible' : 'Aucun article trouvé'}
+              </h4>
+              <p className="text-gray-500">
+                {!isSupabaseAvailable()
+                  ? 'Le blog est temporairement indisponible. Veuillez réessayer dans quelques instants.'
+                  : 'Essayez avec une autre catégorie ou revenez plus tard.'}
+              </p>
             </div>
           )}
         </div>
