@@ -12,6 +12,7 @@ const BlogPage = () => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [newsletterMessage, setNewsletterMessage] = useState('');
+
   useEffect(() => {
     document.title = 'Blog - Conseils Transport et Actualités | Location Bus Belgique';
 
@@ -91,37 +92,35 @@ const BlogPage = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
       <section className="relative py-32 bg-gradient-to-br from-blue-900 to-blue-700">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-900/60" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
               Blog & Actualités
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Retrouvez nos conseils d'experts, guides pratiques et actualités 
+              Retrouvez nos conseils d'experts, guides pratiques et actualités
               du transport pour optimiser vos déplacements en toute sérénité.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Featured Article */}
       {featuredPost && (
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Article à la Une</h2>
             </div>
-            
+
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <div className="relative">
                 <img
@@ -170,7 +169,6 @@ const BlogPage = () => {
         </section>
       )}
 
-      {/* Category Filter */}
       <section className="py-8 bg-gray-50 border-y">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-4">
@@ -191,7 +189,6 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Blog Articles Grid */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -262,14 +259,13 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
       <section className="py-20 bg-gradient-to-r from-teal-500 to-teal-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Restez Informés
           </h2>
           <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
-            Inscrivez-vous à notre newsletter pour recevoir nos derniers articles, 
+            Inscrivez-vous à notre newsletter pour recevoir nos derniers articles,
             conseils d'experts et offres spéciales directement dans votre boîte mail.
           </p>
           <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
