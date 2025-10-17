@@ -123,11 +123,11 @@ const BlogPage = () => {
             </div>
             
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-              <div className="relative">
+              <div className="relative aspect-video">
                 <img
                   src={featuredPost.featured_image}
                   alt={`${featuredPost.title} - Guide expert Location Bus Belgique ${featuredPost.category?.name.toLowerCase()} transport premium`}
-                  className="w-full rounded-2xl shadow-2xl"
+                  className="w-full h-full object-cover rounded-2xl shadow-2xl"
                 />
                 <div className="absolute top-6 left-6 bg-red-500 text-white px-4 py-2 rounded-lg font-bold">
                   À la Une

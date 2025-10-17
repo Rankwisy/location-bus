@@ -198,11 +198,11 @@ const BlogPostPage = () => {
             </div>
 
             {post.featured_image && (
-              <div className="mb-12">
+              <div className="mb-12 aspect-video">
                 <img
                   src={post.featured_image}
                   alt={post.title}
-                  className="w-full rounded-2xl shadow-lg"
+                  className="w-full h-full object-cover rounded-2xl shadow-lg"
                 />
               </div>
             )}
