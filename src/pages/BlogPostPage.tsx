@@ -5,7 +5,7 @@ import { blogService } from '../services/blogService';
 import { BlogPost } from '../types/blog';
 
 const BlogPostPage = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
@@ -14,13 +14,13 @@ const BlogPostPage = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      if (!id) return;
+      if (!slug) return;
 
       try {
         setLoading(true);
         setError(null);
 
-        const postData = await blogService.getPostById(id);
+        const postData = await blogService.getPostByIdOrSlug(slug);
 
         if (!postData) {
           setError('Article non trouvé');
@@ -42,7 +42,7 @@ const BlogPostPage = () => {
           canonical.setAttribute('rel', 'canonical');
           document.head.appendChild(canonical);
         }
-        canonical.setAttribute('href', `https://location-bus.be/blog/${postData.id}`);
+        canonical.setAttribute('href', `https://location-bus.be/blog/${postData.slug}`);
 
         if (postData.category_id) {
           const related = await blogService.getRelatedPosts(postData.id, postData.category_id, 3);
@@ -58,7 +58,7 @@ const BlogPostPage = () => {
     };
 
     fetchPost();
-  }, [id]);
+  }, [slug]);
 
   const shareOnFacebook = () => {
     const url = encodeURIComponent(window.location.href);
@@ -256,7 +256,7 @@ const BlogPostPage = () => {
                   <article
                     key={relatedPost.id}
                     className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-                    onClick={() => navigate(`/blog/${relatedPost.id}`)}
+                    onClick={() => navigate(`/blog/${relatedPost.slug}`)}
                   >
                     <div className="relative">
                       <img

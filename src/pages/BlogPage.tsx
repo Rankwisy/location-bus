@@ -158,7 +158,7 @@ const BlogPage = () => {
                   <span>{new Date(featuredPost.published_at).toLocaleDateString('fr-FR')}</span>
                 </div>
                 <Link
-                  to={`/blog/${featuredPost.id}`}
+                  to={`/blog/${featuredPost.slug}`}
                   className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
                 >
                   Lire l'Article
@@ -239,7 +239,7 @@ const BlogPage = () => {
                     <span>{new Date(post.published_at).toLocaleDateString('fr-FR')}</span>
                   </div>
                   <Link
-                    to={`/blog/${post.id}`}
+                    to={`/blog/${post.slug}`}
                     className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold group-hover:underline"
                   >
                     Lire la suite

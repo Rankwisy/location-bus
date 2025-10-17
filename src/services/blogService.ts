@@ -28,6 +28,15 @@ export const blogService = {
     });
   },
 
+  async getPostByIdOrSlug(idOrSlug: string): Promise<BlogPost | null> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const post = blogPosts.find(p => (p.id === idOrSlug || p.slug === idOrSlug) && p.is_published);
+        resolve(post || null);
+      }, 100);
+    });
+  },
+
   async getPostsByCategory(categorySlug: string): Promise<BlogPost[]> {
     return new Promise((resolve) => {
       setTimeout(() => {

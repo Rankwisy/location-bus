@@ -26,7 +26,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
-            <Route path="/blog/:id" element={<BlogPostPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             {/* Catch all unmatched routes */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
