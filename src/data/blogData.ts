@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
 
       <p><strong>Demandez votre devis gratuit dès aujourd'hui</strong> et préparez-vous à vivre la magie des événements bruxellois d'automne et d'hiver 2025 en toute sérénité.</p>
     `,
-    featured_image: 'https://images.pexels.com/photos/161758/governor-s-building-brussels-landmark-161758.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    featured_image: 'https://ik.imagekit.io/by733ltn6/location-bus/Location-Bus-Bruxelles_Post_50.png?updatedAt=1757933799045',
     category_id: '3',
     author_id: '1',
     read_time: 11,
