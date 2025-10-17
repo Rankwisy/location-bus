@@ -12,25 +12,31 @@ import {
 const NotFoundPage = () => {
   useEffect(() => {
     document.title = '404 - Page Non Trouvée | Location Bus Belgique';
-    
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Page non trouvée. Retournez à l\'accueil de Location Bus Belgique pour découvrir nos services de transport premium à Bruxelles.');
     }
 
-    // Add canonical URL for 404 page
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
+    let metaRobots = document.querySelector('meta[name="robots"]');
+    if (!metaRobots) {
+      metaRobots = document.createElement('meta');
+      metaRobots.setAttribute('name', 'robots');
+      document.head.appendChild(metaRobots);
     }
-    canonical.setAttribute('href', 'https://location-bus.be/404');
+    metaRobots.setAttribute('content', 'noindex, follow');
 
-    // Set proper HTTP status for SEO
-    if (typeof window !== 'undefined' && window.history) {
-      window.history.replaceState({}, '', window.location.pathname);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.remove();
     }
+
+    return () => {
+      const metaRobots = document.querySelector('meta[name="robots"]');
+      if (metaRobots) {
+        metaRobots.setAttribute('content', 'index, follow');
+      }
+    };
   }, []);
 
   const quickLinks = [

@@ -1,24 +1,106 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Users, Shield, Clock, Star } from 'lucide-react';
+import { updatePageSEO, addStructuredData, organizationStructuredData, localBusinessStructuredData } from '../utils/seo';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   useEffect(() => {
-    document.title = 'Location Bus avec Chauffeur à Bruxelles | Transferts Aéroport | Location Bus Belgique';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Location de bus et minibus avec chauffeur à Bruxelles. Service professionnel pour transferts d\'aéroport, excursions touristiques, voyages d\'entreprise. Devis gratuit ✓ Conducteurs expérimentés ✓');
-    }
+    updatePageSEO({
+      title: 'Location Bus avec Chauffeur à Bruxelles | Transferts Aéroport | Location Bus Belgique',
+      description: 'Location de bus et minibus avec chauffeur à Bruxelles. Service professionnel pour transferts d\'aéroport, excursions touristiques, voyages d\'entreprise. Devis gratuit ✓ Conducteurs expérimentés ✓',
+      canonical: 'https://location-bus.be/',
+      ogType: 'website',
+      ogImage: 'https://ik.imagekit.io/by733ltn6/location-bus/slider4-1-1024x683-1.jpg?updatedAt=1757936830002',
+      keywords: [
+        'location bus belgique',
+        'transport bus bruxelles',
+        'chauffeur professionnel',
+        'transfert aeroport bruxelles',
+        'excursion touristique belgique',
+        'minibus avec chauffeur',
+        'voyage entreprise',
+        'transport premium bruxelles',
+        'location autocar belgique',
+        'bus 50 places'
+      ]
+    });
 
-    // Add canonical URL
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', 'https://location-bus.be/');
+    const breadcrumbData = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Accueil',
+          item: 'https://location-bus.be/'
+        }
+      ]
+    };
+
+    const serviceData = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Location de Bus avec Chauffeur',
+      provider: {
+        '@type': 'Organization',
+        name: 'Location Bus Belgique',
+        telephone: '+32-2-342-07-34',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Avenue Herrmann Debroux 54',
+          addressLocality: 'Brussels',
+          postalCode: '1160',
+          addressCountry: 'BE'
+        }
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'Belgium'
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Services de Transport',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Transferts Aéroport',
+              description: 'Service de transfert professionnel vers tous les aéroports belges et européens'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Transport d\'Entreprise',
+              description: 'Solutions de transport pour vos événements professionnels et déplacements d\'équipe'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Excursions Touristiques',
+              description: 'Découvrez la Belgique et l\'Europe avec nos circuits personnalisés'
+            }
+          }
+        ]
+      }
+    };
+
+    const combinedData = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        organizationStructuredData,
+        localBusinessStructuredData,
+        breadcrumbData,
+        serviceData
+      ]
+    };
+
+    addStructuredData(combinedData);
   }, []);
 
   const features = [

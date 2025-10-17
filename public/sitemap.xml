@@ -1,93 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://location-bus.be/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/by733ltn6/location-bus/slider4-1-1024x683-1.jpg</image:loc>
+      <image:title>Location Bus Belgique - Transport Premium Bruxelles</image:title>
+    </image:image>
   </url>
-  
+
+  <!-- Services Page - High Priority -->
   <url>
     <loc>https://location-bus.be/services</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
+  <!-- Contact Page - High Priority for Conversions -->
+  <url>
+    <loc>https://location-bus.be/contact</loc>
+    <lastmod>2025-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Fleet Page - Important -->
   <url>
     <loc>https://location-bus.be/fleet</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/by733ltn6/location-bus/sp6.jpg</image:loc>
+      <image:title>Minibus Premium 19 Places</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/by733ltn6/location-bus/70.png</image:loc>
+      <image:title>Autocar Confort 50 Places</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/by733ltn6/location-bus/volvo-bus.png</image:loc>
+      <image:title>Autocar Premium 60 Places</image:title>
+    </image:image>
   </url>
-  
+
+  <!-- Excursions Page - Important -->
   <url>
     <loc>https://location-bus.be/excursions</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <!-- About Page -->
   <url>
     <loc>https://location-bus.be/about</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <url>
-    <loc>https://location-bus.be/contact</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
+
+  <!-- Blog Index -->
   <url>
     <loc>https://location-bus.be/blog</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  
+
   <!-- Blog Articles -->
   <url>
     <loc>https://location-bus.be/blog/1</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2024-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  
+
   <url>
     <loc>https://location-bus.be/blog/2</loc>
-    <lastmod>2024-01-12</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  
+
   <url>
     <loc>https://location-bus.be/blog/3</loc>
-    <lastmod>2024-01-08</lastmod>
+    <lastmod>2024-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  
+
   <url>
     <loc>https://location-bus.be/blog/4</loc>
-    <lastmod>2024-01-05</lastmod>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  
+
   <url>
     <loc>https://location-bus.be/blog/5</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  
+
   <url>
     <loc>https://location-bus.be/blog/6</loc>
-    <lastmod>2023-12-25</lastmod>
+    <lastmod>2024-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
