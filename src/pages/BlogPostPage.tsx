@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Calendar, User, Clock, Tag, ArrowLeft, ArrowRight, Share2, Facebook, Twitter, Linkedin, AlertCircle } from 'lucide-react';
+import { Calendar, User, Clock, ArrowLeft, ArrowRight, Facebook, Twitter, Linkedin, AlertCircle } from 'lucide-react';
 import { blogService } from '../services/blogService';
 import { BlogPost } from '../types/blog';
-import { isSupabaseAvailable } from '../lib/supabase';
 
 const BlogPostPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,12 +19,6 @@ const BlogPostPage = () => {
       try {
         setLoading(true);
         setError(null);
-
-        if (!isSupabaseAvailable()) {
-          setError('Le service de blog est temporairement indisponible. Veuillez réessayer dans quelques instants.');
-          setLoading(false);
-          return;
-        }
 
         const postData = await blogService.getPostById(id);
 
@@ -113,7 +106,7 @@ const BlogPostPage = () => {
               <AlertCircle size={64} className="mx-auto text-yellow-500" />
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              {!isSupabaseAvailable() ? 'Service temporairement indisponible' : 'Article non trouvé'}
+              Article non trouvé
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               {error || 'Désolé, l\'article que vous recherchez n\'existe pas ou a été supprimé.'}

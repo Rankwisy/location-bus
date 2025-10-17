@@ -1,220 +1,115 @@
-import { supabase, isSupabaseAvailable } from '../lib/supabase';
 import { BlogPost, BlogCategory, NewsletterSubscriber } from '../types/blog';
+import { blogPosts, blogCategories, blogAuthors } from '../data/blogData';
 
 export const blogService = {
   async getAllPosts(): Promise<BlogPost[]> {
-    if (!isSupabaseAvailable()) {
-      console.warn('Supabase is not available. Returning empty array.');
-      return [];
-    }
-
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select(`
-        *,
-        category:blog_categories(*),
-        author:blog_authors(*)
-      `)
-      .eq('is_published', true)
-      .order('published_at', { ascending: false });
-
-    if (error) {
-      console.error('Error fetching blog posts:', error);
-      return [];
-    }
-
-    return data || [];
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(blogPosts.filter(post => post.is_published));
+      }, 100);
+    });
   },
 
   async getPostBySlug(slug: string): Promise<BlogPost | null> {
-    if (!isSupabaseAvailable()) {
-      console.warn('Supabase is not available. Returning null.');
-      return null;
-    }
-
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select(`
-        *,
-        category:blog_categories(*),
-        author:blog_authors(*)
-      `)
-      .eq('slug', slug)
-      .eq('is_published', true)
-      .maybeSingle();
-
-    if (error) {
-      console.error('Error fetching blog post:', error);
-      return null;
-    }
-
-    return data;
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const post = blogPosts.find(p => p.slug === slug && p.is_published);
+        resolve(post || null);
+      }, 100);
+    });
   },
 
   async getPostById(id: string): Promise<BlogPost | null> {
-    if (!isSupabaseAvailable()) {
-      console.warn('Supabase is not available. Returning null.');
-      return null;
-    }
-
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select(`
-        *,
-        category:blog_categories(*),
-        author:blog_authors(*)
-      `)
-      .eq('id', id)
-      .eq('is_published', true)
-      .maybeSingle();
-
-    if (error) {
-      console.error('Error fetching blog post:', error);
-      return null;
-    }
-
-    return data;
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const post = blogPosts.find(p => p.id === id && p.is_published);
+        resolve(post || null);
+      }, 100);
+    });
   },
 
   async getPostsByCategory(categorySlug: string): Promise<BlogPost[]> {
-    if (!isSupabaseAvailable()) {
-      console.warn('Supabase is not available. Returning empty array.');
-      return [];
-    }
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const category = blogCategories.find(c => c.slug === categorySlug);
+        if (!category) {
+          resolve([]);
+          return;
+        }
 
-    const { data: category } = await supabase
-      .from('blog_categories')
-      .select('id')
-      .eq('slug', categorySlug)
-      .maybeSingle();
-
-    if (!category) {
-      return [];
-    }
-
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select(`
-        *,
-        category:blog_categories(*),
-        author:blog_authors(*)
-      `)
-      .eq('category_id', category.id)
-      .eq('is_published', true)
-      .order('published_at', { ascending: false });
-
-    if (error) {
-      console.error('Error fetching posts by category:', error);
-      return [];
-    }
-
-    return data || [];
+        const posts = blogPosts.filter(
+          p => p.category_id === category.id && p.is_published
+        );
+        resolve(posts);
+      }, 100);
+    });
   },
 
   async getFeaturedPosts(): Promise<BlogPost[]> {
-    if (!isSupabaseAvailable()) {
-      console.warn('Supabase is not available. Returning empty array.');
-      return [];
-    }
-
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select(`
-        *,
-        category:blog_categories(*),
-        author:blog_authors(*)
-      `)
-      .eq('is_featured', true)
-      .eq('is_published', true)
-      .order('published_at', { ascending: false })
-      .limit(3);
-
-    if (error) {
-      console.error('Error fetching featured posts:', error);
-      return [];
-    }
-
-    return data || [];
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const featured = blogPosts
+          .filter(p => p.is_featured && p.is_published)
+          .slice(0, 3);
+        resolve(featured);
+      }, 100);
+    });
   },
 
   async getRelatedPosts(postId: string, categoryId: string, limit = 3): Promise<BlogPost[]> {
-    if (!isSupabaseAvailable()) {
-      console.warn('Supabase is not available. Returning empty array.');
-      return [];
-    }
-
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select(`
-        *,
-        category:blog_categories(*),
-        author:blog_authors(*)
-      `)
-      .eq('category_id', categoryId)
-      .neq('id', postId)
-      .eq('is_published', true)
-      .order('published_at', { ascending: false })
-      .limit(limit);
-
-    if (error) {
-      console.error('Error fetching related posts:', error);
-      return [];
-    }
-
-    return data || [];
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const related = blogPosts
+          .filter(p =>
+            p.category_id === categoryId &&
+            p.id !== postId &&
+            p.is_published
+          )
+          .slice(0, limit);
+        resolve(related);
+      }, 100);
+    });
   },
 
   async getAllCategories(): Promise<BlogCategory[]> {
-    if (!isSupabaseAvailable()) {
-      console.warn('Supabase is not available. Returning empty array.');
-      return [];
-    }
-
-    const { data, error } = await supabase
-      .from('blog_categories')
-      .select('*')
-      .order('name');
-
-    if (error) {
-      console.error('Error fetching categories:', error);
-      return [];
-    }
-
-    return data || [];
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(blogCategories);
+      }, 100);
+    });
   },
 
   async incrementViewCount(postId: string): Promise<void> {
-    if (!isSupabaseAvailable()) {
-      console.warn('Supabase is not available. Cannot increment view count.');
-      return;
-    }
-
-    const { error } = await supabase.rpc('increment_post_views', { post_id: postId });
-
-    if (error) {
-      console.error('Error incrementing view count:', error);
-    }
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const post = blogPosts.find(p => p.id === postId);
+        if (post) {
+          post.views_count += 1;
+        }
+        resolve();
+      }, 50);
+    });
   },
 
   async subscribeToNewsletter(email: string): Promise<NewsletterSubscriber | null> {
-    if (!isSupabaseAvailable()) {
-      throw new Error('Le service de newsletter n\'est pas disponible pour le moment. Veuillez réessayer plus tard.');
-    }
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          reject(new Error('Adresse email invalide.'));
+          return;
+        }
 
-    const { data, error } = await supabase
-      .from('newsletter_subscribers')
-      .insert({ email, is_active: true })
-      .select()
-      .single();
+        const subscriber: NewsletterSubscriber = {
+          id: Math.random().toString(36).substr(2, 9),
+          email,
+          is_active: true,
+          subscribed_at: new Date().toISOString(),
+          unsubscribed_at: null
+        };
 
-    if (error) {
-      if (error.code === '23505') {
-        throw new Error('Cet email est déjà inscrit à notre newsletter.');
-      }
-      console.error('Error subscribing to newsletter:', error);
-      throw new Error('Une erreur est survenue. Veuillez réessayer.');
-    }
-
-    return data;
+        resolve(subscriber);
+      }, 500);
+    });
   }
 };

@@ -5,101 +5,21 @@
 ### Prerequisites
 
 - A Netlify account
-- Access to your Supabase project credentials
 - Git repository connected to Netlify
 
-### Step 1: Configure Environment Variables in Netlify
+### Deployment Steps
 
-Environment variables are required for the blog system to connect to Supabase. These must be configured in the Netlify dashboard.
+The application is configured to deploy automatically through Netlify when you push changes to your GitHub repository.
+
+#### 1. Connect Your Repository
 
 1. Log in to your Netlify account
-2. Navigate to your site dashboard
-3. Go to **Site Settings** > **Environment Variables** (or **Build & Deploy** > **Environment**)
-4. Add the following environment variables:
+2. Click "Add new site" > "Import an existing project"
+3. Connect your Git provider (GitHub, GitLab, or Bitbucket)
+4. Select your repository
+5. Configure build settings (already set in netlify.toml)
 
-#### Required Environment Variables
-
-| Variable Name | Description | Example Value |
-|--------------|-------------|---------------|
-| `VITE_SUPABASE_URL` | Your Supabase project URL | `https://vcyyuvjwcsxdfwwrohya.supabase.co` |
-| `VITE_SUPABASE_ANON_KEY` | Your Supabase anonymous/public key | See your Supabase project settings |
-
-#### How to Add Environment Variables
-
-1. Click **Add a variable** or **New variable**
-2. Enter the variable name: `VITE_SUPABASE_URL`
-3. Enter the value from your Supabase project
-4. Select the appropriate scope (usually "All deploy contexts")
-5. Click **Save** or **Create variable**
-6. Repeat for `VITE_SUPABASE_ANON_KEY`
-
-### Step 2: Find Your Supabase Credentials
-
-If you need to locate your Supabase credentials:
-
-1. Go to [Supabase Dashboard](https://app.supabase.com)
-2. Select your project
-3. Click on the **Settings** icon (gear icon) in the sidebar
-4. Navigate to **API** section
-5. Copy the following:
-   - **Project URL** → Use for `VITE_SUPABASE_URL`
-   - **anon/public key** → Use for `VITE_SUPABASE_ANON_KEY`
-
-### Step 3: Trigger a New Deployment
-
-After adding the environment variables:
-
-1. Go to **Deploys** tab in your Netlify dashboard
-2. Click **Trigger deploy** button
-3. Select **Deploy site**
-4. Wait for the build to complete
-5. Visit your site to verify the blog articles are now visible
-
-### Step 4: Verify Deployment
-
-Check the following to ensure successful deployment:
-
-- [ ] Blog page loads without errors
-- [ ] Blog articles are visible on `/blog` route
-- [ ] Featured article displays correctly
-- [ ] Category filtering works
-- [ ] Individual blog posts load when clicked
-- [ ] Newsletter subscription form works
-
-### Troubleshooting
-
-#### Blog Shows "No articles found"
-
-**Problem:** The blog page displays but shows no articles.
-
-**Solution:**
-1. Verify environment variables are correctly set in Netlify
-2. Check for typos in variable names (must be exactly `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`)
-3. Ensure values don't have extra spaces or quotes
-4. Trigger a new deployment after making changes
-5. Check build logs for any errors related to Supabase connection
-
-#### Build Fails
-
-**Problem:** Netlify build fails with errors.
-
-**Solution:**
-1. Check the build logs in Netlify dashboard
-2. Verify `package.json` has all required dependencies
-3. Ensure Node version is compatible (currently set to v18)
-4. Clear build cache and retry: **Deploys** > **Options** > **Clear cache and retry**
-
-#### Environment Variables Not Working
-
-**Problem:** Environment variables seem to be set but still not working.
-
-**Solution:**
-1. Verify variable names have the `VITE_` prefix
-2. Check that variables are set for the correct deploy context
-3. Clear browser cache and try again
-4. Trigger a clean deploy after setting variables
-
-### Build Configuration
+#### 2. Build Configuration
 
 The project uses the following build configuration (defined in `netlify.toml`):
 
@@ -112,34 +32,124 @@ The project uses the following build configuration (defined in `netlify.toml`):
   NODE_VERSION = "18"
 ```
 
+Netlify will automatically:
+- Install dependencies with `npm install`
+- Build the project with `npm run build`
+- Deploy the `dist` folder
+
+#### 3. Configure Custom Domain
+
+1. Go to your site dashboard in Netlify
+2. Navigate to **Domain Settings**
+3. Click **Add custom domain**
+4. Enter your domain name (e.g., location-bus.be)
+5. Follow the DNS configuration instructions provided by Netlify
+6. Wait for DNS propagation (can take up to 48 hours)
+
+#### 4. Enable HTTPS
+
+1. In **Domain Settings**, scroll to **HTTPS**
+2. Click **Verify DNS configuration**
+3. Click **Provision certificate**
+4. Wait for SSL certificate to be issued (usually takes a few minutes)
+
+### Troubleshooting
+
+#### Build Fails
+
+**Problem:** Netlify build fails with errors.
+
+**Solution:**
+1. Check the build logs in Netlify dashboard
+2. Verify `package.json` has all required dependencies
+3. Ensure Node version is compatible (currently set to v18)
+4. Clear build cache and retry: **Deploys** > **Options** > **Clear cache and retry**
+
+#### Site Not Loading on Custom Domain
+
+**Problem:** Custom domain shows error or doesn't load.
+
+**Solution:**
+1. Verify DNS settings are correctly configured
+2. Check that DNS propagation is complete (use tools like whatsmydns.net)
+3. Ensure SSL certificate is properly provisioned
+4. Clear browser cache and try in incognito mode
+
+#### Routing Issues (404 on Page Refresh)
+
+**Problem:** Direct URLs or page refresh shows 404 error.
+
+**Solution:**
+- The `netlify.toml` file already includes the necessary redirect rule
+- If issues persist, check that the `_redirects` file in the `public` folder is being copied to `dist`
+
+### Blog Content Management
+
+The blog system uses static data stored in `/src/data/blogData.ts`. To add or modify blog posts:
+
+1. Open `/src/data/blogData.ts`
+2. Add new posts to the `blogPosts` array following the existing structure
+3. Ensure each post has:
+   - Unique `id`
+   - Unique `slug` (used in URLs)
+   - Valid `category_id` and `author_id`
+   - `is_published: true` to make it visible
+4. Commit and push changes
+5. Netlify will automatically rebuild and deploy
+
+### Performance Optimization
+
+The site is optimized for performance with:
+- Code splitting via Vite
+- Lazy loading of images
+- Minified CSS and JavaScript
+- Cached assets with proper headers
+
 ### Security Notes
 
-- The `VITE_SUPABASE_ANON_KEY` is safe to expose in client-side code
-- Row Level Security (RLS) in Supabase protects your data
-- Never expose the Supabase service role key in environment variables
-- The `.env` file is excluded from Git for security
+- HTTPS is automatically enabled via Netlify
+- All external resources use HTTPS
+- No sensitive data is stored in the repository
+- The `.env` file is excluded from Git
+
+### Monitoring
+
+Monitor your site's performance:
+1. **Netlify Analytics:** Enable in site settings for detailed visitor data
+2. **Build Notifications:** Configure email/Slack notifications for build status
+3. **Deploy Previews:** Automatic preview URLs for all pull requests
+
+### Continuous Deployment
+
+The site is configured for continuous deployment:
+- Push to main branch → Automatic production deploy
+- Pull requests → Automatic deploy preview
+- All deploys are atomic and instant rollback is available
 
 ### Support
 
 If you encounter issues not covered in this guide:
-
 1. Check Netlify build logs for specific error messages
-2. Verify Supabase connection in your project settings
-3. Ensure all database migrations have been applied
+2. Verify all files are committed to your repository
+3. Review the Netlify documentation at docs.netlify.com
 4. Contact your development team for assistance
 
 ### Local Development
 
-For local development, copy `.env.example` to `.env` and fill in your credentials:
+For local development:
 
 ```bash
-cp .env.example .env
-# Edit .env with your actual Supabase credentials
-```
-
-Then run:
-
-```bash
+# Install dependencies
 npm install
+
+# Run development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
+
+The development server will be available at `http://localhost:5173`

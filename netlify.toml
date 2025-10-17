@@ -9,8 +9,3 @@
 
 [build.environment]
   NODE_VERSION = "18"
-
-# Environment variables are configured in Netlify UI
-# Required variables:
-# - VITE_SUPABASE_URL
-# - VITE_SUPABASE_ANON_KEY
