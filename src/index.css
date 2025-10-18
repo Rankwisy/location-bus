@@ -46,4 +46,38 @@
     max-width: 100%;
     height: auto;
   }
+
+  .blog-content p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-content a {
+    color: #059669;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  .blog-content a:hover {
+    color: #047857;
+  }
+
+  .blog-content ul,
+  .blog-content ol {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
 }

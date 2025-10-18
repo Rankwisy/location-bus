@@ -185,7 +185,7 @@ const BlogPostPage = () => {
           <nav className="mb-6" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-2 text-sm text-gray-600">
               <li>
-                <Link to="/" className="hover:text-teal-600 transition-colors">
+                <Link to="/" className="font-bold text-emerald-600 hover:text-emerald-700 transition-colors">
                   Accueil
                 </Link>
               </li>
@@ -193,7 +193,7 @@ const BlogPostPage = () => {
                 <ChevronRight size={16} className="text-gray-400" />
               </li>
               <li>
-                <Link to="/blog" className="hover:text-teal-600 transition-colors">
+                <Link to="/blog" className="font-bold text-emerald-600 hover:text-emerald-700 transition-colors">
                   Blog
                 </Link>
               </li>
@@ -205,7 +205,7 @@ const BlogPostPage = () => {
                   <li>
                     <Link
                       to={`/blog#${post.category.slug}`}
-                      className="hover:text-teal-600 transition-colors"
+                      className="font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
                     >
                       {post.category.name}
                     </Link>
@@ -223,7 +223,7 @@ const BlogPostPage = () => {
 
           <Link
             to="/blog"
-            className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold mb-8"
+            className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-bold mb-8"
           >
             <ArrowLeft className="mr-2" size={18} />
             Retour au Blog
@@ -309,7 +309,7 @@ const BlogPostPage = () => {
               </div>
 
               <div
-                className="text-gray-800 leading-relaxed space-y-6"
+                className="blog-content text-gray-800 leading-relaxed space-y-6"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>
