@@ -134,11 +134,11 @@ const BlogPage = () => {
             </div>
             
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-              <div className="relative aspect-video">
+              <Link to={`/blog/${featuredPost.slug}`} className="relative aspect-video block group">
                 <img
                   src={featuredPost.featured_image}
                   alt={`${featuredPost.title} - Guide expert Location Bus Belgique pour ${featuredPost.category?.name.toLowerCase() || 'transport'} avec chauffeur professionnel à Bruxelles`}
-                  className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                  className="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:shadow-3xl transition-shadow duration-300"
                   loading="eager"
                   width="1200"
                   height="675"
@@ -146,7 +146,7 @@ const BlogPage = () => {
                 <div className="absolute top-6 left-6 bg-red-500 text-white px-4 py-2 rounded-lg font-bold">
                   À la Une
                 </div>
-              </div>
+              </Link>
               <div>
                 <div className="flex items-center space-x-4 mb-4">
                   {featuredPost.category && (
@@ -159,7 +159,11 @@ const BlogPage = () => {
                     {featuredPost.read_time} min
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">{featuredPost.title}</h3>
+                <Link to={`/blog/${featuredPost.slug}`}>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4 hover:text-teal-600 transition-colors cursor-pointer">
+                    {featuredPost.title}
+                  </h3>
+                </Link>
                 <p className="text-xl text-gray-600 mb-6 leading-relaxed">{featuredPost.excerpt}</p>
                 <div className="flex items-center text-gray-500 text-sm mb-6">
                   {featuredPost.author && (
@@ -219,51 +223,54 @@ const BlogPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <div className="relative">
-                  <img
-                    src={post.featured_image}
-                    alt={`${post.title} - Conseils et guide Location Bus Belgique ${post.category?.name.toLowerCase() || 'transport'} pour voyages en groupe à Bruxelles`}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    width="400"
-                    height="192"
-                  />
-                  {post.category && (
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                      <span className="text-xs font-semibold text-gray-700">{post.category.name}</span>
-                    </div>
-                  )}
-                  <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-xs">
-                    <Clock size={12} className="inline mr-1" />
-                    {post.read_time} min
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-teal-600 transition-colors">
-                    {post.title}
-                  </h4>
-                  <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">{post.excerpt}</p>
-
-                  <div className="flex items-center text-gray-500 text-sm mb-4">
-                    {post.author && (
-                      <>
-                        <User size={14} className="mr-2" />
-                        <span className="mr-4">{post.author.name}</span>
-                      </>
+              <Link
+                key={post.id}
+                to={`/blog/${post.slug}`}
+                className="block bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              >
+                <article>
+                  <div className="relative">
+                    <img
+                      src={post.featured_image}
+                      alt={`${post.title} - Conseils et guide Location Bus Belgique ${post.category?.name.toLowerCase() || 'transport'} pour voyages en groupe à Bruxelles`}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      width="400"
+                      height="192"
+                    />
+                    {post.category && (
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <span className="text-xs font-semibold text-gray-700">{post.category.name}</span>
+                      </div>
                     )}
-                    <Calendar size={14} className="mr-2" />
-                    <span>{new Date(post.published_at).toLocaleDateString('fr-FR')}</span>
+                    <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-xs">
+                      <Clock size={12} className="inline mr-1" />
+                      {post.read_time} min
+                    </div>
                   </div>
-                  <Link
-                    to={`/blog/${post.slug}`}
-                    className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold group-hover:underline"
-                  >
-                    Lire la suite
-                    <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
-                  </Link>
-                </div>
-              </article>
+                  <div className="p-6">
+                    <h4 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-teal-600 transition-colors">
+                      {post.title}
+                    </h4>
+                    <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">{post.excerpt}</p>
+
+                    <div className="flex items-center text-gray-500 text-sm mb-4">
+                      {post.author && (
+                        <>
+                          <User size={14} className="mr-2" />
+                          <span className="mr-4">{post.author.name}</span>
+                        </>
+                      )}
+                      <Calendar size={14} className="mr-2" />
+                      <span>{new Date(post.published_at).toLocaleDateString('fr-FR')}</span>
+                    </div>
+                    <span className="inline-flex items-center text-teal-600 group-hover:text-teal-700 font-semibold group-hover:underline">
+                      Lire la suite
+                      <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
+                    </span>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
 

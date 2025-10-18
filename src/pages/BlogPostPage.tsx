@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Calendar, User, Clock, ArrowLeft, ArrowRight, Facebook, Twitter, Linkedin, AlertCircle, ChevronRight } from 'lucide-react';
 import { blogService } from '../services/blogService';
 import { BlogPost } from '../types/blog';
@@ -7,7 +7,6 @@ import { createBlogPostStructuredData, createBreadcrumbStructuredData, addStruct
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -350,41 +349,43 @@ const BlogPostPage = () => {
 
               <div className="grid md:grid-cols-3 gap-8">
                 {relatedPosts.map((relatedPost) => (
-                  <article
+                  <Link
                     key={relatedPost.id}
-                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-                    onClick={() => navigate(`/blog/${relatedPost.slug}`)}
+                    to={`/blog/${relatedPost.slug}`}
+                    className="block bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
                   >
-                    <div className="relative">
-                      <img
-                        src={relatedPost.featured_image}
-                        alt={`${relatedPost.title} - Article connexe Location Bus Belgique ${relatedPost.category?.name || 'blog'}`}
-                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
-                        width="400"
-                        height="192"
-                      />
-                      {relatedPost.category && (
-                        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                          <span className="text-xs font-semibold text-gray-700">
-                            {relatedPost.category.name}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-teal-600 transition-colors">
-                        {relatedPost.title}
-                      </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-3">
-                        {relatedPost.excerpt}
-                      </p>
-                      <div className="flex items-center text-gray-500 text-sm">
-                        <Calendar size={14} className="mr-2" />
-                        <span>{new Date(relatedPost.published_at).toLocaleDateString('fr-FR')}</span>
+                    <article>
+                      <div className="relative">
+                        <img
+                          src={relatedPost.featured_image}
+                          alt={`${relatedPost.title} - Article connexe Location Bus Belgique ${relatedPost.category?.name || 'blog'}`}
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                          width="400"
+                          height="192"
+                        />
+                        {relatedPost.category && (
+                          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span className="text-xs font-semibold text-gray-700">
+                              {relatedPost.category.name}
+                            </span>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  </article>
+                      <div className="p-6">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-teal-600 transition-colors">
+                          {relatedPost.title}
+                        </h3>
+                        <p className="text-gray-600 mb-4 line-clamp-3">
+                          {relatedPost.excerpt}
+                        </p>
+                        <div className="flex items-center text-gray-500 text-sm">
+                          <Calendar size={14} className="mr-2" />
+                          <span>{new Date(relatedPost.published_at).toLocaleDateString('fr-FR')}</span>
+                        </div>
+                      </div>
+                    </article>
+                  </Link>
                 ))}
               </div>
             </div>
