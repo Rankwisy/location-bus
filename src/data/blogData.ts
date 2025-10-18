@@ -226,7 +226,7 @@ export const blogPosts: BlogPost[] = [
       <p>L'organisation d'un transfert aéroport pour un groupe nécessite une planification minutieuse. Que ce soit pour un voyage d'affaires, une excursion scolaire ou un événement familial, suivez nos conseils d'experts.</p>
 
       <h2>1. Planifiez à l'Avance</h2>
-      <p>La clé d'un transfert réussi réside dans l'anticipation. Réservez votre transport au moins 2 à 3 semaines avant la date prévue, surtout en haute saison. Cela vous garantit :</p>
+      <p>La clé d'un transfert réussi réside dans l'anticipation. Réservez votre <a href="/services">transport professionnel</a> au moins 2 à 3 semaines avant la date prévue, surtout en haute saison. Selon les recommandations de <a href="https://www.brusselsairport.be/fr/passengers/access-parking/bus-coach" target="_blank" rel="noopener noreferrer">Brussels Airport</a>, une réservation anticipée garantit un accès optimal aux zones de dépose. Cela vous garantit :</p>
       <ul>
         <li>La disponibilité du véhicule adapté à votre groupe</li>
         <li>Les meilleurs tarifs</li>
@@ -234,7 +234,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>2. Choisissez le Bon Véhicule</h2>
-      <p>Le choix du véhicule dépend de plusieurs facteurs :</p>
+      <p>Le choix du véhicule dépend de plusieurs facteurs. Consultez <a href="/fleet">notre flotte complète</a> pour découvrir toutes les options disponibles :</p>
       <ul>
         <li><strong>Nombre de passagers :</strong> Minibus (8-20 places) ou autocar (20-50 places)</li>
         <li><strong>Quantité de bagages :</strong> Assurez-vous d'avoir suffisamment d'espace</li>
@@ -260,7 +260,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Conclusion</h2>
-      <p>Un transfert aéroport bien organisé commence avant même votre arrivée. Avec Location Bus Belgique, bénéficiez d'un service professionnel et fiable pour tous vos déplacements de groupe.</p>
+      <p>Un transfert aéroport bien organisé commence avant même votre arrivée. Avec Location Bus Belgique, bénéficiez d'un service professionnel et fiable pour tous vos déplacements de groupe. <a href="/contact">Contactez-nous</a> pour obtenir un devis personnalisé ou découvrez nos <a href="/blog/evenements-entreprise-transport-bus">conseils pour les événements d'entreprise</a>.</p>
     `,
     featured_image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category_id: '1',
@@ -282,10 +282,10 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Explorez les plus belles destinations de Belgique avec votre groupe. Notre sélection des 10 lieux incontournables accessibles facilement en bus.',
     content: `
       <h2>Introduction</h2>
-      <p>La Belgique regorge de trésors à découvrir. Voici notre sélection des 10 destinations incontournables pour une excursion en groupe.</p>
+      <p>La Belgique regorge de trésors à découvrir. Voici notre sélection des 10 destinations incontournables pour une <a href="/excursions">excursion en groupe</a>. Que vous planifiez une sortie culturelle ou une escapade nature, nos <a href="/services">services de transport</a> vous garantissent un voyage confortable et sécurisé.</p>
 
       <h2>1. Bruges - La Venise du Nord</h2>
-      <p>Avec ses canaux pittoresques et son architecture médiévale, Bruges est une destination de choix. Distance depuis Bruxelles : 100 km, environ 1h15 en bus.</p>
+      <p>Avec ses canaux pittoresques et son architecture médiévale classée au <a href="https://whc.unesco.org/fr/list/996/" target="_blank" rel="noopener noreferrer">patrimoine mondial de l'UNESCO</a>, Bruges est une destination de choix. Le <a href="https://www.visitbruges.be/fr" target="_blank" rel="noopener noreferrer">centre historique de Bruges</a> offre une immersion totale dans le Moyen Âge flamand. Distance depuis Bruxelles : 100 km, environ 1h15 en bus.</p>
 
       <h2>2. Gand - La Cité des Comtes</h2>
       <p>Gand combine patrimoine historique et vie culturelle dynamique. Parfait pour une journée d'excursion avec visite du château des Comtes. Distance : 55 km, environ 50 minutes.</p>
@@ -294,7 +294,7 @@ export const blogPosts: BlogPost[] = [
       <p>Découvrez la ville portuaire d'Anvers, son quartier des diamantaires et la maison de Rubens. Distance : 45 km, environ 45 minutes.</p>
 
       <h2>4. Les Ardennes - Nature Préservée</h2>
-      <p>Pour les amateurs de nature, les Ardennes offrent des paysages spectaculaires. Durbuy, La Roche-en-Ardenne ou Han-sur-Lesse sont accessibles en 1h30 à 2h.</p>
+      <p>Pour les amateurs de nature, les Ardennes offrent des paysages spectaculaires. Découvrez les <a href="https://www.grotte-de-han.be/fr" target="_blank" rel="noopener noreferrer">Grottes de Han</a>, Durbuy (plus petite ville du monde), ou La Roche-en-Ardenne. Ces destinations sont accessibles en 1h30 à 2h et parfaites pour des <a href="/blog/excursion-scolaire-guide-enseignants">excursions scolaires</a>.</p>
 
       <h2>5. Dinant - Perle de la Meuse</h2>
       <p>Ville natale d'Adolphe Sax, Dinant séduit par sa citadelle et sa collégiale. Distance : 95 km, environ 1h15.</p>
@@ -315,7 +315,7 @@ export const blogPosts: BlogPost[] = [
       <p>Profitez des plages et de la promenade en bord de mer. Parfait pour les sorties d'été. Distance : 115 km, environ 1h30.</p>
 
       <h2>Conclusion</h2>
-      <p>Ces destinations sont toutes facilement accessibles depuis Bruxelles. Contactez-nous pour organiser votre prochaine excursion !</p>
+      <p>Ces destinations sont toutes facilement accessibles depuis Bruxelles avec nos services de <a href="/fleet">bus et minibus</a>. Pour planifier votre voyage en toute sérénité, consultez notre <a href="/blog/securite-reglementation-transport-groupe-2024">guide de sécurité et réglementation</a>. <a href="/contact">Contactez-nous</a> pour organiser votre prochaine excursion avec un devis personnalisé !</p>
     `,
     featured_image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category_id: '2',
@@ -337,10 +337,10 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Restez informés des dernières réglementations en matière de transport de groupe. Ce qu\'il faut savoir pour voyager en toute sérénité.',
     content: `
       <h2>Introduction</h2>
-      <p>La sécurité des passagers est notre priorité absolue. Découvrez les normes et réglementations qui encadrent le transport de groupe en Belgique en 2024.</p>
+      <p>La sécurité des passagers est notre priorité absolue. Découvrez les normes et réglementations qui encadrent le transport de groupe en Belgique en 2024, conformément aux directives du <a href="https://mobilit.belgium.be/fr" target="_blank" rel="noopener noreferrer">SPF Mobilité et Transports</a>.</p>
 
       <h2>Normes de Sécurité Obligatoires</h2>
-      <p>Tous nos véhicules respectent scrupuleusement :</p>
+      <p>Tous nos <a href="/fleet">véhicules</a> respectent scrupuleusement les normes européennes et belges :</p>
       <ul>
         <li>Contrôle technique régulier tous les 6 mois</li>
         <li>Système de freinage ABS et ESP obligatoire</li>
@@ -361,7 +361,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Temps de Conduite et Repos</h2>
-      <p>La réglementation européenne impose :</p>
+      <p>La <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32006R0561" target="_blank" rel="noopener noreferrer">réglementation européenne (CE) N° 561/2006</a> impose des règles strictes :</p>
       <ul>
         <li>Maximum 9h de conduite par jour (extensible à 10h deux fois par semaine)</li>
         <li>Pause de 45 minutes après 4h30 de conduite</li>
@@ -397,7 +397,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Conclusion</h2>
-      <p>Chez Location Bus Belgique, la sécurité n'est pas un option mais une exigence. Voyagez l'esprit tranquille avec des professionnels certifiés.</p>
+      <p>Chez Location Bus Belgique, la sécurité n'est pas une option mais une exigence. Voyagez l'esprit tranquille avec des professionnels certifiés. Pour en savoir plus sur nos <a href="/services">services de transport</a> ou organiser un <a href="/blog/organiser-transfert-aeroport-groupe">transfert aéroport</a>, <a href="/contact">contactez notre équipe</a>.</p>
     `,
     featured_image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category_id: '3',
@@ -419,7 +419,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Les avantages du transport collectif pour vos événements professionnels : team building, séminaires, salons. Optimisez logistique et budget.',
     content: `
       <h2>Introduction</h2>
-      <p>L'organisation d'événements d'entreprise implique de nombreux défis logistiques. Le transport collectif en bus représente une solution efficace et économique.</p>
+      <p>L'organisation d'événements d'entreprise implique de nombreux défis logistiques. Le <a href="/services">transport collectif en bus</a> représente une solution efficace et économique qui contribue à la <a href="https://www.rse-belgium.be/" target="_blank" rel="noopener noreferrer">responsabilité sociétale des entreprises (RSE)</a>.</p>
 
       <h2>Avantages Économiques</h2>
       <h3>Réduction des Coûts</h3>
@@ -431,7 +431,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h3>Budget Prévisible</h3>
-      <p>Avec un devis fixe, maîtrisez vos dépenses sans surprises. Comparez : un trajet Bruxelles-Anvers coûte environ 400€ en bus (40 personnes) contre 2000€+ en taxis individuels.</p>
+      <p>Avec un <a href="/contact">devis fixe</a>, maîtrisez vos dépenses sans surprises. Comparez : un trajet Bruxelles-Anvers coûte environ 400€ en bus (40 personnes) contre 2000€+ en taxis individuels. Consultez notre <a href="/fleet">flotte complète</a> pour choisir le véhicule adapté à votre budget.</p>
 
       <h2>Avantages Pratiques</h2>
       <h3>Ponctualité Garantie</h3>

@@ -160,3 +160,85 @@ export const localBusinessStructuredData = {
     reviewCount: '1000'
   }
 };
+
+export interface BlogPostStructuredDataParams {
+  title: string;
+  excerpt: string;
+  content: string;
+  featuredImage: string;
+  authorName: string;
+  authorUrl?: string;
+  publishedAt: string;
+  updatedAt: string;
+  slug: string;
+  categoryName?: string;
+  readTime?: number;
+}
+
+export const createBlogPostStructuredData = (params: BlogPostStructuredDataParams) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  '@id': `https://location-bus.be/blog/${params.slug}#article`,
+  headline: params.title,
+  description: params.excerpt,
+  image: {
+    '@type': 'ImageObject',
+    url: params.featuredImage,
+    width: 1200,
+    height: 630
+  },
+  author: {
+    '@type': 'Person',
+    name: params.authorName,
+    url: params.authorUrl || 'https://location-bus.be/about'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Location Bus Belgique',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://ik.imagekit.io/by733ltn6/location-bus/cropped-Logo-Location_bus-1.png?updatedAt=1757933964171',
+      width: 600,
+      height: 60
+    }
+  },
+  datePublished: params.publishedAt,
+  dateModified: params.updatedAt,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `https://location-bus.be/blog/${params.slug}`
+  },
+  articleSection: params.categoryName,
+  wordCount: params.content.replace(/<[^>]*>/g, '').split(/\s+/).length,
+  timeRequired: params.readTime ? `PT${params.readTime}M` : undefined,
+  inLanguage: 'fr-BE',
+  isAccessibleForFree: true
+});
+
+export const createBreadcrumbStructuredData = (items: Array<{ name: string; url: string }>) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: item.url
+  }))
+});
+
+export const createBlogCollectionStructuredData = (posts: Array<{ title: string; url: string; publishedAt: string }>) => ({
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': 'https://location-bus.be/blog#page',
+  name: 'Blog Location Bus Belgique',
+  description: 'Conseils transport, destinations touristiques et actualités du secteur',
+  url: 'https://location-bus.be/blog',
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: posts.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: post.url
+    }))
+  }
+});

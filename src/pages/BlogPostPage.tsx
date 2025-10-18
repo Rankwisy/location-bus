@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Calendar, User, Clock, ArrowLeft, ArrowRight, Facebook, Twitter, Linkedin, AlertCircle } from 'lucide-react';
+import { Calendar, User, Clock, ArrowLeft, ArrowRight, Facebook, Twitter, Linkedin, AlertCircle, ChevronRight } from 'lucide-react';
 import { blogService } from '../services/blogService';
 import { BlogPost } from '../types/blog';
+import { createBlogPostStructuredData, createBreadcrumbStructuredData, addStructuredData } from '../utils/seo';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -31,10 +32,39 @@ const BlogPostPage = () => {
         setPost(postData);
 
         document.title = `${postData.title} | Location Bus Belgique`;
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-          metaDescription.setAttribute('content', postData.excerpt);
-        }
+
+        const metaTags = [
+          { name: 'description', content: postData.excerpt },
+          { name: 'keywords', content: `${postData.title}, location bus belgique, ${postData.category?.name || 'transport'}` },
+          { name: 'author', content: postData.author?.name || 'Location Bus Belgique' },
+          { property: 'og:title', content: postData.title },
+          { property: 'og:description', content: postData.excerpt },
+          { property: 'og:type', content: 'article' },
+          { property: 'og:url', content: `https://location-bus.be/blog/${postData.slug}` },
+          { property: 'og:image', content: postData.featured_image },
+          { property: 'article:published_time', content: postData.published_at },
+          { property: 'article:modified_time', content: postData.updated_at },
+          { property: 'article:author', content: postData.author?.name || 'Location Bus Belgique' },
+          { property: 'article:section', content: postData.category?.name || 'Blog' },
+          { name: 'twitter:card', content: 'summary_large_image' },
+          { name: 'twitter:title', content: postData.title },
+          { name: 'twitter:description', content: postData.excerpt },
+          { name: 'twitter:image', content: postData.featured_image }
+        ];
+
+        metaTags.forEach(({ name, property, content }) => {
+          const selector = name ? `meta[name="${name}"]` : `meta[property="${property}"]`;
+          let meta = document.querySelector(selector);
+
+          if (!meta) {
+            meta = document.createElement('meta');
+            if (name) meta.setAttribute('name', name);
+            if (property) meta.setAttribute('property', property);
+            document.head.appendChild(meta);
+          }
+
+          meta.setAttribute('content', content);
+        });
 
         let canonical = document.querySelector('link[rel="canonical"]');
         if (!canonical) {
@@ -43,6 +73,31 @@ const BlogPostPage = () => {
           document.head.appendChild(canonical);
         }
         canonical.setAttribute('href', `https://location-bus.be/blog/${postData.slug}`);
+
+        const blogPostSchema = createBlogPostStructuredData({
+          title: postData.title,
+          excerpt: postData.excerpt,
+          content: postData.content,
+          featuredImage: postData.featured_image,
+          authorName: postData.author?.name || 'Location Bus Belgique',
+          publishedAt: postData.published_at,
+          updatedAt: postData.updated_at,
+          slug: postData.slug,
+          categoryName: postData.category?.name,
+          readTime: postData.read_time
+        });
+
+        const breadcrumbSchema = createBreadcrumbStructuredData([
+          { name: 'Accueil', url: 'https://location-bus.be' },
+          { name: 'Blog', url: 'https://location-bus.be/blog' },
+          { name: postData.category?.name || 'Articles', url: `https://location-bus.be/blog#${postData.category?.slug || 'all'}` },
+          { name: postData.title, url: `https://location-bus.be/blog/${postData.slug}` }
+        ]);
+
+        addStructuredData({
+          '@context': 'https://schema.org',
+          '@graph': [blogPostSchema, breadcrumbSchema]
+        });
 
         if (postData.category_id) {
           const related = await blogService.getRelatedPosts(postData.id, postData.category_id, 3);
@@ -128,6 +183,45 @@ const BlogPostPage = () => {
     <div className="pt-20">
       <article className="bg-white">
         <div className="container mx-auto px-4 py-8">
+          <nav className="mb-6" aria-label="Breadcrumb">
+            <ol className="flex items-center space-x-2 text-sm text-gray-600">
+              <li>
+                <Link to="/" className="hover:text-teal-600 transition-colors">
+                  Accueil
+                </Link>
+              </li>
+              <li>
+                <ChevronRight size={16} className="text-gray-400" />
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-teal-600 transition-colors">
+                  Blog
+                </Link>
+              </li>
+              {post?.category && (
+                <>
+                  <li>
+                    <ChevronRight size={16} className="text-gray-400" />
+                  </li>
+                  <li>
+                    <Link
+                      to={`/blog#${post.category.slug}`}
+                      className="hover:text-teal-600 transition-colors"
+                    >
+                      {post.category.name}
+                    </Link>
+                  </li>
+                </>
+              )}
+              <li>
+                <ChevronRight size={16} className="text-gray-400" />
+              </li>
+              <li className="text-gray-900 font-medium line-clamp-1">
+                {post?.title}
+              </li>
+            </ol>
+          </nav>
+
           <Link
             to="/blog"
             className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold mb-8"
@@ -201,8 +295,11 @@ const BlogPostPage = () => {
               <div className="mb-12 aspect-video">
                 <img
                   src={post.featured_image}
-                  alt={post.title}
+                  alt={`${post.title} - Article complet Location Bus Belgique sur ${post.category?.name.toLowerCase() || 'le transport'} avec conseils d'experts`}
                   className="w-full h-full object-cover rounded-2xl shadow-lg"
+                  loading="eager"
+                  width="1200"
+                  height="675"
                 />
               </div>
             )}
@@ -261,8 +358,11 @@ const BlogPostPage = () => {
                     <div className="relative">
                       <img
                         src={relatedPost.featured_image}
-                        alt={relatedPost.title}
+                        alt={`${relatedPost.title} - Article connexe Location Bus Belgique ${relatedPost.category?.name || 'blog'}`}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        width="400"
+                        height="192"
                       />
                       {relatedPost.category && (
                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">

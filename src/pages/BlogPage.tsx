@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight, Clock, Tag } from 'lucide-react';
 import { blogService } from '../services/blogService';
 import { BlogPost, BlogCategory } from '../types/blog';
+import { createBlogCollectionStructuredData, addStructuredData } from '../utils/seo';
 
 const BlogPage = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
@@ -37,6 +38,16 @@ const BlogPage = () => {
         ]);
         setBlogPosts(postsData);
         setCategories(categoriesData);
+
+        const collectionSchema = createBlogCollectionStructuredData(
+          postsData.slice(0, 10).map(post => ({
+            title: post.title,
+            url: `https://location-bus.be/blog/${post.slug}`,
+            publishedAt: post.published_at
+          }))
+        );
+
+        addStructuredData(collectionSchema);
       } catch (error) {
         console.error('Error loading blog data:', error);
       } finally {
@@ -126,8 +137,11 @@ const BlogPage = () => {
               <div className="relative aspect-video">
                 <img
                   src={featuredPost.featured_image}
-                  alt={`${featuredPost.title} - Guide expert Location Bus Belgique ${featuredPost.category?.name.toLowerCase()} transport premium`}
+                  alt={`${featuredPost.title} - Guide expert Location Bus Belgique pour ${featuredPost.category?.name.toLowerCase() || 'transport'} avec chauffeur professionnel à Bruxelles`}
                   className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                  loading="eager"
+                  width="1200"
+                  height="675"
                 />
                 <div className="absolute top-6 left-6 bg-red-500 text-white px-4 py-2 rounded-lg font-bold">
                   À la Une
@@ -209,8 +223,11 @@ const BlogPage = () => {
                 <div className="relative">
                   <img
                     src={post.featured_image}
-                    alt={`${post.title} - Article blog Location Bus Belgique conseils ${post.category?.name.toLowerCase()} transport professionnel`}
+                    alt={`${post.title} - Conseils et guide Location Bus Belgique ${post.category?.name.toLowerCase() || 'transport'} pour voyages en groupe à Bruxelles`}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    width="400"
+                    height="192"
                   />
                   {post.category && (
                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
