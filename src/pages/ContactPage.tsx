@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  Send, 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
   CheckCircle,
   User,
   MessageSquare,
   Calendar,
-  Users
+  Users,
+  Star,
+  Route,
+  Euro,
+  Headphones,
+  Leaf,
+  TrendingUp
 } from 'lucide-react';
 
 const ContactPage = () => {
@@ -106,6 +112,44 @@ const ContactPage = () => {
     'Transport scolaire',
     'Service régulier',
     'Autre (préciser dans le message)'
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: Star,
+      title: 'Véhicules haut de gamme pour chaque besoin',
+      description: 'Notre flotte moderne s\'adapte à toutes les exigences avec équipements premium : climatisation, wifi, sièges ergonomiques, audio/vidéo HD.'
+    },
+    {
+      icon: Users,
+      title: 'Chauffeurs professionnels multilingues',
+      description: 'Chauffeurs qualifiés, ponctuels et courtois parlant FR, EN, NL, ES avec connaissance approfondie de Bruxelles et ses environs.'
+    },
+    {
+      icon: Route,
+      title: 'Flexibilité et circuits sur-mesure',
+      description: 'Itinéraires personnalisés pour groupes, entreprises et agences. Chaque circuit adapté à vos besoins spécifiques.'
+    },
+    {
+      icon: Euro,
+      title: 'Tarifs transparents et compétitifs',
+      description: 'Devis clairs sans frais cachés. Prix tout inclus : véhicule, chauffeur, carburant, assurances. Aucune surprise.'
+    },
+    {
+      icon: Headphones,
+      title: 'Réactivité et accompagnement personnalisé',
+      description: 'Interlocuteur dédié qui vous accompagne du devis à la réalisation. Réponse en moins de 24h, conseils experts.'
+    },
+    {
+      icon: Leaf,
+      title: 'Respect de l\'environnement',
+      description: 'Flotte à émissions réduites, conformité aux normes européennes. Transport collectif pour réduire l\'empreinte carbone.'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Satisfaction client prouvée',
+      description: 'Taux de satisfaction supérieur aux standards du marché. Qualité irréprochable et attention aux détails.'
+    }
   ];
 
   return (
@@ -397,6 +441,71 @@ const ContactPage = () => {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Location-Bus */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Pourquoi Choisir location-bus ?
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Dans le secteur dynamique de la location d'autocars à Bruxelles, location-bus s'impose
+              comme le partenaire de confiance pour tous vos déplacements collectifs. Découvrez nos 7 avantages exclusifs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {whyChooseUs.map((item, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-white to-teal-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-teal-100"
+              >
+                <div className="bg-teal-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-200 transition-colors">
+                  <item.icon className="text-teal-600" size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-teal-600 to-teal-700 p-12 rounded-2xl text-white text-center">
+            <h3 className="text-3xl font-bold mb-6">
+              L'Excellence du Transport Collectif à Bruxelles
+            </h3>
+            <p className="text-xl text-teal-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+              En choisissant location-bus, vous bénéficiez d'une expérience de transport premium
+              qui allie confort, sécurité et service personnalisé. Rejoignez les milliers de clients
+              satisfaits qui nous font confiance !
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                <CheckCircle className="mx-auto mb-3 text-teal-200" size={32} />
+                <p className="font-semibold">Véhicules Premium</p>
+              </div>
+              <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                <CheckCircle className="mx-auto mb-3 text-teal-200" size={32} />
+                <p className="font-semibold">Chauffeurs Experts</p>
+              </div>
+              <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                <CheckCircle className="mx-auto mb-3 text-teal-200" size={32} />
+                <p className="font-semibold">Tarifs Transparents</p>
+              </div>
+              <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                <CheckCircle className="mx-auto mb-3 text-teal-200" size={32} />
+                <p className="font-semibold">Service 7j/7</p>
+              </div>
+            </div>
+            <p className="text-2xl font-bold mt-8 mb-4">
+              Bruxelles mérite l'excellence du transport collectif !
+            </p>
+            <p className="text-teal-100 mb-6">
+              Confiez vos voyages à location-bus et vivez la différence.
+            </p>
           </div>
         </div>
       </section>

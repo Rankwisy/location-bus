@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Users, 
-  Award, 
-  Clock, 
-  Shield, 
-  CheckCircle, 
+import {
+  Users,
+  Award,
+  Clock,
+  Shield,
+  CheckCircle,
   ArrowRight,
   Target,
   Heart,
-  Zap
+  Zap,
+  Star,
+  Route,
+  Euro,
+  Headphones,
+  Leaf,
+  TrendingUp
 } from 'lucide-react';
 
 const AboutPage = () => {
@@ -84,6 +90,44 @@ const AboutPage = () => {
     'Assurance Responsabilité Civile Professionnelle',
     'Certification Sécurité Routière',
     'Agrément Tourisme Belgique'
+  ];
+
+  const differentiators = [
+    {
+      icon: Star,
+      title: 'Des véhicules haut de gamme pour chaque besoin',
+      description: 'Notre flotte moderne et variée s\'adapte à toutes les exigences : minibus élégants pour petits groupes, autocars grand confort pour les voyages longue distance ou bus VIP pour événements d\'entreprise et transferts aéroport. Tous nos véhicules sont équipés des dernières technologies : climatisation individuelle, wifi haut débit, sièges ergonomiques, systèmes audio et vidéo HD, toilettes à bord.'
+    },
+    {
+      icon: Users,
+      title: 'Des chauffeurs professionnels, multilingues et courtois',
+      description: 'Le voyage ne se résume pas au véhicule. Nos chauffeurs qualifiés incarnent la convivialité belge, sont ponctuels, discrets, multilingues (FR, EN, NL, ES) et disposent d\'une connaissance approfondie de Bruxelles et de ses environs. Chaque chauffeur est régulièrement formé aux standards du transport de groupe, du tourisme et des exigences VIP.'
+    },
+    {
+      icon: Route,
+      title: 'Une flexibilité totale et des circuits sur-mesure',
+      description: 'Location-bus propose bien plus qu\'un simple trajet. Nous concevons des itinéraires personnalisés pour les groupes, entreprises, écoles et agences. Excursion culturelle, parcours touristique Bruxelles-Europe, voyage scolaire, événement professionnel – chaque circuit est adapté à vos besoins grâce à notre écoute attentive et à notre expérience locale.'
+    },
+    {
+      icon: Euro,
+      title: 'Des tarifs transparents et compétitifs',
+      description: 'Contrairement à beaucoup de nos concurrents qui multiplient les frais cachés ou surprises de dernière minute, location-bus garantit des devis rapides, clairs et sans ambiguïté. Le prix annoncé inclut tous les services essentiels : véhicule haut de gamme, chauffeur, carburant, assurances, assistance – aucune mauvaise surprise, aucune majoration inattendue.'
+    },
+    {
+      icon: Headphones,
+      title: 'Réactivité et accompagnement du devis à la réalisation',
+      description: 'Confier votre projet à location-bus c\'est bénéficier d\'un interlocuteur dédié qui vous conseille, vous accompagne et assure le suivi logistique avant, pendant et après votre voyage. Demande de devis en moins de 24h, réponses claires et conseils personnalisés assurent la réussite de chaque mission, quelle que soit sa complexité.'
+    },
+    {
+      icon: Leaf,
+      title: 'Respect de l\'environnement et des normes européennes',
+      description: 'Notre engagement va au-delà du transport. Location-bus utilise une flotte dont les émissions sont réduites, encourage l\'organisation de déplacements collectifs pour diminuer l\'empreinte carbone, et s\'assure de la conformité aux règlementations européennes du transport en toute transparence et sécurité.'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Satisfaction client prouvée',
+      description: 'Chaque témoignage, chaque retour client est analysé pour améliorer en permanence notre offre. Notre taux de satisfaction dépasse constamment les standards du marché, grâce à une qualité de service irréprochable et à une attention portée à chaque détail, du premier contact à la fin du trajet.'
+    }
   ];
 
   return (
@@ -200,8 +244,113 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Why Choose Location-Bus */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Votre Voyage, Notre Passion : Le Choix N°1 à Bruxelles
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Dans le secteur dynamique et exigeant de la location d'autocars à Bruxelles,
+              location-bus s'impose comme le partenaire de confiance pour tous vos déplacements
+              collectifs, touristiques, professionnels ou sur-mesure. Découvrez pourquoi choisir
+              location-bus, c'est opter pour l'excellence.
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {differentiators.map((item, index) => (
+              <div
+                key={index}
+                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-start`}
+              >
+                <div className="lg:w-1/4 flex justify-center lg:justify-start">
+                  <div className="bg-teal-100 w-20 h-20 rounded-2xl flex items-center justify-center group-hover:bg-teal-200 transition-colors">
+                    <item.icon className="text-teal-600" size={36} />
+                  </div>
+                </div>
+                <div className="lg:w-3/4">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                  <p className="text-gray-600 text-lg leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 bg-gradient-to-r from-teal-50 to-teal-100 p-12 rounded-2xl">
+            <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+              Pourquoi choisir location-bus ?
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="flex items-start">
+                <CheckCircle className="text-teal-600 mr-3 mt-1 flex-shrink-0" size={24} />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">Véhicules haut de gamme</h4>
+                  <p className="text-gray-700">Adaptés à votre projet</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="text-teal-600 mr-3 mt-1 flex-shrink-0" size={24} />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">Chauffeurs professionnels</h4>
+                  <p className="text-gray-700">Multilingues et courtois</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="text-teal-600 mr-3 mt-1 flex-shrink-0" size={24} />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">Itinéraires sur-mesure</h4>
+                  <p className="text-gray-700">Organisation flexible</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="text-teal-600 mr-3 mt-1 flex-shrink-0" size={24} />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">Tarifs transparents</h4>
+                  <p className="text-gray-700">Compétitifs et sans surprise</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="text-teal-600 mr-3 mt-1 flex-shrink-0" size={24} />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">Réactivité et accompagnement</h4>
+                  <p className="text-gray-700">Personnalisé à chaque étape</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="text-teal-600 mr-3 mt-1 flex-shrink-0" size={24} />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">Engagement écologique</h4>
+                  <p className="text-gray-700">Conformité aux normes</p>
+                </div>
+              </div>
+              <div className="flex items-start md:col-span-2 justify-center">
+                <CheckCircle className="text-teal-600 mr-3 mt-1 flex-shrink-0" size={24} />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">Satisfaction client garantie</h4>
+                  <p className="text-gray-700">Qualité et attention aux détails</p>
+                </div>
+              </div>
+            </div>
+            <div className="text-center mt-8">
+              <p className="text-xl text-gray-800 font-semibold mb-6">
+                Bruxelles mérite l'excellence du transport collectif. Confiez vos voyages à location-bus et vivez la différence !
+              </p>
+              <Link
+                to="/contact"
+                className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center"
+              >
+                Contactez-nous dès maintenant
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -232,7 +381,7 @@ const AboutPage = () => {
       </section>
 
       {/* Certifications */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
