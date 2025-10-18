@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Voitures partagées :</strong> 6-8 véhicules requis + essence + stationnement (20-30€) = budget imprévisible</li>
       </ul>
 
-      <p>Pour un événement comme le <strong>FCKNYE Festival</strong> au Brussels Expo, où le stationnement coûte 25€ et où les sorties sont massives vers 4h du matin, l'économie devient encore plus flagrante. Visitez <a href="/services">nos services de transport de groupe</a> pour découvrir nos formules adaptées à chaque taille de groupe.</p>
+      <p>Pour un événement comme le <strong>FCKNYE Festival</strong> au Brussels Expo, où le stationnement coûte 25€ et où les sorties sont massives vers 4h du matin, l'économie devient encore plus flagrante. Consultez <a href="/services">nos services de location de bus avec chauffeur</a> pour découvrir nos formules tarifaires adaptées à chaque taille de groupe et type d'événement.</p>
 
       <h3>Disponibilité de Nuit pour les Festivals</h3>
       <p>La STIB termine ses services vers minuit-1h du matin, laissant les noctambules sans solution pratique. Durant <strong>Les Nuits Weekender</strong> ou le <strong>Brussels Art Film Festival</strong>, nombreux sont les événements qui se prolongent jusqu'à l'aube. Un autocar privatisé reste à votre disposition selon vos horaires réels, pas selon un planning imposé.</p>
@@ -89,7 +89,7 @@ export const blogPosts: BlogPost[] = [
       <h3>Octobre : Culture et Ambiance Alternative</h3>
 
       <h4>Día de Muertos dans les Marolles (27 octobre – 1 novembre)</h4>
-      <p>Le quartier populaire des Marolles se pare de couleurs vives et d'autels fleuris pour célébrer la tradition mexicaine du Jour des Morts. Ce festival unique en Belgique attire des milliers de visiteurs curieux de découvrir les cortèges costumés, les ateliers de création de calaveras (crânes décorés) et les dégustations de spécialités mexicaines. Pour en savoir plus sur les excursions culturelles à Bruxelles, consultez notre page <a href="/excursions">excursions touristiques</a>.</p>
+      <p>Le quartier populaire des Marolles se pare de couleurs vives et d'autels fleuris pour célébrer la tradition mexicaine du Jour des Morts. Ce festival unique en Belgique attire des milliers de visiteurs curieux de découvrir les cortèges costumés, les ateliers de création de calaveras (crânes décorés) et les dégustations de spécialités mexicaines. Pour organiser votre <a href="/excursions">excursion culturelle à Bruxelles</a> avec transport en groupe, découvrez nos formules sur mesure.</p>
 
       <p><strong>Pourquoi un autocar ?</strong> Les Marolles, quartier aux rues étroites et pentues, offre très peu de stationnement. Un dépôt au Jeu de Balle ou place Poelaert permet à votre groupe de descendre directement au cœur de l'action. Le chauffeur récupère ensuite le groupe après les festivités nocturnes qui se terminent souvent vers 23h-minuit.</p>
 
@@ -116,7 +116,7 @@ export const blogPosts: BlogPost[] = [
       <p><strong>Transport de cinéphiles multi-sites :</strong> Ces trois salles sont situées dans des quartiers différents (centre, Sablon, Quartier Européen). Un autocar élimine le stress de trouver où se garer près de Bozar (mission quasi impossible) et permet d'enchaîner plusieurs projections sans courir.</p>
 
       <h4>Grrrabuge – Salon du Vin Naturel (15–16 novembre)</h4>
-      <p>Ce salon réunit 150 vignerons naturels européens pour deux jours de dégustations, masterclasses et découvertes œnologiques à Tour & Taxis. Les amateurs de vins bio, biodynamiques et sans sulfites y affluent pour rencontrer producteurs et cavistes passionnés. Découvrez aussi comment nous organisons des <a href="https://www.visit.brussels/fr/article/festivals-et-evenements-a-bruxelles" target="_blank" rel="noopener">transports pour tous les événements bruxellois majeurs</a>.</p>
+      <p>Ce salon réunit 150 vignerons naturels européens pour deux jours de dégustations, masterclasses et découvertes œnologiques à Tour & Taxis. Les amateurs de vins bio, biodynamiques et sans sulfites y affluent pour rencontrer producteurs et cavistes passionnés. Pour découvrir l'ensemble du <a href="https://www.visit.brussels/fr/article/festivals-et-evenements-a-bruxelles" target="_blank" rel="noopener">calendrier des festivals et événements à Bruxelles</a>, consultez le guide officiel de Visit Brussels.</p>
 
       <p><strong>Trajets sans souci de conduite :</strong> Après avoir dégusté plusieurs dizaines de vins durant la journée, personne ne devrait prendre le volant. L'autocar avec chauffeur devient la solution responsable et confortable, permettant aux participants de prolonger les discussions œnologiques durant le trajet retour.</p>
 
@@ -142,7 +142,7 @@ export const blogPosts: BlogPost[] = [
       <p>Chaque événement possède ses spécificités. Notre flotte diversifiée permet de répondre précisément à vos besoins, que vous soyez 8 ou 55 personnes.</p>
 
       <h3>Autocars Grand Confort (45-55 places)</h3>
-      <p>Parfaits pour les grandes sorties associatives, comités d'entreprise ou groupes scolaires souhaitant profiter des événements culturels bruxellois. Équipés de climatisation, sièges inclinables, WC, WiFi et système audio, ces autocars garantissent un confort optimal même sur des trajets longs.</p>
+      <p>Parfaits pour les grandes sorties associatives, comités d'entreprise ou groupes scolaires souhaitant profiter des événements culturels bruxellois. Équipés de climatisation, sièges inclinables, WC, WiFi et système audio, ces autocars garantissent un confort optimal même sur des trajets longs. Découvrez <a href="/fleet">notre flotte complète de véhicules</a> pour choisir l'option idéale selon vos besoins.</p>
 
       <p><strong>Idéal pour :</strong> Plaisirs d'Hiver (groupes d'entreprise), FCKNYE Festival (collectifs de jeunes), Next Opera Days (clubs d'amateurs d'opéra).</p>
 
