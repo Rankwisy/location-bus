@@ -35,7 +35,6 @@
 /excursions/* /excursions/:splat
 /about/* /about/:splat
 /contact/* /contact/:splat
-/blog/* /blog/:splat
 
 # Catch-all for React Router (must be last)
 # This ensures 404 status is returned for truly non-existent pages
