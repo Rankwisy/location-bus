@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "timestamp": "2025-10-19",
+  "routes": [
+    "/",
+    "/services",
+    "/fleet",
+    "/excursions",
+    "/about",
+    "/contact",
+    "/blog",
+    "/blog/:slug"
+  ],
+  "version": "1.0.0"
+}
