@@ -268,7 +268,7 @@ const ServicesPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/contact"
+                to="/contactez-nous"
                 className="bg-white text-teal-600 hover:bg-gray-100 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center min-h-[48px]"
               >
                 Demander un Devis

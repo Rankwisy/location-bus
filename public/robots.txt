@@ -3,10 +3,10 @@ Allow: /
 
 # Allow all main pages for indexing
 Allow: /services
-Allow: /fleet  
+Allow: /flotte
 Allow: /excursions
-Allow: /about
-Allow: /contact
+Allow: /qui-sommes-nous
+Allow: /contactez-nous
 Allow: /blog
 
 # Block unnecessary files and directories

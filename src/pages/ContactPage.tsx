@@ -46,7 +46,7 @@ const ContactPage = () => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://location-bus.be/contact');
+    canonical.setAttribute('href', 'https://location-bus.be/contactez-nous');
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -399,7 +399,7 @@ const ContactPage = () => {
                     <CheckCircle className="text-teal-600 mr-3 mt-1 flex-shrink-0" size={20} />
                     <div>
                       <h5 className="font-semibold text-gray-900">Devis gratuit sous 24h</h5>
-                      <p className="text-gray-600 text-sm">Réponse rapide et détaillée à toutes vos demandes. Découvrez <Link to="/about" className="text-teal-700 hover:text-teal-800 font-medium">notre engagement qualité</Link>.</p>
+                      <p className="text-gray-600 text-sm">Réponse rapide et détaillée à toutes vos demandes. Découvrez <Link to="/qui-sommes-nous" className="text-teal-700 hover:text-teal-800 font-medium">notre engagement qualité</Link>.</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -413,7 +413,7 @@ const ContactPage = () => {
                     <CheckCircle className="text-teal-600 mr-3 mt-1 flex-shrink-0" size={20} />
                     <div>
                       <h5 className="font-semibold text-gray-900">Service personnalisé</h5>
-                      <p className="text-gray-600 text-sm">Conseils experts et solutions sur mesure. Consultez notre <Link to="/fleet" className="text-teal-700 hover:text-teal-800 font-medium">gamme de véhicules</Link> disponibles.</p>
+                      <p className="text-gray-600 text-sm">Conseils experts et solutions sur mesure. Consultez notre <Link to="/flotte" className="text-teal-700 hover:text-teal-800 font-medium">gamme de véhicules</Link> disponibles.</p>
                     </div>
                   </div>
                   <div className="flex items-start">

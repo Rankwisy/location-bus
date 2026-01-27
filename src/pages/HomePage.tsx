@@ -167,14 +167,14 @@ const HomePage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/contact"
+                to="/contactez-nous"
                 className="bg-teal-400 hover:bg-teal-500 text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg flex items-center justify-center min-h-[48px]"
               >
                 Devis Gratuit Immédiat
                 <ArrowRight className="ml-2" size={20} />
               </Link>
               <Link
-                to="/fleet"
+                to="/flotte"
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 flex items-center justify-center min-h-[48px]"
               >
                 Voir Notre Flotte
@@ -217,7 +217,7 @@ const HomePage: React.FC = () => {
                   💰 <strong>Tarifs transparents</strong> sans surprise<br/>
                   ⚡ <strong>Réponse sous 2h</strong> garantie
                 </p>
-                <Link 
+                <Link
                   to="/services"
                   className="inline-flex items-center text-gray-900 font-bold hover:underline text-lg"
                 >
@@ -247,7 +247,7 @@ const HomePage: React.FC = () => {
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">🛡️ Sécurité Militaire & Technologie de Pointe</h4>
                     <p className="text-gray-600 text-lg">
-                      <Link to="/fleet" className="text-teal-600 hover:text-teal-700 font-semibold">Flotte ultra-moderne</Link> aux <strong>standards européens les plus élevés</strong>. Maintenance préventive systématique, contrôles techniques renforcés et équipements de sécurité dernier cri pour une tranquillité absolue.
+                      <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">Flotte ultra-moderne</Link> aux <strong>standards européens les plus élevés</strong>. Maintenance préventive systématique, contrôles techniques renforcés et équipements de sécurité dernier cri pour une tranquillité absolue.
                     </p>
                   </div>
                 </div>
@@ -296,7 +296,7 @@ const HomePage: React.FC = () => {
             <p className="text-teal-600 font-bold mb-4 text-base sm:text-lg">🏆 RAPPORT QUALITÉ/PRIX IMBATTABLE EN BELGIQUE</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Votre Flotte Premium : Performance & Élégance</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto px-4">
-              Choisissez votre véhicule parmi notre collection exclusive de <strong>50+ autocars dernière génération</strong>. Du <Link to="/fleet" className="text-teal-600 hover:text-teal-700 font-semibold">minibus VIP 19 places</Link> à l'<Link to="/fleet" className="text-teal-600 hover:text-teal-700 font-semibold">autocar grand luxe 60 places</Link>, nous avons la solution parfaite pour chaque occasion.
+              Choisissez votre véhicule parmi notre collection exclusive de <strong>50+ autocars dernière génération</strong>. Du <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">minibus VIP 19 places</Link> à l'<Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">autocar grand luxe 60 places</Link>, nous avons la solution parfaite pour chaque occasion.
             </p>
           </div>
 
@@ -327,7 +327,7 @@ const HomePage: React.FC = () => {
                   </ul>
                   <p className="text-gray-600 mb-6">{vehicle.description}</p>
                   <Link
-                    to="/contact"
+                    to="/contactez-nous"
                     className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold"
                   >
                     Réserver ce véhicule
@@ -366,7 +366,7 @@ const HomePage: React.FC = () => {
               </div>
             </div>
             <Link
-              to="/fleet"
+              to="/flotte"
               className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105"
             >
               Explorer Notre Flotte Complète
@@ -473,7 +473,7 @@ const HomePage: React.FC = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/contact"
+              to="/contactez-nous"
               className="bg-white text-teal-600 hover:bg-gray-100 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center shadow-lg min-h-[48px]"
             >
               🎯 Mon Devis Gratuit & Immédiat

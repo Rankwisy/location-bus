@@ -86,13 +86,13 @@ const Footer = () => {
               <Link to="/services" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Solutions Entreprise
               </Link>
-              <Link to="/fleet" className="block text-gray-300 hover:text-teal-400 transition-colors">
+              <Link to="/flotte" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Notre Flotte
               </Link>
-              <Link to="/about" className="block text-gray-300 hover:text-teal-400 transition-colors">
+              <Link to="/qui-sommes-nous" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Notre Expertise
               </Link>
-              <Link to="/contact" className="block text-gray-300 hover:text-teal-400 transition-colors">
+              <Link to="/contactez-nous" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Devis Gratuit
               </Link>
             </nav>

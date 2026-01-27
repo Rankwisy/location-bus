@@ -300,7 +300,7 @@ const ExcursionsPage = () => {
 
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link
-                      to="/contact"
+                      to="/contactez-nous"
                       className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 flex items-center justify-center flex-1"
                     >
                       Réserver Maintenant
@@ -330,7 +330,7 @@ const ExcursionsPage = () => {
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Vous avez une destination particulière en tête ? Nous créons des excursions 
-                personnalisées selon vos souhaits, votre budget et vos centres d'intérêt. Notre <Link to="/about" className="text-teal-600 hover:text-teal-700 font-semibold">équipe expérimentée</Link> vous accompagne dans la conception de votre itinéraire.
+                personnalisées selon vos souhaits, votre budget et vos centres d'intérêt. Notre <Link to="/qui-sommes-nous" className="text-teal-600 hover:text-teal-700 font-semibold">équipe expérimentée</Link> vous accompagne dans la conception de votre itinéraire.
               </p>
               
               <div className="space-y-6 mb-8">
@@ -358,7 +358,7 @@ const ExcursionsPage = () => {
               </div>
 
               <Link
-                to="/contact"
+                to="/contactez-nous"
                 className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105"
               >
                 Demander un Devis Personnalisé

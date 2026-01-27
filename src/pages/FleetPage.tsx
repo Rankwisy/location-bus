@@ -18,7 +18,7 @@ const FleetPage = () => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://location-bus.be/fleet');
+    canonical.setAttribute('href', 'https://location-bus.be/flotte');
   }, []);
 
   const fleet = [
@@ -218,7 +218,7 @@ const FleetPage = () => {
                   </div>
 
                   <Link
-                    to="/contact"
+                    to="/contactez-nous"
                     className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 transform hover:scale-105"
                   >
                     Réserver ce Véhicule
@@ -297,7 +297,7 @@ const FleetPage = () => {
                 Maintenance et Sécurité
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                La sécurité de nos passagers est notre priorité absolue. Découvrez <Link to="/about" className="text-teal-600 hover:text-teal-700 font-semibold">notre histoire et nos certifications</Link>. Tous nos véhicules suivent un programme de maintenance strict et sont contrôlés régulièrement.
+                La sécurité de nos passagers est notre priorité absolue. Découvrez <Link to="/qui-sommes-nous" className="text-teal-600 hover:text-teal-700 font-semibold">notre histoire et nos certifications</Link>. Tous nos véhicules suivent un programme de maintenance strict et sont contrôlés régulièrement.
               </p>
               
               <div className="space-y-6">

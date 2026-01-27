@@ -42,8 +42,8 @@ const NotFoundPage = () => {
   const quickLinks = [
     { name: 'Accueil', href: '/', icon: Home, description: 'Retour à la page principale' },
     { name: 'Nos Services', href: '/services', icon: MapPin, description: 'Découvrir nos solutions transport' },
-    { name: 'Notre Flotte', href: '/fleet', icon: Search, description: 'Véhicules disponibles' },
-    { name: 'Contact', href: '/contact', icon: Phone, description: 'Nous contacter directement' }
+    { name: 'Notre Flotte', href: '/flotte', icon: Search, description: 'Véhicules disponibles' },
+    { name: 'Contact', href: '/contactez-nous', icon: Phone, description: 'Nous contacter directement' }
   ];
 
   return (
@@ -144,7 +144,7 @@ const NotFoundPage = () => {
                     +32 2 342 07 34
                   </a>
                   <Link
-                    to="/contact"
+                    to="/contactez-nous"
                     className="border-2 border-teal-600 text-teal-600 hover:bg-teal-50 px-8 py-4 rounded-lg font-bold transition-all duration-200 inline-flex items-center justify-center"
                   >
                     Nous Contacter

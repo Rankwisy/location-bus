@@ -5,7 +5,7 @@
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://location-bus.be/</loc>
-    <lastmod>2025-10-17</lastmod>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -17,23 +17,23 @@
   <!-- Services Page - High Priority -->
   <url>
     <loc>https://location-bus.be/services</loc>
-    <lastmod>2025-10-17</lastmod>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Contact Page - High Priority for Conversions -->
   <url>
-    <loc>https://location-bus.be/contact</loc>
-    <lastmod>2025-10-17</lastmod>
+    <loc>https://location-bus.be/contactez-nous</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Fleet Page - Important -->
   <url>
-    <loc>https://location-bus.be/fleet</loc>
-    <lastmod>2025-10-17</lastmod>
+    <loc>https://location-bus.be/flotte</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -53,15 +53,15 @@
   <!-- Excursions Page - Important -->
   <url>
     <loc>https://location-bus.be/excursions</loc>
-    <lastmod>2025-10-17</lastmod>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- About Page -->
   <url>
-    <loc>https://location-bus.be/about</loc>
-    <lastmod>2025-10-17</lastmod>
+    <loc>https://location-bus.be/qui-sommes-nous</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -69,7 +69,7 @@
   <!-- Blog Index -->
   <url>
     <loc>https://location-bus.be/blog</loc>
-    <lastmod>2025-10-17</lastmod>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

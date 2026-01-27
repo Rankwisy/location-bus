@@ -34,7 +34,7 @@ const AboutPage = () => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://location-bus.be/about');
+    canonical.setAttribute('href', 'https://location-bus.be/qui-sommes-nous');
   }, []);
 
   const values = [
@@ -166,7 +166,7 @@ const AboutPage = () => {
                 <p>
                   Fondée en 2008 à Bruxelles, Location Bus Belgique est née de la passion 
                   de son fondateur pour le transport et le service client d'excellence. 
-                  Partant d'une petite <Link to="/fleet" className="text-teal-600 hover:text-teal-700 font-semibold">flotte de 3 véhicules</Link>, nous avons progressivement développé notre entreprise pour devenir l'un des acteurs majeurs du transport de personnes en Belgique.
+                  Partant d'une petite <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">flotte de 3 véhicules</Link>, nous avons progressivement développé notre entreprise pour devenir l'un des acteurs majeurs du transport de personnes en Belgique.
                 </p>
                 <p>
                   Notre croissance s'est construite sur des valeurs solides : la sécurité, 
@@ -175,7 +175,7 @@ const AboutPage = () => {
                   qu'il s'agisse d'un <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">transfert aéroport</Link>, d'une <Link to="/excursions" className="text-teal-600 hover:text-teal-700 font-semibold">excursion touristique</Link> ou d'un voyage d'entreprise.
                 </p>
                 <p>
-                  Aujourd'hui, avec plus de <Link to="/fleet" className="text-teal-600 hover:text-teal-700 font-semibold">50 véhicules dans notre flotte</Link> et une équipe 
+                  Aujourd'hui, avec plus de <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">50 véhicules dans notre flotte</Link> et une équipe 
                   de professionnels dévoués, nous continuons à innover pour vous offrir 
                   le meilleur du transport premium.
                 </p>
@@ -338,7 +338,7 @@ const AboutPage = () => {
                 Bruxelles mérite l'excellence du transport collectif. Confiez vos voyages à location-bus et vivez la différence !
               </p>
               <Link
-                to="/contact"
+                to="/contactez-nous"
                 className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center"
               >
                 Contactez-nous dès maintenant
@@ -446,14 +446,14 @@ const AboutPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/contact"
+              to="/contactez-nous"
               className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center"
             >
               Nous Contacter
               <ArrowRight className="ml-2" size={20} />
             </Link>
             <Link
-              to="/fleet"
+              to="/flotte"
               className="border-2 border-white text-white hover:bg-white hover:text-teal-600 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 inline-flex items-center justify-center"
             >
               Découvrir Notre Flotte

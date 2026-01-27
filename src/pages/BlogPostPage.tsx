@@ -402,7 +402,7 @@ const BlogPostPage = () => {
             Contactez-nous dès maintenant pour obtenir votre devis gratuit et personnalisé.
           </p>
           <Link
-            to="/contact"
+            to="/contactez-nous"
             className="inline-flex items-center bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105"
           >
             Obtenir un Devis
