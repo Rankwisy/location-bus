@@ -1,119 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage - Highest Priority -->
+  <!-- Homepage -->
   <url>
     <loc>https://location-bus.be/</loc>
     <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://ik.imagekit.io/by733ltn6/location-bus/slider4-1-1024x683-1.jpg</image:loc>
-      <image:title>Location Bus Belgique - Transport Premium Bruxelles</image:title>
-    </image:image>
   </url>
 
-  <!-- Services Page - High Priority -->
+  <!-- Services Page -->
   <url>
     <loc>https://location-bus.be/services</loc>
     <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 
-  <!-- Contact Page - High Priority for Conversions -->
+  <!-- Contact Page -->
   <url>
     <loc>https://location-bus.be/contactez-nous</loc>
     <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 
-  <!-- Fleet Page - Important -->
+  <!-- Fleet Page -->
   <url>
     <loc>https://location-bus.be/flotte</loc>
     <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://ik.imagekit.io/by733ltn6/location-bus/sp6.jpg</image:loc>
-      <image:title>Minibus Premium 19 Places</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://ik.imagekit.io/by733ltn6/location-bus/70.png</image:loc>
-      <image:title>Autocar Confort 50 Places</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://ik.imagekit.io/by733ltn6/location-bus/volvo-bus.png</image:loc>
-      <image:title>Autocar Premium 60 Places</image:title>
-    </image:image>
   </url>
 
-  <!-- Excursions Page - Important -->
+  <!-- Excursions Page -->
   <url>
     <loc>https://location-bus.be/excursions</loc>
     <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- About Page -->
   <url>
     <loc>https://location-bus.be/qui-sommes-nous</loc>
     <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Blog Index -->
   <url>
     <loc>https://location-bus.be/blog</loc>
     <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
   </url>
 
-  <!-- Blog Articles -->
+  <!-- Blog Posts -->
   <url>
-    <loc>https://location-bus.be/blog/1</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://location-bus.be/blog/location-autocar-chauffeur-bruxelles-evenements-automne-hiver-2025</loc>
+    <lastmod>2025-01-17</lastmod>
   </url>
 
   <url>
-    <loc>https://location-bus.be/blog/2</loc>
-    <lastmod>2024-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://location-bus.be/blog/organiser-transfert-aeroport-groupe</loc>
+    <lastmod>2024-10-15</lastmod>
   </url>
 
   <url>
-    <loc>https://location-bus.be/blog/3</loc>
-    <lastmod>2024-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://location-bus.be/blog/top-10-destinations-belgique-bus</loc>
+    <lastmod>2024-10-12</lastmod>
   </url>
 
   <url>
-    <loc>https://location-bus.be/blog/4</loc>
-    <lastmod>2024-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://location-bus.be/blog/securite-reglementation-transport-groupe-2024</loc>
+    <lastmod>2024-10-10</lastmod>
   </url>
 
   <url>
-    <loc>https://location-bus.be/blog/5</loc>
-    <lastmod>2024-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://location-bus.be/blog/evenements-entreprise-transport-bus</loc>
+    <lastmod>2024-10-08</lastmod>
   </url>
 
   <url>
-    <loc>https://location-bus.be/blog/6</loc>
-    <lastmod>2024-02-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://location-bus.be/blog/excursion-scolaire-guide-enseignants</loc>
+    <lastmod>2024-10-05</lastmod>
   </url>
+
+  <url>
+    <loc>https://location-bus.be/blog/amsterdam-bus-weekend-itineraire</loc>
+    <lastmod>2024-10-01</lastmod>
+  </url>
+
 </urlset>
