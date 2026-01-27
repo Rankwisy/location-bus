@@ -112,7 +112,7 @@ This project is built with modern web technologies ensuring:
 
 ## 📄 License
 
-© 2024 Location Bus Belgique. All rights reserved.
+© 2026 Location Bus Belgique. All rights reserved.
 
 ---
 
