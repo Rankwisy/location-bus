@@ -76,7 +76,7 @@ src/
 
 ## 🔗 Live Site
 
-**Production URL**: [https://location-bus-belgiqu-54rw.bolt.host](https://location-bus-belgiqu-54rw.bolt.host)
+**Production URL**: https://location-bus-be
 
 ## 📞 Contact Information
 
