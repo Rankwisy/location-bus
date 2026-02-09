@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Leaf } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -89,6 +89,10 @@ const Footer = () => {
               <Link to="/flotte" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Notre Flotte
               </Link>
+              <Link to="/lez-bruxelles" className="flex items-center text-green-400 hover:text-green-300 transition-colors font-medium">
+                <Leaf size={16} className="mr-2" />
+                Conformité LEZ Bruxelles
+              </Link>
               <Link to="/qui-sommes-nous" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Notre Expertise
               </Link>
@@ -99,9 +103,29 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            © 2024 Location Bus Belgique. Tous droits réservés. 
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          {/* Legal Links */}
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
+            <Link to="/mentions-legales" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">
+              Mentions Légales
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link to="/politique-confidentialite" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">
+              Politique de Confidentialité
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link to="/conditions-generales-vente" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">
+              Conditions Générales de Vente
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link to="/lez-bruxelles" className="text-green-400 hover:text-green-300 transition-colors text-sm font-medium">
+              Conformité LEZ
+            </Link>
+          </div>
+
+          {/* Copyright */}
+          <p className="text-gray-400 text-sm text-center">
+            © {new Date().getFullYear()} Location Bus Belgique. Tous droits réservés.
             <span className="mx-2">|</span>
             Développé avec passion pour un transport de qualité.
           </p>

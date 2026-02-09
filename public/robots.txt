@@ -1,13 +1,24 @@
+# robots.txt for https://location-bus.be
+# Updated: 2026-02-09
+
+# Default crawl rules for all bots
 User-agent: *
 Allow: /
 
 # Allow all main pages for indexing
 Allow: /services
 Allow: /flotte
+Allow: /lez-bruxelles
 Allow: /excursions
 Allow: /qui-sommes-nous
 Allow: /contactez-nous
 Allow: /blog
+Allow: /blog/*
+
+# Allow legal pages
+Allow: /mentions-legales
+Allow: /politique-confidentialite
+Allow: /conditions-generales-vente
 
 # Block unnecessary files and directories
 Disallow: /src/
@@ -39,9 +50,62 @@ Allow: *.gif
 Allow: *.svg
 Allow: *.webp
 Allow: *.ico
+Allow: *.pdf
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.webp
+Disallow: /icons/
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Specific rules for social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Block bad bots and scrapers
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
 
 # Sitemap reference
 Sitemap: https://location-bus.be/sitemap.xml
 
-# Crawl delay (optional - helps prevent server overload)
+# Crawl delay for general bots (helps prevent server overload)
+# Google and Bing ignore this, but other bots respect it
 Crawl-delay: 1

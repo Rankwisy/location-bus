@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, Mail, ChevronDown } from 'lucide-react';
+import { Phone, Menu, X, Mail, ChevronDown, Leaf } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +21,7 @@ const Header = () => {
     { name: 'Accueil', href: '/' },
     { name: 'Services', href: '/services' },
     { name: 'Flotte', href: '/flotte' },
+    { name: 'LEZ', href: '/lez-bruxelles', badge: true },
     { name: 'Excursions', href: '/excursions' },
     {
      name: 'Contact',
@@ -101,12 +102,13 @@ const Header = () => {
                   // Regular menu item
                   <Link
                     to={item.href}
-                    className={`font-medium transition-colors duration-200 hover:text-teal-500 ${
-                      location.pathname === item.href 
-                        ? 'text-teal-500 border-b-2 border-teal-500' 
+                    className={`font-medium transition-colors duration-200 hover:text-teal-500 flex items-center ${
+                      location.pathname === item.href
+                        ? 'text-teal-500 border-b-2 border-teal-500'
                         : 'text-gray-700'
-                    }`}
+                    } ${item.badge ? 'bg-green-100 px-3 py-1 rounded-full text-green-700 hover:bg-green-200 hover:text-green-800' : ''}`}
                   >
+                    {item.badge && <Leaf size={16} className="mr-1" />}
                     {item.name}
                   </Link>
                 )}
@@ -201,10 +203,11 @@ const Header = () => {
                       to={item.href}
                       className={`block px-4 py-4 font-medium transition-colors hover:bg-gray-50 hover:text-teal-500 min-h-[44px] flex items-center ${
                         location.pathname === item.href ? 'text-teal-500 bg-gray-50' : 'text-gray-700'
-                      }`}
+                      } ${item.badge ? 'bg-green-50' : ''}`}
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      {item.name}
+                      {item.badge && <Leaf size={16} className="mr-2 text-green-600" />}
+                      <span className={item.badge ? 'text-green-700 font-semibold' : ''}>{item.name}</span>
                     </Link>
                   )}
                 </div>

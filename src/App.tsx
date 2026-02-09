@@ -11,6 +11,10 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
+import LEZBruxellesPage from './pages/LEZBruxellesPage';
+import MentionsLegalesPage from './pages/MentionsLegalesPage';
+import PolitiqueConfidentialitePage from './pages/PolitiqueConfidentialitePage';
+import CGVPage from './pages/CGVPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function RedirectHandler() {
@@ -46,6 +50,12 @@ function App() {
               <Route path="/contactez-nous" element={<ContactPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
+
+              {/* Legal and Compliance Pages */}
+              <Route path="/lez-bruxelles" element={<LEZBruxellesPage />} />
+              <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
+              <Route path="/politique-confidentialite" element={<PolitiqueConfidentialitePage />} />
+              <Route path="/conditions-generales-vente" element={<CGVPage />} />
 
               {/* 301 Redirects from old English URLs to French URLs */}
               <Route path="/fleet" element={<Navigate to="/flotte" replace />} />
