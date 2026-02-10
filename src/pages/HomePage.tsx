@@ -6,7 +6,7 @@ import { updatePageSEO, addStructuredData, organizationStructuredData, localBusi
 const HomePage: React.FC = () => {
   useEffect(() => {
     updatePageSEO({
-      title: 'Location Bus avec Chauffeur à Bruxelles | Transferts Aéroport | Location Bus Belgique',
+      title: 'Location Bus Bruxelles | Transferts Aéroport | Location Bus avec chauffeur',
       description: 'Location de bus et minibus avec chauffeur à Bruxelles. Service professionnel pour transferts d\'aéroport, excursions touristiques, voyages d\'entreprise. Devis gratuit ✓ Conducteurs expérimentés ✓',
       canonical: 'https://location-bus.be/',
       ogType: 'website',
