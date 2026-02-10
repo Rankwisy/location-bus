@@ -162,8 +162,7 @@ const HomePage: React.FC = () => {
               <span className="block text-teal-400">Bruxelles</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto px-4">
-              <strong>Transformez vos déplacements en expériences exceptionnelles !</strong> Découvrez notre service premium de transport en bus avec chauffeur professionnel - 
-              l'alliance parfaite entre <em>luxe absolu</em>, <em>sécurité irréprochable</em> et <em>ponctualité garantie</em> pour tous vos voyages d\'affaires, excursions touristiques et événements privés.
+              <strong>Location de bus et autocar avec chauffeur professionnel à Bruxelles</strong> - Spécialiste du transport de groupes en Belgique. Service premium pour <em>transferts aéroport</em>, <em>excursions touristiques</em> et <em>voyages d'entreprise</em>. Minibus 19 places, bus 50 places et autocars 60 places : flotte moderne, tarifs compétitifs, disponibilité 24/7.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
