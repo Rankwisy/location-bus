@@ -245,7 +245,7 @@ const HomePage: React.FC = () => {
                 <div className="flex items-start">
                   <CheckCircle className="text-teal-500 mr-4 mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">🛡️ Sécurité Militaire & Technologie de Pointe</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Sécurité Renforcée et Véhicules Modernes avec Technologie de Pointe</h4>
                     <p className="text-gray-600 text-lg">
                       <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">Flotte ultra-moderne</Link> aux <strong>standards européens les plus élevés</strong>. Maintenance préventive systématique, contrôles techniques renforcés et équipements de sécurité dernier cri pour une tranquillité absolue.
                     </p>
@@ -254,7 +254,7 @@ const HomePage: React.FC = () => {
                 <div className="flex items-start">
                   <CheckCircle className="text-teal-500 mr-4 mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">⚡ Ponctualité Suisse & Fiabilité Absolue</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Ponctualité Garantie et Fiabilité Absolue</h4>
                     <p className="text-gray-600 text-lg">
                       <strong>Zéro retard toléré !</strong> Notre engagement : respecter vos horaires à la minute près. Suivi GPS en temps réel, planification optimisée et chauffeurs experts pour une ponctualité irréprochable.
                     </p>
@@ -263,7 +263,7 @@ const HomePage: React.FC = () => {
                 <div className="flex items-start">
                   <CheckCircle className="text-teal-500 mr-4 mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">🌟 Confort 5 Étoiles & Équipements Premium</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Confort Haut de Gamme et Équipements Premium</h4>
                     <p className="text-gray-600 text-lg">
                       Voyagez dans un <strong>cocon de luxe</strong> : sièges en cuir inclinables, climatisation individuelle, Wi-Fi haut débit, prises USB, système audio HD. Découvrez tous nos <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">services de transport premium</Link> pour transformer le temps de transport en moment de détente ou de productivité.
                     </p>
