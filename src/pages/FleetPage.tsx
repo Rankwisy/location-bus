@@ -100,15 +100,6 @@ const FleetPage = () => {
     }
   ];
 
-  const equipmentIcons = {
-    'Climatisation': Snowflake,
-    'Audio': Volume2,
-    'USB': UsbPort,
-    'Café': Coffee,
-    'Wi-Fi': Wifi,
-    'Sécurité': Shield
-  };
-
   return (
     <div className="pt-20">
       {/* Hero Section */}

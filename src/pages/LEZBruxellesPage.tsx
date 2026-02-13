@@ -3,6 +3,29 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, Shield, Leaf, Info, ExternalLink, ArrowRight } from 'lucide-react';
 import { setPageSEO } from '../utils/seo';
 
+const faqData = [
+    {
+      question: "Qu'est-ce que la LEZ Bruxelles ?",
+      answer: "La LEZ (Low Emission Zone) est une zone de basses émissions qui couvre l'ensemble de la Région de Bruxelles-Capitale. Elle vise à améliorer la qualité de l'air en restreignant l'accès aux véhicules les plus polluants. Depuis 2026, seuls les véhicules diesel Euro 6 et essence Euro 5 minimum peuvent circuler."
+    },
+    {
+      question: "Votre flotte est-elle conforme aux normes LEZ 2026 ?",
+      answer: "Oui, 100% de notre flotte est conforme aux normes LEZ Bruxelles 2026. Tous nos bus et minibus respectent la norme Euro 6, ce qui garantit votre libre circulation dans toute la zone de basses émissions de Bruxelles sans aucune restriction."
+    },
+    {
+      question: "Quels sont les avantages d'une flotte Euro 6 ?",
+      answer: "Les véhicules Euro 6 émettent jusqu'à 80% moins d'oxydes d'azote (NOx) que les véhicules Euro 5. Ils contribuent à améliorer la qualité de l'air, réduisent votre empreinte carbone et garantissent votre conformité avec les réglementations environnementales actuelles et futures."
+    },
+    {
+      question: "Puis-je circuler partout à Bruxelles avec vos véhicules ?",
+      answer: "Absolument. Grâce à notre flotte 100% conforme Euro 6, vous pouvez circuler librement dans toute la Région de Bruxelles-Capitale, y compris dans la zone LEZ, sans risque d'amende ou de restriction. Nos véhicules répondent aux normes les plus strictes."
+    },
+    {
+      question: "Comment vérifier la conformité LEZ d'un véhicule ?",
+      answer: "Vous pouvez vérifier la conformité d'un véhicule sur le site officiel lez.brussels en utilisant la plaque d'immatriculation. Pour nos véhicules, nous fournissons systématiquement les certificats de conformité Euro 6 sur demande."
+    }
+];
+
 const LEZBruxellesPage = () => {
   useEffect(() => {
     setPageSEO({
@@ -33,43 +56,20 @@ const LEZBruxellesPage = () => {
     });
   }, []);
 
-  const faqData = [
-    {
-      question: "Qu'est-ce que la LEZ Bruxelles ?",
-      answer: "La LEZ (Low Emission Zone) est une zone de basses émissions qui couvre l'ensemble de la Région de Bruxelles-Capitale. Elle vise à améliorer la qualité de l'air en restreignant l'accès aux véhicules les plus polluants. Depuis 2026, seuls les véhicules diesel Euro 6 et essence Euro 5 minimum peuvent circuler."
-    },
-    {
-      question: "Votre flotte est-elle conforme aux normes LEZ 2026 ?",
-      answer: "Oui, 100% de notre flotte est conforme aux normes LEZ Bruxelles 2026. Tous nos bus et minibus respectent la norme Euro 6, ce qui garantit votre libre circulation dans toute la zone de basses émissions de Bruxelles sans aucune restriction."
-    },
-    {
-      question: "Quels sont les avantages d'une flotte Euro 6 ?",
-      answer: "Les véhicules Euro 6 émettent jusqu'à 80% moins d'oxydes d'azote (NOx) que les véhicules Euro 5. Ils contribuent à améliorer la qualité de l'air, réduisent votre empreinte carbone et garantissent votre conformité avec les réglementations environnementales actuelles et futures."
-    },
-    {
-      question: "Puis-je circuler partout à Bruxelles avec vos véhicules ?",
-      answer: "Absolument. Grâce à notre flotte 100% conforme Euro 6, vous pouvez circuler librement dans toute la Région de Bruxelles-Capitale, y compris dans la zone LEZ, sans risque d'amende ou de restriction. Nos véhicules répondent aux normes les plus strictes."
-    },
-    {
-      question: "Comment vérifier la conformité LEZ d'un véhicule ?",
-      answer: "Vous pouvez vérifier la conformité d'un véhicule sur le site officiel lez.brussels en utilisant la plaque d'immatriculation. Pour nos véhicules, nous fournissons systématiquement les certificats de conformité Euro 6 sur demande."
-    }
-  ];
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqData.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer
-      }
-    }))
-  };
-
   useEffect(() => {
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqData.map(faq => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer
+        }
+      }))
+    };
+
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify(faqSchema);

@@ -37,7 +37,7 @@ const Header = () => {
     setOpenSubMenuId(openSubMenuId === menuName ? null : menuName);
   };
 
-  const isActiveRoute = (href: string, children?: any[]) => {
+  const isActiveRoute = (href: string, children?: Array<{ name: string; href: string }>) => {
     if (location.pathname === href) return true;
     if (children) {
       return children.some(child => location.pathname === child.href);

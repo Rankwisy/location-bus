@@ -1,5 +1,5 @@
 import { BlogPost, BlogCategory, NewsletterSubscriber } from '../types/blog';
-import { blogPosts, blogCategories, blogAuthors } from '../data/blogData';
+import { blogPosts, blogCategories } from '../data/blogData';
 
 export const blogService = {
   async getAllPosts(): Promise<BlogPost[]> {
