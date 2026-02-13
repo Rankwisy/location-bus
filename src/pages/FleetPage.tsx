@@ -335,6 +335,97 @@ const FleetPage = () => {
         </div>
       </section>
 
+      {/* Environmental Compliance & Usage Guide */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Environmental Compliance */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <Shield className="text-green-600 mr-3" size={32} />
+                Conformité Environnementale
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Toute notre flotte respecte les normes environnementales les plus strictes.
+                Découvrez notre engagement pour un <Link to="/lez-bruxelles" className="text-teal-600 hover:text-teal-700 font-semibold">transport écologique conforme aux normes LEZ Bruxelles 2026</Link>.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <CheckCircle className="text-green-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Motorisation Euro 6</h5>
+                    <p className="text-gray-600 text-sm">Tous nos véhicules respectent la norme Euro 6, réduisant considérablement les émissions polluantes.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-green-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Accès LEZ garanti</h5>
+                    <p className="text-gray-600 text-sm">Circulation autorisée dans toutes les zones à faibles émissions de Bruxelles et d'Europe.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-green-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-1">Transport collectif responsable</h5>
+                    <p className="text-gray-600 text-sm">En choisissant le bus, vous réduisez l'empreinte carbone de vos déplacements de groupe.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Usage Guide */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <Users className="text-teal-600 mr-3" size={32} />
+                Guides Pratiques
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Besoin d'aide pour choisir le bon véhicule ? Consultez nos ressources utiles pour préparer votre réservation.
+              </p>
+              <div className="space-y-4">
+                <Link
+                  to="/services"
+                  className="block p-4 bg-teal-50 rounded-lg hover:bg-teal-100 transition-colors group"
+                >
+                  <h5 className="font-semibold text-gray-900 mb-2 group-hover:text-teal-700">
+                    Découvrez tous nos services →
+                  </h5>
+                  <p className="text-gray-600 text-sm">Transferts aéroport, transport entreprise, voyages scolaires et plus encore.</p>
+                </Link>
+                <Link
+                  to="/excursions"
+                  className="block p-4 bg-teal-50 rounded-lg hover:bg-teal-100 transition-colors group"
+                >
+                  <h5 className="font-semibold text-gray-900 mb-2 group-hover:text-teal-700">
+                    Excursions touristiques guidées →
+                  </h5>
+                  <p className="text-gray-600 text-sm">Découvrez nos circuits en Belgique et Europe avec guide professionnel.</p>
+                </Link>
+                <Link
+                  to="/blog"
+                  className="block p-4 bg-teal-50 rounded-lg hover:bg-teal-100 transition-colors group"
+                >
+                  <h5 className="font-semibold text-gray-900 mb-2 group-hover:text-teal-700">
+                    Conseils et actualités →
+                  </h5>
+                  <p className="text-gray-600 text-sm">Articles pratiques pour bien préparer vos déplacements en groupe.</p>
+                </Link>
+                <Link
+                  to="/qui-sommes-nous"
+                  className="block p-4 bg-teal-50 rounded-lg hover:bg-teal-100 transition-colors group"
+                >
+                  <h5 className="font-semibold text-gray-900 mb-2 group-hover:text-teal-700">
+                    Notre expertise et certifications →
+                  </h5>
+                  <p className="text-gray-600 text-sm">Découvrez notre histoire, notre équipe et nos agréments professionnels.</p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-teal-500 to-teal-600">
         <div className="container mx-auto px-4 text-center">
@@ -347,7 +438,7 @@ const FleetPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/contact"
+              to="/contactez-nous"
               className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center"
             >
               Demander un Devis

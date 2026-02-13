@@ -443,6 +443,56 @@ const PolitiqueConfidentialitePage = () => {
             </div>
           </div>
 
+          {/* Related Documents */}
+          <div className="bg-gray-100 rounded-xl p-8 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Documents Connexes</h2>
+            <p className="text-gray-600 mb-6">
+              Consultez également nos autres documents légaux et informationnels pour une vue complète de nos pratiques.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link
+                to="/mentions-legales"
+                className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-all group"
+              >
+                <div>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-teal-600">Mentions Légales</h4>
+                  <p className="text-sm text-gray-600">Informations sur la société</p>
+                </div>
+                <Scale className="text-teal-500" size={24} />
+              </Link>
+              <Link
+                to="/conditions-generales-vente"
+                className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-all group"
+              >
+                <div>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-teal-600">Conditions Générales de Vente</h4>
+                  <p className="text-sm text-gray-600">Modalités de réservation</p>
+                </div>
+                <FileText className="text-teal-500" size={24} />
+              </Link>
+              <Link
+                to="/services"
+                className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-all group"
+              >
+                <div>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-teal-600">Nos Services</h4>
+                  <p className="text-sm text-gray-600">Découvrez notre offre</p>
+                </div>
+                <CheckCircle className="text-teal-500" size={24} />
+              </Link>
+              <Link
+                to="/contactez-nous"
+                className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-all group"
+              >
+                <div>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-teal-600">Nous Contacter</h4>
+                  <p className="text-sm text-gray-600">Posez vos questions</p>
+                </div>
+                <Mail className="text-teal-500" size={24} />
+              </Link>
+            </div>
+          </div>
+
           {/* Contact CTA */}
           <div className="bg-gradient-to-r from-teal-500 to-green-500 rounded-xl shadow-xl p-8 text-white text-center">
             <Mail className="mx-auto mb-4" size={48} />

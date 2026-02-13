@@ -46,8 +46,8 @@ const ServicesPage = () => {
       ],
       image: 'https://ik.imagekit.io/by733ltn6/location-bus/Afbeelding-van-WhatsApp-op-2024-03-05-om-15.24.35_2f27af2b.jpg?updatedAt=1757933904450',
       relatedLinks: [
-        { text: 'Voir notre flotte premium', url: '/fleet' },
-        { text: 'Demander un devis', url: '/contact' }
+        { text: 'Voir notre flotte premium', url: '/flotte' },
+        { text: 'Demander un devis', url: '/contactez-nous' }
       ]
     },
     {
@@ -77,7 +77,7 @@ const ServicesPage = () => {
       ],
       image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       relatedLinks: [
-        { text: 'En savoir plus sur notre équipe', url: '/about' }
+        { text: 'En savoir plus sur notre équipe', url: '/qui-sommes-nous' }
       ]
     },
     {
@@ -92,7 +92,7 @@ const ServicesPage = () => {
       ],
       image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2099&q=80',
       relatedLinks: [
-        { text: 'Planifier votre événement', url: '/contact' }
+        { text: 'Planifier votre événement', url: '/contactez-nous' }
       ]
     },
     {
@@ -122,7 +122,7 @@ const ServicesPage = () => {
       ],
       image: 'https://ik.imagekit.io/by733ltn6/location-bus/1888944-scaled.jpg?updatedAt=1757936645948',
       relatedLinks: [
-        { text: 'Contact urgence 24h/24', url: '/contact' }
+        { text: 'Contact urgence 24h/24', url: '/contactez-nous' }
       ]
     }
   ];

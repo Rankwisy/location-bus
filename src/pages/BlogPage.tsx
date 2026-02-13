@@ -290,6 +290,115 @@ const BlogPage = () => {
         </div>
       </section>
 
+      {/* Explore Our Services */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Passez à l'Action !
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Vous avez trouvé des informations utiles dans nos articles ?
+              Découvrez maintenant nos services de transport premium pour concrétiser vos projets de voyages.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Link
+              to="/services"
+              className="bg-gradient-to-br from-teal-50 to-teal-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-teal-200"
+            >
+              <div className="bg-teal-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <CheckCircle className="text-white" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-700">Nos Services</h4>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Transferts aéroport, transport entreprise, voyages scolaires et événements privés.
+              </p>
+              <span className="text-teal-600 font-semibold group-hover:underline inline-flex items-center">
+                En savoir plus
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+              </span>
+            </Link>
+
+            <Link
+              to="/flotte"
+              className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-blue-200"
+            >
+              <div className="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <CheckCircle className="text-white" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700">Notre Flotte</h4>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Minibus 19 places, bus 50 places et autocars 60 places. Véhicules modernes et confortables.
+              </p>
+              <span className="text-blue-600 font-semibold group-hover:underline inline-flex items-center">
+                Découvrir
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+              </span>
+            </Link>
+
+            <Link
+              to="/excursions"
+              className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-green-200"
+            >
+              <div className="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <CheckCircle className="text-white" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-700">Excursions</h4>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Circuits guidés en Belgique et Europe. Bruxelles, Bruges, Amsterdam, Paris et plus encore.
+              </p>
+              <span className="text-green-600 font-semibold group-hover:underline inline-flex items-center">
+                Voir les circuits
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+              </span>
+            </Link>
+
+            <Link
+              to="/contactez-nous"
+              className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-orange-200"
+            >
+              <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <CheckCircle className="text-white" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-700">Devis Gratuit</h4>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Contactez-nous pour un devis personnalisé et gratuit. Réponse sous 24h garantie.
+              </p>
+              <span className="text-orange-600 font-semibold group-hover:underline inline-flex items-center">
+                Nous contacter
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+              </span>
+            </Link>
+          </div>
+
+          <div className="mt-16 bg-gray-50 p-8 rounded-2xl">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">En Savoir Plus</h3>
+            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              <div>
+                <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
+                  <CheckCircle className="text-teal-600 mr-2" size={20} />
+                  À Propos de Nous
+                </h5>
+                <p className="text-gray-600 mb-3">
+                  Découvrez <Link to="/qui-sommes-nous" className="text-teal-600 hover:text-teal-700 font-semibold hover:underline">notre entreprise</Link>, notre histoire et les valeurs qui nous animent depuis plus de 15 ans.
+                </p>
+              </div>
+              <div>
+                <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
+                  <CheckCircle className="text-teal-600 mr-2" size={20} />
+                  Engagement Écologique
+                </h5>
+                <p className="text-gray-600 mb-3">
+                  Notre flotte respecte les <Link to="/lez-bruxelles" className="text-teal-600 hover:text-teal-700 font-semibold hover:underline">normes LEZ Bruxelles 2026</Link> et les standards environnementaux européens.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Newsletter Signup */}
       <section className="py-20 bg-gradient-to-r from-teal-500 to-teal-600">
         <div className="container mx-auto px-4 text-center">

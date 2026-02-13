@@ -376,6 +376,76 @@ const ExcursionsPage = () => {
         </div>
       </section>
 
+      {/* Fleet & Services Info */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Voyagez en Tout Confort
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Toutes nos excursions sont assurées avec notre <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">flotte de véhicules modernes et confortables</Link>, équipés des dernières technologies pour votre bien-être.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
+              <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="text-teal-600" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">Transport Premium Inclus</h4>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Tous nos circuits incluent le transport en <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">bus premium</Link> avec climatisation, sièges confortables et équipements modernes.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
+              <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="text-teal-600" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">Services Complémentaires</h4>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Découvrez nos <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">services de transport</Link> pour vos autres besoins : transferts aéroport, événements d'entreprise et plus.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
+              <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="text-teal-600" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">Guides & Conseils</h4>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Consultez notre <Link to="/blog" className="text-teal-600 hover:text-teal-700 font-semibold">blog</Link> pour des conseils de voyage, guides de destinations et astuces pour préparer vos excursions.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-green-50 to-teal-50 p-8 rounded-2xl border-2 border-green-200">
+            <div className="flex items-start">
+              <CheckCircle className="text-green-600 mr-4 mt-1 flex-shrink-0" size={32} />
+              <div>
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">Engagement Environnemental</h4>
+                <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                  Notre flotte respecte les <Link to="/lez-bruxelles" className="text-teal-600 hover:text-teal-700 font-semibold">normes LEZ Bruxelles 2026</Link> et les réglementations européennes les plus strictes. En voyageant en groupe avec nos bus, vous participez à la réduction de l'empreinte carbone des déplacements touristiques.
+                </p>
+                <ul className="space-y-2 ml-6">
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="text-green-600 mr-2 flex-shrink-0" size={18} />
+                    <span>Motorisation Euro 6 sur toute notre flotte</span>
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="text-green-600 mr-2 flex-shrink-0" size={18} />
+                    <span>Émissions réduites par passager comparé aux véhicules individuels</span>
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="text-green-600 mr-2 flex-shrink-0" size={18} />
+                    <span>Accès garanti à toutes les zones à faibles émissions européennes</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Booking CTA */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-teal-600">
         <div className="container mx-auto px-4 text-center">
@@ -388,10 +458,10 @@ const ExcursionsPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/contact"
+              to="/contactez-nous"
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center"
             >
-              Voir Toutes les Excursions
+              Réserver une Excursion
               <ArrowRight className="ml-2" size={20} />
             </Link>
             <a

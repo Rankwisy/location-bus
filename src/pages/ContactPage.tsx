@@ -522,30 +522,78 @@ const ContactPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                question: "Combien de temps à l'avance dois-je réserver ?",
-                answer: "Nous recommandons de réserver au moins 48h à l'avance pour garantir la disponibilité. Pour les services d'urgence, contactez-nous directement par téléphone."
-              },
-              {
-                question: "Vos tarifs incluent-ils les frais de carburant ?",
-                answer: "Oui, nos tarifs sont tout compris : carburant, péages, assurances, chauffeur professionnel. Aucun supplément caché."
-              },
-              {
-                question: "Puis-je modifier ma réservation ?",
-                answer: "Les modifications sont possibles jusqu'à 24h avant le départ, sous réserve de disponibilité et sans frais supplémentaires."
-              },
-              {
-                question: "Que se passe-t-il en cas de panne ?",
-                answer: "Nous disposons d'un service de dépannage 24h/24 et de véhicules de remplacement pour assurer la continuité de votre transport."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg">
-                <h4 className="font-bold text-gray-900 mb-3">{faq.question}</h4>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+            <div className="bg-white p-6 rounded-xl shadow-lg">
+              <h4 className="font-bold text-gray-900 mb-3">Combien de temps à l'avance dois-je réserver ?</h4>
+              <p className="text-gray-600 leading-relaxed">Nous recommandons de réserver au moins 48h à l'avance pour garantir la disponibilité. Pour les services d'urgence, contactez-nous directement par téléphone.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-lg">
+              <h4 className="font-bold text-gray-900 mb-3">Vos tarifs incluent-ils les frais de carburant ?</h4>
+              <p className="text-gray-600 leading-relaxed">Oui, nos tarifs sont tout compris : carburant, péages, assurances, chauffeur professionnel. Aucun supplément caché. Consultez nos <Link to="/conditions-generales-vente" className="text-teal-600 hover:text-teal-700 font-semibold">conditions générales de vente</Link> pour plus de détails.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-lg">
+              <h4 className="font-bold text-gray-900 mb-3">Puis-je modifier ma réservation ?</h4>
+              <p className="text-gray-600 leading-relaxed">Les modifications sont possibles jusqu'à 24h avant le départ, sous réserve de disponibilité et sans frais supplémentaires. Voir notre <Link to="/conditions-generales-vente" className="text-teal-600 hover:text-teal-700 font-semibold">politique de modification</Link>.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-lg">
+              <h4 className="font-bold text-gray-900 mb-3">Vos véhicules respectent-ils les normes environnementales ?</h4>
+              <p className="text-gray-600 leading-relaxed">Absolument ! Toute notre <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">flotte moderne</Link> est conforme aux <Link to="/lez-bruxelles" className="text-teal-600 hover:text-teal-700 font-semibold">normes LEZ Bruxelles 2026</Link> et aux standards environnementaux européens.</p>
+            </div>
+          </div>
+
+          {/* Resources Links */}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Ressources Utiles</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                    <CheckCircle className="text-teal-600 mr-2" size={20} />
+                    Explorez Nos Services
+                  </h4>
+                  <ul className="space-y-2 ml-7">
+                    <li>
+                      <Link to="/services" className="text-teal-600 hover:text-teal-700 hover:underline">
+                        Transferts aéroport et transport entreprise
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/excursions" className="text-teal-600 hover:text-teal-700 hover:underline">
+                        Excursions touristiques en Belgique et Europe
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/flotte" className="text-teal-600 hover:text-teal-700 hover:underline">
+                        Notre flotte : minibus, bus et autocars premium
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                    <CheckCircle className="text-teal-600 mr-2" size={20} />
+                    Informations Complémentaires
+                  </h4>
+                  <ul className="space-y-2 ml-7">
+                    <li>
+                      <Link to="/qui-sommes-nous" className="text-teal-600 hover:text-teal-700 hover:underline">
+                        Notre entreprise et nos valeurs
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/blog" className="text-teal-600 hover:text-teal-700 hover:underline">
+                        Blog : conseils et actualités transport
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/politique-confidentialite" className="text-teal-600 hover:text-teal-700 hover:underline">
+                        Protection de vos données personnelles
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

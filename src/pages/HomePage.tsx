@@ -441,6 +441,97 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Blog & Resources Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              📚 Guides Pratiques & Conseils d'Experts
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Découvrez nos articles spécialisés, conseils professionnels et guides complets pour optimiser vos déplacements en bus et organiser des voyages de groupe réussis.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-gradient-to-br from-teal-50 to-teal-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-teal-200">
+              <div className="bg-teal-500 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <CheckCircle className="text-white" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">Conseils Transport</h4>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Comment préparer votre voyage en groupe, choisir le bon véhicule, organiser un transfert aéroport et plus encore.
+              </p>
+              <Link
+                to="/blog"
+                className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold hover:underline"
+              >
+                Lire nos articles
+                <ArrowRight className="ml-2" size={18} />
+              </Link>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-200">
+              <div className="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <CheckCircle className="text-white" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">Guides Destinations</h4>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Explorez nos guides détaillés sur les meilleures destinations touristiques en Belgique et en Europe accessible en bus.
+              </p>
+              <Link
+                to="/blog"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold hover:underline"
+              >
+                Découvrir les guides
+                <ArrowRight className="ml-2" size={18} />
+              </Link>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-green-200">
+              <div className="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <CheckCircle className="text-white" size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">Actualités Secteur</h4>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Restez informé des dernières actualités du transport, nouvelles réglementations LEZ et innovations du secteur.
+              </p>
+              <Link
+                to="/blog"
+                className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold hover:underline"
+              >
+                Suivre l'actualité
+                <ArrowRight className="ml-2" size={18} />
+              </Link>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 sm:p-12 text-center">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+              💡 Besoin de Conseils Personnalisés ?
+            </h3>
+            <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Notre <Link to="/blog" className="text-teal-400 hover:text-teal-300 font-semibold underline">blog spécialisé</Link> contient des centaines d'articles pratiques rédigés par nos experts. Trouvez toutes les réponses à vos questions sur le transport en groupe, l'organisation d'excursions et la location de bus avec chauffeur.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/blog"
+                className="bg-teal-500 hover:bg-teal-600 text-white px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center"
+              >
+                📖 Accéder au Blog
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
+              <Link
+                to="/contactez-nous"
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 inline-flex items-center justify-center"
+              >
+                ✉️ Poser une Question
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Enhanced CTA Section */}
       <section className="py-20 bg-gradient-to-r from-teal-500 to-teal-600">
         <div className="container mx-auto px-4 text-center">

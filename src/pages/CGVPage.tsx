@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, AlertCircle, CheckCircle, XCircle, CreditCard } from 'lucide-react';
+import { FileText, AlertCircle, CheckCircle, XCircle, CreditCard, Scale, Shield, Bus, Mail } from 'lucide-react';
 import { setPageSEO } from '../utils/seo';
 
 const CGVPage = () => {
@@ -353,6 +353,56 @@ const CGVPage = () => {
                 Si une clause des présentes CGV était déclarée nulle ou inapplicable, les autres clauses
                 resteraient en vigueur.
               </p>
+            </div>
+          </div>
+
+          {/* Related Documents */}
+          <div className="bg-gray-100 rounded-xl p-8 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Documents Connexes</h2>
+            <p className="text-gray-600 mb-6">
+              Pour une information complète, consultez également nos autres documents légaux et pages d'information.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Link
+                to="/mentions-legales"
+                className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-all group"
+              >
+                <div>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-teal-600">Mentions Légales</h4>
+                  <p className="text-sm text-gray-600">Informations sur la société</p>
+                </div>
+                <Scale className="text-teal-500" size={24} />
+              </Link>
+              <Link
+                to="/politique-confidentialite"
+                className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-all group"
+              >
+                <div>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-teal-600">Politique de Confidentialité</h4>
+                  <p className="text-sm text-gray-600">Protection de vos données</p>
+                </div>
+                <Shield className="text-teal-500" size={24} />
+              </Link>
+              <Link
+                to="/flotte"
+                className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-all group"
+              >
+                <div>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-teal-600">Notre Flotte</h4>
+                  <p className="text-sm text-gray-600">Véhicules disponibles</p>
+                </div>
+                <Bus className="text-teal-500" size={24} />
+              </Link>
+              <Link
+                to="/contactez-nous"
+                className="flex items-center justify-between bg-white p-4 rounded-lg shadow hover:shadow-md transition-all group"
+              >
+                <div>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-teal-600">Nous Contacter</h4>
+                  <p className="text-sm text-gray-600">Posez vos questions</p>
+                </div>
+                <Mail className="text-teal-500" size={24} />
+              </Link>
             </div>
           </div>
 
