@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, User, ArrowRight, Clock, Tag } from 'lucide-react';
+import { Calendar, User, ArrowRight, Clock, Tag, CheckCircle } from 'lucide-react';
 import { blogService } from '../services/blogService';
 import { BlogPost, BlogCategory } from '../types/blog';
 import { createBlogCollectionStructuredData, addStructuredData } from '../utils/seo';
