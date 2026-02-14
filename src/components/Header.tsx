@@ -23,7 +23,7 @@ const Header = () => {
     { name: 'Flotte', href: '/flotte' },
     { name: 'LEZ', href: '/lez-bruxelles', badge: true },
     { name: 'Excursions', href: '/excursions' },
-    { name: 'Qui sommes-nous', href: '/qui-sommes-nous' },
+    { name: 'À Propos', href: '/qui-sommes-nous' },
     { name: 'Contact', href: '/contactez-nous' },
     { name: 'Blog', href: '/blog' },
   ];
