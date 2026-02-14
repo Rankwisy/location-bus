@@ -6,7 +6,8 @@ import {
   MapPin, 
   Phone, 
   Search,
-  AlertTriangle
+  AlertTriangle,
+  BookOpen
 } from 'lucide-react';
 
 const NotFoundPage = () => {
@@ -43,6 +44,8 @@ const NotFoundPage = () => {
     { name: 'Accueil', href: '/', icon: Home, description: 'Retour à la page principale' },
     { name: 'Nos Services', href: '/services', icon: MapPin, description: 'Découvrir nos solutions transport' },
     { name: 'Notre Flotte', href: '/flotte', icon: Search, description: 'Véhicules disponibles' },
+    { name: 'Excursions', href: '/excursions', icon: ArrowRight, description: 'Découvrir nos excursions' },
+    { name: 'Blog', href: '/blog', icon: BookOpen, description: 'Conseils et actualités' },
     { name: 'Contact', href: '/contactez-nous', icon: Phone, description: 'Nous contacter directement' }
   ];
 
@@ -79,7 +82,7 @@ const NotFoundPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {quickLinks.map((link, index) => (
               <Link
                 key={index}

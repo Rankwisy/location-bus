@@ -198,9 +198,9 @@ const HomePage: React.FC = () => {
                 {features.map((feature, index) => (
                   <div key={index} className="group">
                     <div className="bg-teal-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-teal-100 transition-colors">
-                      <feature.icon className="text-teal-600" size={32} />
+                      <feature.icon className="text-teal-700" size={32} aria-hidden />
                     </div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h4>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                   </div>
                 ))}
@@ -244,16 +244,16 @@ const HomePage: React.FC = () => {
                 <div className="flex items-start">
                   <CheckCircle className="text-teal-500 mr-4 mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">Sécurité Renforcée et Véhicules Modernes avec Technologie de Pointe</h4>
+                    <h3 className="font-bold text-gray-900 mb-2">Sécurité Renforcée et Véhicules Modernes avec Technologie de Pointe</h3>
                     <p className="text-gray-600 text-lg">
-                      <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">Flotte ultra-moderne</Link> aux <strong>standards européens les plus élevés</strong>. Maintenance préventive systématique, contrôles techniques renforcés et équipements de sécurité dernier cri pour une tranquillité absolue.
+                      <Link to="/flotte" className="text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2">Flotte ultra-moderne</Link> aux <strong>standards européens les plus élevés</strong>. Maintenance préventive systématique, contrôles techniques renforcés et équipements de sécurité dernier cri pour une tranquillité absolue.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-teal-500 mr-4 mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">Ponctualité Garantie et Fiabilité Absolue</h4>
+                    <h3 className="font-bold text-gray-900 mb-2">Ponctualité Garantie et Fiabilité Absolue</h3>
                     <p className="text-gray-600 text-lg">
                       <strong>Zéro retard toléré !</strong> Notre engagement : respecter vos horaires à la minute près. Suivi GPS en temps réel, planification optimisée et chauffeurs experts pour une ponctualité irréprochable.
                     </p>
@@ -262,9 +262,9 @@ const HomePage: React.FC = () => {
                 <div className="flex items-start">
                   <CheckCircle className="text-teal-500 mr-4 mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">Confort Haut de Gamme et Équipements Premium</h4>
+                    <h3 className="font-bold text-gray-900 mb-2">Confort Haut de Gamme et Équipements Premium</h3>
                     <p className="text-gray-600 text-lg">
-                      Voyagez dans un <strong>cocon de luxe</strong> : sièges en cuir inclinables, climatisation individuelle, Wi-Fi haut débit, prises USB, système audio HD. Découvrez tous nos <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">services de transport premium</Link> pour transformer le temps de transport en moment de détente ou de productivité.
+                      Voyagez dans un <strong>cocon de luxe</strong> : sièges en cuir inclinables, climatisation individuelle, Wi-Fi haut débit, prises USB, système audio HD. Découvrez tous nos <Link to="/services" className="text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2">services de transport premium</Link> pour transformer le temps de transport en moment de détente ou de productivité.
                     </p>
                   </div>
                 </div>
@@ -292,10 +292,10 @@ const HomePage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-teal-600 font-bold mb-4 text-base sm:text-lg">🏆 RAPPORT QUALITÉ/PRIX IMBATTABLE EN BELGIQUE</p>
+            <p className="text-teal-700 font-bold mb-4 text-base sm:text-lg">🏆 RAPPORT QUALITÉ/PRIX IMBATTABLE EN BELGIQUE</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Votre Flotte Premium : Performance & Élégance</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto px-4">
-              Choisissez votre véhicule parmi notre collection exclusive de <strong>50+ autocars dernière génération</strong>. Du <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">minibus VIP 19 places</Link> à l'<Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">autocar grand luxe 60 places</Link>, nous avons la solution parfaite pour chaque occasion.
+              Choisissez votre véhicule parmi notre collection exclusive de <strong>50+ autocars dernière génération</strong>. Du <Link to="/flotte" className="text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2">minibus VIP 19 places</Link> à l'<Link to="/flotte" className="text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2">autocar grand luxe 60 places</Link>, nous avons la solution parfaite pour chaque occasion.
             </p>
           </div>
 
@@ -315,7 +315,7 @@ const HomePage: React.FC = () => {
                   )}
                 </div>
                 <div className="p-8 text-center">
-                  <h4 className="text-2xl font-bold text-teal-600 mb-4">{vehicle.name}</h4>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{vehicle.name}</h3>
                   <ul className="space-y-2 mb-6">
                     {vehicle.features.map((feature, fIndex) => (
                       <li key={fIndex} className="text-gray-600 flex items-center justify-center">
@@ -327,7 +327,7 @@ const HomePage: React.FC = () => {
                   <p className="text-gray-600 mb-6">{vehicle.description}</p>
                   <Link
                     to="/contactez-nous"
-                    className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold"
+                    className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2"
                   >
                     Réserver ce véhicule
                     <ArrowRight className="ml-2" size={18} />
@@ -343,23 +343,23 @@ const HomePage: React.FC = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div className="flex flex-col items-center">
                   <div className="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center mb-3">
-                    <span className="text-teal-600 font-bold text-xl">1</span>
+                    <span className="text-teal-700 font-bold text-xl">1</span>
                   </div>
-                  <h5 className="font-bold text-gray-900 mb-2">Sélectionnez</h5>
+                  <h4 className="font-bold text-gray-900 mb-2">Sélectionnez</h4>
                   <p className="text-gray-600 text-sm">Choisissez votre véhicule selon vos besoins</p>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center mb-3">
-                    <span className="text-teal-600 font-bold text-xl">2</span>
+                    <span className="text-teal-700 font-bold text-xl">2</span>
                   </div>
-                  <h5 className="font-bold text-gray-900 mb-2">Personnalisez</h5>
+                  <h4 className="font-bold text-gray-900 mb-2">Personnalisez</h4>
                   <p className="text-gray-600 text-sm">Définissez votre itinéraire et options</p>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center mb-3">
-                    <span className="text-teal-600 font-bold text-xl">3</span>
+                    <span className="text-teal-700 font-bold text-xl">3</span>
                   </div>
-                  <h5 className="font-bold text-gray-900 mb-2">Réservez</h5>
+                  <h4 className="font-bold text-gray-900 mb-2">Réservez</h4>
                   <p className="text-gray-600 text-sm">Confirmation instantanée, paiement sécurisé</p>
                 </div>
               </div>
@@ -379,7 +379,7 @@ const HomePage: React.FC = () => {
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-teal-600 font-bold mb-4 uppercase tracking-wide text-base sm:text-lg">🗺️ TOURS EXCLUSIFS & EXCURSIONS PREMIUM</p>
+            <p className="text-teal-700 font-bold mb-4 uppercase tracking-wide text-base sm:text-lg">🗺️ TOURS EXCLUSIFS & EXCURSIONS PREMIUM</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
               Explorez les Trésors Cachés de l'Europe avec Nos Guides Experts
             </h2>
@@ -400,12 +400,12 @@ const HomePage: React.FC = () => {
             <div className="space-y-8">
               <div className="flex items-start">
                 <div className="bg-teal-100 p-3 rounded-full mr-6 flex-shrink-0">
-                  <Star className="text-teal-600" size={24} />
+                  <Star className="text-teal-700" size={24} aria-hidden />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
                     🚌 Plateforme Révolutionnaire de Réservation Intelligente
-                  </h4>
+                  </h3>
                   <p className="text-gray-600">
                     <strong>Révolutionnez votre façon de voyager !</strong> Notre plateforme innovante vous connecte instantanément avec nos chauffeurs d'élite. Réservation en ligne intuitive, suivi GPS en temps réel, et service client 24/7 pour une expérience sans faille.
                   </p>
@@ -413,14 +413,14 @@ const HomePage: React.FC = () => {
               </div>
               <div className="flex items-start">
                 <div className="bg-teal-100 p-3 rounded-full mr-6 flex-shrink-0">
-                  <Users className="text-teal-600" size={24} />
+                  <Users className="text-teal-700" size={24} aria-hidden />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
                     💼 Solutions Corporate Haut de Gamme & Gestion Intégrale
-                  </h4>
+                  </h3>
                   <p className="text-gray-600">
-                    <strong>Déléguez-nous votre logistique transport</strong> et concentrez-vous sur l'essentiel. De la sortie d'entreprise au séminaire international, en passant par les conférences prestigieuses : nous orchestrons chaque détail avec une précision d'orfèvre pour garantir le succès de vos <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">événements professionnels</Link>. Découvrez également nos <Link to="/excursions" className="text-teal-600 hover:text-teal-700 font-semibold">excursions touristiques guidées</Link> pour vos sorties d'équipe.
+                    <strong>Déléguez-nous votre logistique transport</strong> et concentrez-vous sur l'essentiel. De la sortie d'entreprise au séminaire international, en passant par les conférences prestigieuses : nous orchestrons chaque détail avec une précision d'orfèvre pour garantir le succès de vos <Link to="/services" className="text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2">événements professionnels</Link>. Découvrez également nos <Link to="/excursions" className="text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2">excursions touristiques guidées</Link> pour vos sorties d'équipe.
                   </p>
                 </div>
               </div>
@@ -458,13 +458,13 @@ const HomePage: React.FC = () => {
               <div className="bg-teal-500 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <CheckCircle className="text-white" size={32} />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-4">Conseils Transport</h4>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Conseils Transport</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Comment préparer votre voyage en groupe, choisir le bon véhicule, organiser un transfert aéroport et plus encore.
               </p>
               <Link
                 to="/blog"
-                className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold hover:underline"
+                className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2"
               >
                 Lire nos articles
                 <ArrowRight className="ml-2" size={18} />
@@ -475,7 +475,7 @@ const HomePage: React.FC = () => {
               <div className="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <CheckCircle className="text-white" size={32} />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-4">Guides Destinations</h4>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Guides Destinations</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Explorez nos guides détaillés sur les meilleures destinations touristiques en Belgique et en Europe accessible en bus.
               </p>
@@ -492,7 +492,7 @@ const HomePage: React.FC = () => {
               <div className="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <CheckCircle className="text-white" size={32} />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-4">Actualités Secteur</h4>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Actualités Secteur</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Restez informé des dernières actualités du transport, nouvelles réglementations LEZ et innovations du secteur.
               </p>
@@ -511,7 +511,7 @@ const HomePage: React.FC = () => {
               💡 Besoin de Conseils Personnalisés ?
             </h3>
             <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Notre <Link to="/blog" className="text-teal-400 hover:text-teal-300 font-semibold underline">blog spécialisé</Link> contient des centaines d'articles pratiques rédigés par nos experts. Trouvez toutes les réponses à vos questions sur le transport en groupe, l'organisation d'excursions et la location de bus avec chauffeur.
+              Notre <Link to="/blog" className="text-teal-300 hover:text-teal-200 font-semibold underline">blog spécialisé</Link> contient des centaines d'articles pratiques rédigés par nos experts. Trouvez toutes les réponses à vos questions sur le transport en groupe, l'organisation d'excursions et la location de bus avec chauffeur.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -564,14 +564,14 @@ const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contactez-nous"
-              className="bg-white text-teal-600 hover:bg-gray-100 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center shadow-lg min-h-[48px]"
+              className="bg-white text-teal-700 hover:bg-gray-100 hover:text-teal-800 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center shadow-lg min-h-[48px]"
             >
               🎯 Mon Devis Gratuit & Immédiat
               <ArrowRight className="ml-2" size={20} />
             </Link>
             <a
               href="tel:+3223420734"
-              className="border-2 border-white text-white hover:bg-white hover:text-teal-600 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 inline-flex items-center justify-center shadow-lg min-h-[48px]"
+              className="border-2 border-white text-white hover:bg-white hover:text-teal-800 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 inline-flex items-center justify-center shadow-lg min-h-[48px]"
             >
               📞 Conseil Expert Immédiat
             </a>

@@ -285,7 +285,7 @@ export const createBlogPostStructuredData = (params: BlogPostStructuredDataParam
   author: {
     '@type': 'Person',
     name: params.authorName,
-    url: params.authorUrl || 'https://location-bus.be/about'
+    url: params.authorUrl || 'https://location-bus.be/qui-sommes-nous'
   },
   publisher: {
     '@type': 'Organization',

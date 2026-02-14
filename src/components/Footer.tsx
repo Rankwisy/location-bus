@@ -18,22 +18,25 @@ const Footer = () => {
               Location de bus et minibus avec chauffeur à Bruxelles. Service professionnel 
               pour vos transferts d'aéroport, excursions, voyages d'entreprise et événements spéciaux.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">
-                <Facebook size={24} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">
-                <Twitter size={24} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-teal-400 transition-colors">
-                <Instagram size={24} />
-              </a>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2" aria-label="Réseaux sociaux">
+              <Link to="/contactez-nous" className="text-gray-300 hover:text-teal-400 transition-colors inline-flex items-center gap-2" aria-label="Nous contacter via Facebook">
+                <Facebook size={24} aria-hidden />
+                <span className="text-sm font-medium">Facebook</span>
+              </Link>
+              <Link to="/contactez-nous" className="text-gray-300 hover:text-teal-400 transition-colors inline-flex items-center gap-2" aria-label="Nous contacter via Twitter">
+                <Twitter size={24} aria-hidden />
+                <span className="text-sm font-medium">Twitter</span>
+              </Link>
+              <Link to="/contactez-nous" className="text-gray-300 hover:text-teal-400 transition-colors inline-flex items-center gap-2" aria-label="Nous contacter via Instagram">
+                <Instagram size={24} aria-hidden />
+                <span className="text-sm font-medium">Instagram</span>
+              </Link>
             </div>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-teal-400">Contact</h4>
+            <h2 className="text-lg font-semibold mb-6 text-teal-400">Contact</h2>
             <div className="space-y-4">
               <div className="flex items-start">
                 <MapPin size={20} className="text-teal-400 mr-3 mt-1 flex-shrink-0" />
@@ -59,24 +62,27 @@ const Footer = () => {
 
           {/* Hours & Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-teal-400">Horaires & Services</h4>
+            <h2 className="text-lg font-semibold mb-6 text-teal-400">Horaires & Services</h2>
             <div className="mb-6">
               <div className="flex items-start mb-3">
                 <Clock size={20} className="text-teal-400 mr-3 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 font-medium">Lundi - Vendredi</p>
-                  <p className="text-gray-400 text-sm">09:00 - 19:00</p>
+                  <p className="text-gray-300 text-sm">09:00 - 19:00</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <Clock size={20} className="text-teal-400 mr-3 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 font-medium">Samedi - Dimanche</p>
-                  <p className="text-gray-400 text-sm">09:00 - 19:00</p>
+                  <p className="text-gray-300 text-sm">09:00 - 19:00</p>
                 </div>
               </div>
             </div>
-            <nav className="space-y-2">
+            <nav className="space-y-2" aria-label="Navigation principale">
+              <Link to="/" className="block text-gray-300 hover:text-teal-400 transition-colors">
+                Accueil
+              </Link>
               <Link to="/services" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Services de Transport
               </Link>
@@ -96,6 +102,9 @@ const Footer = () => {
               <Link to="/qui-sommes-nous" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Notre Expertise
               </Link>
+              <Link to="/blog" className="block text-gray-300 hover:text-teal-400 transition-colors">
+                Blog
+              </Link>
               <Link to="/contactez-nous" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Devis Gratuit
               </Link>
@@ -104,27 +113,30 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8">
-          {/* Legal Links */}
-          <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <Link to="/mentions-legales" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">
+          {/* Legal & key pages - clearly accessible */}
+          <p className="text-gray-500 text-xs text-center mb-4 uppercase tracking-wider" id="footer-legal-heading">
+            Informations légales
+          </p>
+          <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-6" aria-labelledby="footer-legal-heading">
+            <Link to="/mentions-legales" className="text-gray-300 hover:text-teal-400 transition-colors text-sm">
               Mentions Légales
             </Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/politique-confidentialite" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">
+            <span className="text-gray-600" aria-hidden="true">|</span>
+            <Link to="/politique-confidentialite" className="text-gray-300 hover:text-teal-400 transition-colors text-sm">
               Politique de Confidentialité
             </Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/conditions-generales-vente" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">
+            <span className="text-gray-600" aria-hidden="true">|</span>
+            <Link to="/conditions-generales-vente" className="text-gray-300 hover:text-teal-400 transition-colors text-sm">
               Conditions Générales de Vente
             </Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/lez-bruxelles" className="text-green-400 hover:text-green-300 transition-colors text-sm font-medium">
+            <span className="text-gray-600" aria-hidden="true">|</span>
+            <Link to="/lez-bruxelles" className="text-green-300 hover:text-green-200 transition-colors text-sm font-medium">
               Conformité LEZ
             </Link>
-          </div>
+          </nav>
 
           {/* Copyright */}
-          <p className="text-gray-400 text-sm text-center">
+          <p className="text-gray-300 text-sm text-center">
             © {new Date().getFullYear()} Location Bus Belgique. Tous droits réservés.
             <span className="mx-2">|</span>
             Développé avec passion pour un transport de qualité.

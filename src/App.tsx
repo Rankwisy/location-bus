@@ -40,7 +40,7 @@ function App() {
         <RedirectHandler />
         <div className="min-h-screen bg-white">
           <Header />
-          <main>
+          <main id="main-content" tabIndex={-1}>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/services" element={<ServicesPage />} />

@@ -23,13 +23,8 @@ const Header = () => {
     { name: 'Flotte', href: '/flotte' },
     { name: 'LEZ', href: '/lez-bruxelles', badge: true },
     { name: 'Excursions', href: '/excursions' },
-    {
-     name: 'Contact',
-     href: '/contactez-nous',
-      children: [
-       { name: 'Propos', href: '/qui-sommes-nous' }
-      ]
-    },
+    { name: 'Qui sommes-nous', href: '/qui-sommes-nous' },
+    { name: 'Contact', href: '/contactez-nous' },
     { name: 'Blog', href: '/blog' },
   ];
 
@@ -46,10 +41,17 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-3 sm:py-4'
-    }`}>
-      <div className="container mx-auto px-4">
+    <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-teal-500 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
+      >
+        Aller au contenu principal
+      </a>
+      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-3 sm:py-4'
+      }`}>
+        <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
@@ -71,10 +73,10 @@ const Header = () => {
                   <div className="flex items-center">
                     <Link
                       to={item.href}
-                      className={`font-medium transition-colors duration-200 hover:text-teal-500 flex items-center ${
+                      className={`font-medium transition-colors duration-200 hover:text-teal-600 flex items-center ${
                         isActiveRoute(item.href, item.children)
-                          ? 'text-teal-500 border-b-2 border-teal-500' 
-                          : 'text-gray-700'
+                          ? 'text-teal-600 border-b-2 border-teal-600' 
+                          : 'text-gray-900'
                       }`}
                     >
                       {item.name}
@@ -88,8 +90,8 @@ const Header = () => {
                           <Link
                             key={child.name}
                             to={child.href}
-                            className={`block px-4 py-2 text-sm transition-colors hover:bg-gray-50 hover:text-teal-500 ${
-                              location.pathname === child.href ? 'text-teal-500 bg-gray-50' : 'text-gray-700'
+                            className={`block px-4 py-2 text-sm transition-colors hover:bg-gray-50 hover:text-teal-600 ${
+                              location.pathname === child.href ? 'text-teal-600 bg-gray-50' : 'text-gray-900'
                             }`}
                           >
                             {child.name}
@@ -102,11 +104,11 @@ const Header = () => {
                   // Regular menu item
                   <Link
                     to={item.href}
-                    className={`font-medium transition-colors duration-200 hover:text-teal-500 flex items-center ${
+                    className={`font-medium transition-colors duration-200 hover:text-teal-600 flex items-center ${
                       location.pathname === item.href
-                        ? 'text-teal-500 border-b-2 border-teal-500'
-                        : 'text-gray-700'
-                    } ${item.badge ? 'bg-green-100 px-3 py-1 rounded-full text-green-700 hover:bg-green-200 hover:text-green-800' : ''}`}
+                        ? 'text-teal-600 border-b-2 border-teal-600'
+                        : 'text-gray-900'
+                    } ${item.badge ? 'bg-green-100 px-3 py-1 rounded-full text-green-800 hover:bg-green-200 hover:text-green-900' : ''}`}
                   >
                     {item.badge && <Leaf size={16} className="mr-1" />}
                     {item.name}
@@ -120,7 +122,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <a 
               href="mailto:info@location-bus.be"
-              className="flex items-center text-gray-600 hover:text-teal-500 transition-colors"
+              className="flex items-center text-gray-800 hover:text-teal-600 transition-colors"
             >
               <Mail size={18} className="mr-2" />
               <span className="text-sm font-bold">info@location-bus.be</span>
@@ -156,8 +158,8 @@ const Header = () => {
                       <div className="flex items-center justify-between px-4 py-3">
                         <Link
                           to={item.href}
-                          className={`font-medium transition-colors hover:text-teal-500 ${
-                            isActiveRoute(item.href, item.children) ? 'text-teal-500' : 'text-gray-700'
+                          className={`font-medium transition-colors hover:text-teal-600 ${
+                            isActiveRoute(item.href, item.children) ? 'text-teal-600' : 'text-gray-900'
                           }`}
                           onClick={() => setIsMenuOpen(false)}
                         >
@@ -186,8 +188,8 @@ const Header = () => {
                             <Link
                               key={child.name}
                               to={child.href}
-                              className={`block px-8 py-2 text-sm transition-colors hover:bg-gray-100 hover:text-teal-500 ${
-                                location.pathname === child.href ? 'text-teal-500 bg-gray-100' : 'text-gray-600'
+                              className={`block px-8 py-2 text-sm transition-colors hover:bg-gray-100 hover:text-teal-600 ${
+                                location.pathname === child.href ? 'text-teal-600 bg-gray-100' : 'text-gray-800'
                               }`}
                               onClick={() => setIsMenuOpen(false)}
                             >
@@ -201,8 +203,8 @@ const Header = () => {
                     // Regular menu item
                     <Link
                       to={item.href}
-                      className={`block px-4 py-4 font-medium transition-colors hover:bg-gray-50 hover:text-teal-500 min-h-[44px] flex items-center ${
-                        location.pathname === item.href ? 'text-teal-500 bg-gray-50' : 'text-gray-700'
+                      className={`block px-4 py-4 font-medium transition-colors hover:bg-gray-50 hover:text-teal-600 min-h-[44px] flex items-center ${
+                        location.pathname === item.href ? 'text-teal-600 bg-gray-50' : 'text-gray-900'
                       } ${item.badge ? 'bg-green-50' : ''}`}
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -226,6 +228,7 @@ const Header = () => {
         )}
       </div>
     </header>
+    </>
   );
 };
 

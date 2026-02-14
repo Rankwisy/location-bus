@@ -142,7 +142,7 @@ export const blogPosts: BlogPost[] = [
       <p>Chaque événement possède ses spécificités. Notre flotte diversifiée permet de répondre précisément à vos besoins, que vous soyez 8 ou 55 personnes.</p>
 
       <h3>Autocars Grand Confort (45-55 places)</h3>
-      <p>Parfaits pour les grandes sorties associatives, comités d'entreprise ou groupes scolaires souhaitant profiter des événements culturels bruxellois. Équipés de climatisation, sièges inclinables, WC, WiFi et système audio, ces autocars garantissent un confort optimal même sur des trajets longs. Découvrez <a href="/fleet">notre flotte complète de véhicules</a> pour choisir l'option idéale selon vos besoins.</p>
+      <p>Parfaits pour les grandes sorties associatives, comités d'entreprise ou groupes scolaires souhaitant profiter des événements culturels bruxellois. Équipés de climatisation, sièges inclinables, WC, WiFi et système audio, ces autocars garantissent un confort optimal même sur des trajets longs. Découvrez <a href="/flotte">notre flotte complète de véhicules</a> pour choisir l'option idéale selon vos besoins.</p>
 
       <p><strong>Idéal pour :</strong> Plaisirs d'Hiver (groupes d'entreprise), FCKNYE Festival (collectifs de jeunes), Next Opera Days (clubs d'amateurs d'opéra).</p>
 
@@ -234,7 +234,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>2. Choisissez le Bon Véhicule</h2>
-      <p>Le choix du véhicule dépend de plusieurs facteurs. Consultez <a href="/fleet">notre flotte complète</a> pour découvrir toutes les options disponibles :</p>
+      <p>Le choix du véhicule dépend de plusieurs facteurs. Consultez <a href="/flotte">notre flotte complète</a> pour découvrir toutes les options disponibles :</p>
       <ul>
         <li><strong>Nombre de passagers :</strong> Minibus (8-20 places) ou autocar (20-50 places)</li>
         <li><strong>Quantité de bagages :</strong> Assurez-vous d'avoir suffisamment d'espace</li>
@@ -260,7 +260,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Conclusion</h2>
-      <p>Un transfert aéroport bien organisé commence avant même votre arrivée. Avec Location Bus Belgique, bénéficiez d'un service professionnel et fiable pour tous vos déplacements de groupe. <a href="/contact">Contactez-nous</a> pour obtenir un devis personnalisé ou découvrez nos <a href="/blog/evenements-entreprise-transport-bus">conseils pour les événements d'entreprise</a>.</p>
+      <p>Un transfert aéroport bien organisé commence avant même votre arrivée. Avec Location Bus Belgique, bénéficiez d'un service professionnel et fiable pour tous vos déplacements de groupe. <a href="/contactez-nous">Contactez-nous</a> pour obtenir un devis personnalisé ou découvrez nos <a href="/blog/evenements-entreprise-transport-bus">conseils pour les événements d'entreprise</a>.</p>
     `,
     featured_image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category_id: '1',
@@ -315,7 +315,7 @@ export const blogPosts: BlogPost[] = [
       <p>Profitez des plages et de la promenade en bord de mer. Parfait pour les sorties d'été. Distance : 115 km, environ 1h30.</p>
 
       <h2>Conclusion</h2>
-      <p>Ces destinations sont toutes facilement accessibles depuis Bruxelles avec nos services de <a href="/fleet">bus et minibus</a>. Pour planifier votre voyage en toute sérénité, consultez notre <a href="/blog/securite-reglementation-transport-groupe-2024">guide de sécurité et réglementation</a>. <a href="/contact">Contactez-nous</a> pour organiser votre prochaine excursion avec un devis personnalisé !</p>
+      <p>Ces destinations sont toutes facilement accessibles depuis Bruxelles avec nos services de <a href="/flotte">bus et minibus</a>. Pour planifier votre voyage en toute sérénité, consultez notre <a href="/blog/securite-reglementation-transport-groupe-2024">guide de sécurité et réglementation</a>. <a href="/contactez-nous">Contactez-nous</a> pour organiser votre prochaine excursion avec un devis personnalisé !</p>
     `,
     featured_image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category_id: '2',
@@ -340,7 +340,7 @@ export const blogPosts: BlogPost[] = [
       <p>La sécurité des passagers est notre priorité absolue. Découvrez les normes et réglementations qui encadrent le transport de groupe en Belgique en 2024, conformément aux directives du <a href="https://mobilit.belgium.be/fr" target="_blank" rel="noopener noreferrer">SPF Mobilité et Transports</a>.</p>
 
       <h2>Normes de Sécurité Obligatoires</h2>
-      <p>Tous nos <a href="/fleet">véhicules</a> respectent scrupuleusement les normes européennes et belges :</p>
+      <p>Tous nos <a href="/flotte">véhicules</a> respectent scrupuleusement les normes européennes et belges :</p>
       <ul>
         <li>Contrôle technique régulier tous les 6 mois</li>
         <li>Système de freinage ABS et ESP obligatoire</li>
@@ -397,7 +397,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h2>Conclusion</h2>
-      <p>Chez Location Bus Belgique, la sécurité n'est pas une option mais une exigence. Voyagez l'esprit tranquille avec des professionnels certifiés. Pour en savoir plus sur nos <a href="/services">services de transport</a> ou organiser un <a href="/blog/organiser-transfert-aeroport-groupe">transfert aéroport</a>, <a href="/contact">contactez notre équipe</a>.</p>
+      <p>Chez Location Bus Belgique, la sécurité n'est pas une option mais une exigence. Voyagez l'esprit tranquille avec des professionnels certifiés. Pour en savoir plus sur nos <a href="/services">services de transport</a> ou organiser un <a href="/blog/organiser-transfert-aeroport-groupe">transfert aéroport</a>, <a href="/contactez-nous">contactez notre équipe</a>.</p>
     `,
     featured_image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     category_id: '3',
@@ -431,7 +431,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
 
       <h3>Budget Prévisible</h3>
-      <p>Avec un <a href="/contact">devis fixe</a>, maîtrisez vos dépenses sans surprises. Comparez : un trajet Bruxelles-Anvers coûte environ 400€ en bus (40 personnes) contre 2000€+ en taxis individuels. Consultez notre <a href="/fleet">flotte complète</a> pour choisir le véhicule adapté à votre budget.</p>
+      <p>Avec un <a href="/contactez-nous">devis fixe</a>, maîtrisez vos dépenses sans surprises. Comparez : un trajet Bruxelles-Anvers coûte environ 400€ en bus (40 personnes) contre 2000€+ en taxis individuels. Consultez notre <a href="/flotte">flotte complète</a> pour choisir le véhicule adapté à votre budget.</p>
 
       <h2>Avantages Pratiques</h2>
       <h3>Ponctualité Garantie</h3>

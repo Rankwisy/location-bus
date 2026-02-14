@@ -165,13 +165,21 @@ const BlogPostPage = () => {
             <p className="text-xl text-gray-600 mb-8">
               {error || 'Désolé, l\'article que vous recherchez n\'existe pas ou a été supprimé.'}
             </p>
-            <Link
-              to="/blog"
-              className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-            >
-              <ArrowLeft className="mr-2" size={18} />
-              Retour au Blog
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/blog"
+                className="inline-flex items-center justify-center bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
+              >
+                <ArrowLeft className="mr-2" size={18} />
+                Retour au Blog
+              </Link>
+              <Link
+                to="/"
+                className="inline-flex items-center justify-center border-2 border-teal-500 text-teal-600 hover:bg-teal-50 px-6 py-3 rounded-lg font-semibold transition-all duration-200"
+              >
+                Accueil
+              </Link>
+            </div>
           </div>
         </div>
       </div>
