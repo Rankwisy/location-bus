@@ -6,7 +6,7 @@ import { updatePageSEO, addStructuredData, organizationStructuredData, localBusi
 const HomePage: React.FC = () => {
   useEffect(() => {
     updatePageSEO({
-      title: 'Location Bus à Bruxelles | Transfert Aéroport & Excursions',
+      title: 'Location Bus Bruxelles | Transfert Aéroport & Excursions',
       description: 'Location de bus avec chauffeur à Bruxelles. Service professionnel pour transferts aéroport (Zaventem, Charleroi) et excursions touristiques. Flotte moderne, tarifs compétitifs. Devis gratuit.',
       canonical: 'https://location-bus.be/',
       ogType: 'website',

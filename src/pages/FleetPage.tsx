@@ -4,14 +4,53 @@ import { Users, CheckCircle, ArrowRight, Wifi, Coffee, Snowflake, Volume2, Usb a
 
 const FleetPage = () => {
   useEffect(() => {
-    document.title = 'Notre Flotte - Bus et Minibus de Luxe avec Chauffeur | Location Bus Belgique';
+    const title = 'Flotte Bus Bruxelles | Minibus 19 Places & Autocar 60 Places Premium';
+    const description = 'Location minibus et bus à Bruxelles : 19, 50 et 60 places. Véhicules Euro 6 climatisés, WiFi, sièges confort. Conformes LEZ Bruxelles 2026. Chauffeur professionnel inclus.';
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Découvrez notre flotte de bus et minibus de luxe : 19, 50 et 60 places. Véhicules modernes, confortables et équipés. Location avec chauffeur à Bruxelles.');
+    document.title = title;
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
     }
+    metaDescription.setAttribute('content', description);
 
-    // Add canonical URL
+    // Open Graph
+    const ogTags = [
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://location-bus.be/flotte' }
+    ];
+    ogTags.forEach(tag => {
+      let el = document.querySelector(`meta[property="${tag.property}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('property', tag.property);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', tag.content);
+    });
+
+    // Twitter Card
+    const twitterTags = [
+      { name: 'twitter:title', content: title },
+      { name: 'twitter:description', content: description },
+      { name: 'twitter:card', content: 'summary_large_image' }
+    ];
+    twitterTags.forEach(tag => {
+      let el = document.querySelector(`meta[name="${tag.name}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('name', tag.name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', tag.content);
+    });
+
+    // Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
