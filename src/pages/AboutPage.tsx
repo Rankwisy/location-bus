@@ -185,7 +185,7 @@ const AboutPage = () => {
           <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
               À Propos de
-              <span className="block text-teal-400">Location Bus Belgique</span>
+              <span className="block text-teal-400">Location Bus Bruxelles</span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
               Depuis plus de 15 ans, nous sommes votre partenaire de confiance pour tous 
