@@ -16,12 +16,54 @@ import {
 
 const ServicesPage = () => {
   useEffect(() => {
-    document.title = 'Nos Services - Location Bus avec Chauffeur Bruxelles | Location Bus Belgique';
+    const title = 'Location Bus Bruxelles | Transfert Aéroport Zaventem & Transport Entreprise';
+    const description = 'Location bus avec chauffeur à Bruxelles : transfert aéroport Zaventem-Charleroi, transport entreprise, excursions. Service 24/7, flotte premium Euro 6. Devis gratuit sous 24h.';
     
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Services de location de bus avec chauffeur : transferts aéroport, transport entreprise, voyages scolaires, événements. Devis gratuit à Bruxelles.');
+    document.title = title;
+    
+    // Update or create meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
     }
+    metaDescription.setAttribute('content', description);
+
+    // Open Graph meta tags
+    const ogTags = [
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://location-bus.be/services' }
+    ];
+
+    ogTags.forEach(tag => {
+      let ogTag = document.querySelector(`meta[property="${tag.property}"]`);
+      if (!ogTag) {
+        ogTag = document.createElement('meta');
+        ogTag.setAttribute('property', tag.property);
+        document.head.appendChild(ogTag);
+      }
+      ogTag.setAttribute('content', tag.content);
+    });
+
+    // Twitter Card meta tags
+    const twitterTags = [
+      { name: 'twitter:title', content: title },
+      { name: 'twitter:description', content: description },
+      { name: 'twitter:card', content: 'summary_large_image' }
+    ];
+
+    twitterTags.forEach(tag => {
+      let twitterTag = document.querySelector(`meta[name="${tag.name}"]`);
+      if (!twitterTag) {
+        twitterTag = document.createElement('meta');
+        twitterTag.setAttribute('name', tag.name);
+        document.head.appendChild(twitterTag);
+      }
+      twitterTag.setAttribute('content', tag.content);
+    });
 
     // Add canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
