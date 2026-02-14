@@ -216,7 +216,7 @@ const ContactPage = () => {
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                Demande de Devis Gratuit
+                Demande de Devis Gratuit Bruxelles
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
                 Remplissez ce formulaire pour recevoir votre devis personnalisé sous 24h. 
@@ -450,7 +450,7 @@ const ContactPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Pourquoi Choisir location-bus ?
+              Pourquoi Choisir location-bus Bruxelles ?
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Dans le secteur dynamique de la location d'autocars à Bruxelles, location-bus s'impose
@@ -515,7 +515,7 @@ const ContactPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Questions Fréquentes
+              Questions Fréquentes Bruxelles
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Retrouvez les réponses aux questions les plus courantes sur nos services

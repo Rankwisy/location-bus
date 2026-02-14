@@ -200,7 +200,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Notre Histoire</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Notre Histoire Bruxelles</h2>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
                   Fondée en 2008 à Bruxelles, Location Bus Belgique est née de la passion 
@@ -236,7 +236,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Nos Chiffres Clés
+              Nos Chiffres Clés Bruxelles
             </h2>
             <p className="text-xl text-teal-100">
               Des résultats qui témoignent de notre engagement et de votre confiance
@@ -262,7 +262,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Nos Valeurs
+              Nos Valeurs Bruxelles
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Les principes qui guident nos actions quotidiennes et notre relation client
@@ -393,7 +393,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Notre Équipe Dirigeante
+              Notre Équipe Dirigeante Bruxelles
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Des professionnels expérimentés et passionnés, dédiés à votre satisfaction
@@ -425,7 +425,7 @@ const AboutPage = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Certifications et Agréments
+                Certifications et Agréments Bruxelles
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Notre engagement qualité est reconnu par de nombreuses certifications 
@@ -457,7 +457,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="text-4xl font-bold text-white mb-8">
-              Notre Mission
+              Notre Mission Bruxelles
             </h2>
             <blockquote className="text-2xl text-gray-200 italic max-w-4xl mx-auto leading-relaxed mb-8">
               "Offrir à nos clients une expérience de transport exceptionnelle, 
@@ -477,7 +477,7 @@ const AboutPage = () => {
       <section className="py-20 bg-teal-500">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Prêt à Voyager avec Nous ?
+            Prêt à Voyager avec Nous Bruxelles ?
           </h2>
           <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
             Rejoignez les milliers de clients qui nous font confiance. 

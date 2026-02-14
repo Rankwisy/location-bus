@@ -36,7 +36,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h2 className="text-lg font-semibold mb-6 text-teal-400">Contact</h2>
+            <h2 className="text-lg font-semibold mb-6 text-teal-400">Contact Bruxelles</h2>
             <div className="space-y-4">
               <div className="flex items-start">
                 <MapPin size={20} className="text-teal-400 mr-3 mt-1 flex-shrink-0" />
@@ -62,7 +62,7 @@ const Footer = () => {
 
           {/* Hours & Services */}
           <div>
-            <h2 className="text-lg font-semibold mb-6 text-teal-400">Horaires & Services</h2>
+            <h2 className="text-lg font-semibold mb-6 text-teal-400">Horaires & Services Bruxelles</h2>
             <div className="mb-6">
               <div className="flex items-start mb-3">
                 <Clock size={20} className="text-teal-400 mr-3 mt-1 flex-shrink-0" />

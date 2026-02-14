@@ -149,7 +149,7 @@ const LEZBruxellesPage = () => {
         {/* Our Compliance */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-gradient-to-r from-green-500 to-teal-500 rounded-xl shadow-xl p-8 md:p-12 text-white">
-            <h2 className="text-3xl font-bold mb-6">Notre Engagement Environnemental</h2>
+            <h2 className="text-3xl font-bold mb-6">Notre Engagement Environnemental Bruxelles</h2>
             <div className="space-y-4">
               <div className="flex items-start">
                 <CheckCircle className="mr-4 flex-shrink-0 mt-1" size={24} />
@@ -232,7 +232,7 @@ const LEZBruxellesPage = () => {
 
         {/* FAQ Section */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Questions Fréquentes</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Questions Fréquentes Bruxelles</h2>
           <div className="space-y-4">
             {faqData.map((faq, index) => (
               <details key={index} className="bg-white rounded-lg shadow-md p-6 group">
@@ -249,7 +249,7 @@ const LEZBruxellesPage = () => {
         {/* Useful Links */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900">Liens Officiels</h2>
+            <h2 className="text-2xl font-bold mb-6 text-gray-900">Liens Officiels Bruxelles</h2>
             <div className="space-y-3">
               <a
                 href="https://lez.brussels"
@@ -285,7 +285,7 @@ const LEZBruxellesPage = () => {
         {/* CTA Section */}
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-teal-500 to-green-500 rounded-2xl p-8 md:p-12 text-white shadow-xl">
-            <h2 className="text-3xl font-bold mb-4">Réservez Votre Transport Conforme LEZ</h2>
+            <h2 className="text-3xl font-bold mb-4">Réservez Votre Transport Conforme LEZ Bruxelles</h2>
             <p className="text-xl mb-8 text-green-50">
               Voyagez en toute sérénité avec notre flotte 100% conforme aux normes environnementales 2026
             </p>

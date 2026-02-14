@@ -169,7 +169,7 @@ const BlogPage = () => {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Article à la Une</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Article à la Une Bruxelles</h2>
             </div>
             
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -253,7 +253,7 @@ const BlogPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              {selectedCategory === 'Tous' ? 'Tous nos Articles' : `Articles : ${selectedCategory}`}
+              {selectedCategory === 'Tous' ? 'Tous nos Articles Bruxelles' : `Articles : ${selectedCategory} Bruxelles`}
             </h2>
             <p className="text-xl text-gray-600">
               {filteredPosts.length} article{filteredPosts.length > 1 ? 's' : ''} trouvé{filteredPosts.length > 1 ? 's' : ''}
@@ -334,7 +334,7 @@ const BlogPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Passez à l'Action !
+              Passez à l'Action Bruxelles !
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Vous avez trouvé des informations utiles dans nos articles ?
@@ -442,7 +442,7 @@ const BlogPage = () => {
       <section className="py-20 bg-gradient-to-r from-teal-500 to-teal-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Restez Informés
+            Restez Informés Bruxelles
           </h2>
           <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
             Inscrivez-vous à notre newsletter pour recevoir nos derniers articles, 

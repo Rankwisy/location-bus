@@ -352,7 +352,7 @@ const BlogPostPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-                Articles Similaires
+                Articles Similaires Bruxelles
               </h2>
 
               <div className="grid md:grid-cols-3 gap-8">
@@ -404,7 +404,7 @@ const BlogPostPage = () => {
       <section className="py-20 bg-gradient-to-r from-teal-500 to-teal-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Prêt à Réserver Votre Transport ?
+            Prêt à Réserver Votre Transport Bruxelles ?
           </h2>
           <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
             Contactez-nous dès maintenant pour obtenir votre devis gratuit et personnalisé.

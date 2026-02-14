@@ -218,7 +218,7 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Une Gamme Complète de Services
+              Une Gamme Complète de Services Bruxelles
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Que ce soit pour un déplacement professionnel, un événement privé ou une excursion touristique, 
@@ -280,7 +280,7 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Pourquoi Choisir Location Bus Belgique ?
+              Pourquoi Choisir Location Bus Bruxelles ?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Plus qu'un simple service de transport, nous offrons une expérience complète 
@@ -332,7 +332,7 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Comment Ça Marche ?
+              Comment Ça Marche Bruxelles ?
             </h2>
             <p className="text-xl text-gray-600">
               Un processus simple et transparent pour votre tranquillité d'esprit

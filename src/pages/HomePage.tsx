@@ -158,8 +158,7 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Location Bus
-              <span className="block text-teal-400">Bruxelles</span>
+              Location Bus <span className="block text-teal-400">Bruxelles</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto px-4">
               <strong>Location de bus et autocar avec chauffeur professionnel à Bruxelles</strong> - Spécialiste du transport de groupes en Belgique. Service premium pour <em>transferts aéroport</em>, <em>excursions touristiques</em> et <em>voyages d'entreprise</em>. Minibus 19 places, bus 50 places et autocars 60 places : flotte moderne, tarifs compétitifs, disponibilité 24/7.
@@ -235,7 +234,7 @@ const HomePage: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Solutions Transport Professionnelles : Optimisez Vos Déplacements d'Entreprise
+                Solutions Transport Professionnelles : Optimisez Vos Déplacements d'Entreprise Bruxelles
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6">
                 <strong>Concentrez-vous sur votre business</strong> pendant que nous gérons votre mobilité avec une précision chirurgicale. Nos solutions premium transforment chaque trajet en avantage concurrentiel.
@@ -293,7 +292,7 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-teal-700 font-bold mb-4 text-base sm:text-lg">🏆 RAPPORT QUALITÉ/PRIX IMBATTABLE EN BELGIQUE</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Votre Flotte Premium : Performance & Élégance</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Votre Flotte Premium : Performance & Élégance Bruxelles</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto px-4">
               Choisissez votre véhicule parmi notre collection exclusive de <strong>50+ autocars dernière génération</strong>. Du <Link to="/flotte" className="text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2">minibus VIP 19 places</Link> à l'<Link to="/flotte" className="text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2">autocar grand luxe 60 places</Link>, nous avons la solution parfaite pour chaque occasion.
             </p>
@@ -381,7 +380,7 @@ const HomePage: React.FC = () => {
           <div className="text-center mb-16">
             <p className="text-teal-700 font-bold mb-4 uppercase tracking-wide text-base sm:text-lg">🗺️ TOURS EXCLUSIFS & EXCURSIONS PREMIUM</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
-              Explorez les Trésors Cachés de l'Europe avec Nos Guides Experts
+              Explorez les Trésors Cachés de l'Europe avec Nos Guides Experts Bruxelles
             </h2>
             <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
               Vivez des <strong>aventures inoubliables</strong> au cœur des plus belles destinations européennes. Nos circuits sur-mesure transforment chaque excursion en voyage extraordinaire.
@@ -446,7 +445,7 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              📚 Guides Pratiques & Conseils d'Experts
+              📚 Guides Pratiques & Conseils d'Experts Bruxelles
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Découvrez nos articles spécialisés, conseils professionnels et guides complets pour optimiser vos déplacements en bus et organiser des voyages de groupe réussis.
@@ -541,7 +540,7 @@ const HomePage: React.FC = () => {
             </div>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
-            🚀 Votre Voyage Exceptionnel Commence Ici !
+            🚀 Votre Voyage Exceptionnel Commence Ici Bruxelles !
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-teal-100 mb-8 max-w-2xl mx-auto px-4">
             <strong>Rejoignez les 10,000+ clients satisfaits</strong> qui nous font confiance pour leurs déplacements les plus importants. 

@@ -170,7 +170,7 @@ const FleetPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Des Véhicules pour Tous Vos Besoins
+              Des Véhicules pour Tous Vos Besoins Bruxelles
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Que vous transportiez 19 ou 60 personnes, notre flotte moderne vous garantit 
@@ -266,7 +266,7 @@ const FleetPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Équipements de Série
+              Équipements de Série Bruxelles
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Tous nos véhicules sont équipés des dernières technologies pour votre confort et votre sécurité.
@@ -324,7 +324,7 @@ const FleetPage = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Maintenance et Sécurité
+                Maintenance et Sécurité Bruxelles
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 La sécurité de nos passagers est notre priorité absolue. Découvrez <Link to="/qui-sommes-nous" className="text-teal-600 hover:text-teal-700 font-semibold">notre histoire et nos certifications</Link>. Tous nos véhicules suivent un programme de maintenance strict et sont contrôlés régulièrement.
@@ -460,7 +460,7 @@ const FleetPage = () => {
       <section className="py-20 bg-gradient-to-r from-teal-500 to-teal-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Réservez Votre Véhicule Maintenant
+            Réservez Votre Véhicule Maintenant Bruxelles
           </h2>
           <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
             Choisissez le véhicule parfait pour votre événement. Notre équipe vous aide 

@@ -197,7 +197,7 @@ const ExcursionsPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Types d'Excursions
+              Types d'Excursions Bruxelles
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Des circuits adaptés à tous les goûts et centres d'intérêt
@@ -223,7 +223,7 @@ const ExcursionsPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Nos Excursions Populaires
+              Nos Excursions Populaires Bruxelles
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Circuits soigneusement sélectionnés pour vous offrir le meilleur de chaque destination
@@ -326,7 +326,7 @@ const ExcursionsPage = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Excursions Sur Mesure
+                Excursions Sur Mesure Bruxelles
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Vous avez une destination particulière en tête ? Nous créons des excursions 
@@ -381,7 +381,7 @@ const ExcursionsPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Voyagez en Tout Confort
+              Voyagez en Tout Confort Bruxelles
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Toutes nos excursions sont assurées avec notre <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">flotte de véhicules modernes et confortables</Link>, équipés des dernières technologies pour votre bien-être.
@@ -450,7 +450,7 @@ const ExcursionsPage = () => {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-teal-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Réservez Votre Prochaine Aventure
+            Réservez Votre Prochaine Aventure Bruxelles
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Ne manquez pas nos offres spéciales ! Réservez dès maintenant et découvrez 
