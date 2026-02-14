@@ -6,8 +6,8 @@ import { updatePageSEO, addStructuredData, organizationStructuredData, localBusi
 const HomePage: React.FC = () => {
   useEffect(() => {
     updatePageSEO({
-      title: 'Location Bus Bruxelles | Transferts Aéroport | Location Bus avec chauffeur',
-      description: 'Location de bus et minibus avec chauffeur à Bruxelles. Service professionnel pour transferts d\'aéroport, excursions touristiques, voyages d\'entreprise. Devis gratuit ✓ Conducteurs expérimentés ✓',
+      title: 'Location Bus à Bruxelles | Transfert Aéroport & Excursions',
+      description: 'Location de bus avec chauffeur à Bruxelles. Service professionnel pour transferts aéroport (Zaventem, Charleroi) et excursions touristiques. Flotte moderne, tarifs compétitifs. Devis gratuit.',
       canonical: 'https://location-bus.be/',
       ogType: 'website',
       ogImage: 'https://ik.imagekit.io/by733ltn6/location-bus/slider4-1-1024x683-1.jpg?updatedAt=1757936830002',
