@@ -14,12 +14,51 @@ const BlogPage = () => {
   const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [newsletterMessage, setNewsletterMessage] = useState('');
   useEffect(() => {
-    document.title = 'Blog - Conseils Transport et Actualités | Location Bus Belgique';
+    const title = 'Blog Transport Bruxelles | Conseils Location Bus & Destinations Touristiques';
+    const description = 'Blog Location Bus Belgique : conseils transport de groupe, destinations excursions, actualités tourisme Bruxelles. Guides pratiques transferts aéroport, voyages scolaires, LEZ 2026.';
+    
+    document.title = title;
 
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Blog Location Bus Belgique : conseils transport, destinations touristiques, actualités du secteur. Guides pratiques pour vos voyages en bus.');
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
     }
+    metaDescription.setAttribute('content', description);
+
+    // Open Graph
+    const ogTags = [
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://location-bus.be/blog' }
+    ];
+    ogTags.forEach(tag => {
+      let el = document.querySelector(`meta[property="${tag.property}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('property', tag.property);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', tag.content);
+    });
+
+    // Twitter Card
+    const twitterTags = [
+      { name: 'twitter:title', content: title },
+      { name: 'twitter:description', content: description },
+      { name: 'twitter:card', content: 'summary_large_image' }
+    ];
+    twitterTags.forEach(tag => {
+      let el = document.querySelector(`meta[name="${tag.name}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('name', tag.name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', tag.content);
+    });
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
