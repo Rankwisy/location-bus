@@ -1,1 +1,20 @@
+# 301 permanent redirects: alternate URLs -> canonical (avoid duplicate content)
+/fleet          /flotte                       301
+/about          /qui-sommes-nous              301
+/contact        /contactez-nous               301
+/en             /                             301
+/en/            /                             301
+/en/services    /services                     301
+/en/fleet       /flotte                       301
+/en/flotte      /flotte                       301
+/en/excursions  /excursions                   301
+/en/about       /qui-sommes-nous              301
+/en/qui-sommes-nous  /qui-sommes-nous        301
+/en/contact     /contactez-nous               301
+/en/contactez-nous  /contactez-nous          301
+/en/blog        /blog                         301
+/en/blog/*      /blog/:splat                  301
+/en/*           /                             301
+
+# SPA fallback: serve index.html for client-side routes (must be last)
 /*    /index.html   200

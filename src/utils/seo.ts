@@ -30,7 +30,9 @@ export const defaultSEO: SEOConfig = {
 export const setPageSEO = (config: Partial<SEOConfig>) => {
   const currentPath = window.location.pathname;
   const baseUrl = 'https://location-bus.be';
-  const canonicalUrl = config.canonical || `${baseUrl}${currentPath}`;
+  // Normalize canonical: no trailing slash (except home); use explicit config.canonical when provided
+  const pathNorm = currentPath.replace(/\/$/, '') || '/';
+  const canonicalUrl = config.canonical || `${baseUrl}${pathNorm}`;
 
   const seoConfig = {
     ...defaultSEO,
