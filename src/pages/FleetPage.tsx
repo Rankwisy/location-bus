@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, CheckCircle, ArrowRight, Wifi, Coffee, Snowflake, Volume2, Usb as UsbPort, Shield } from 'lucide-react';
+import { sampleCommunesForCopy } from '../data/brusselsLocal';
 
 const FleetPage = () => {
   useEffect(() => {
@@ -159,7 +160,7 @@ const FleetPage = () => {
             </h1>
             <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
               Des véhicules modernes et confortables, entretenus selon les plus hauts standards 
-              de sécurité et de qualité pour votre tranquillité d'esprit.
+              de sécurité et de qualité. Disponibles pour toute la Région : {sampleCommunesForCopy.join(', ')}.
             </p>
           </div>
         </div>
@@ -209,7 +210,7 @@ const FleetPage = () => {
                   <div className="mb-8">
                     <h4 className="text-lg font-bold text-gray-900 mb-4">Équipements Inclus</h4>
                     <p className="text-sm text-gray-600 mb-4">
-                      Tous nos véhicules bénéficient d'un <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">service premium</Link> avec chauffeur professionnel.
+                      Tous nos véhicules bénéficient de notre <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">service transport bus Bruxelles</Link> avec chauffeur professionnel.
                     </p>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {vehicle.features.map((feature, fIndex) => (
@@ -236,7 +237,7 @@ const FleetPage = () => {
                   <div className="mb-8">
                     <h4 className="text-lg font-bold text-gray-900 mb-4">Idéal Pour</h4>
                     <p className="text-sm text-gray-600 mb-3">
-                      Découvrez nos <Link to="/excursions" className="text-teal-600 hover:text-teal-700 font-semibold">excursions touristiques</Link> et nos <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">solutions entreprise</Link>.
+                      Découvrez nos <Link to="/excursions" className="text-teal-600 hover:text-teal-700 font-semibold">excursions touristiques en bus Belgique et Europe</Link> et nos <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">solutions transport entreprise</Link>.
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {vehicle.idealFor.map((use, uIndex) => (
@@ -251,7 +252,7 @@ const FleetPage = () => {
                     to="/contactez-nous"
                     className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 transform hover:scale-105"
                   >
-                    Réserver ce Véhicule
+                    Demander un devis personnalisé pour ce véhicule
                     <ArrowRight className="ml-2" size={20} />
                   </Link>
                 </div>
@@ -463,15 +464,14 @@ const FleetPage = () => {
             Réservez Votre Véhicule Maintenant Bruxelles
           </h2>
           <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
-            Choisissez le véhicule parfait pour votre événement. Notre équipe vous aide 
-            à sélectionner la solution optimale selon vos besoins.
+            Choisissez le véhicule parfait pour votre événement. Devis gratuit sous 24h, tarifs transparents.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contactez-nous"
               className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center"
             >
-              Demander un Devis
+              Devis gratuit sous 24h
               <ArrowRight className="ml-2" size={20} />
             </Link>
             <a

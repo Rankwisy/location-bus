@@ -2,27 +2,18 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Users, Shield, Clock, Star } from 'lucide-react';
 import { updatePageSEO, addStructuredData, organizationStructuredData, localBusinessStructuredData } from '../utils/seo';
+import { sampleCommunesForCopy, sampleQuartiersForCopy } from '../data/brusselsLocal';
+import { getPageKeywords } from '../data/seoKeywords';
 
 const HomePage: React.FC = () => {
   useEffect(() => {
     updatePageSEO({
       title: 'Location Bus Bruxelles | Transfert Aéroport & Excursions',
-      description: 'Location de bus avec chauffeur à Bruxelles. Service professionnel pour transferts aéroport (Zaventem, Charleroi) et excursions touristiques. Flotte moderne, tarifs compétitifs. Devis gratuit.',
+      description: 'Location de bus avec chauffeur à Bruxelles. Service professionnel pour transferts aéroport (Zaventem, Charleroi) et excursions touristiques. Flotte moderne, tarifs compétitifs. Devis gratuit sous 24h.',
       canonical: 'https://location-bus.be/',
       ogType: 'website',
       ogImage: 'https://ik.imagekit.io/by733ltn6/location-bus/slider4-1-1024x683-1.jpg?updatedAt=1757936830002',
-      keywords: [
-        'location bus belgique',
-        'transport bus bruxelles',
-        'chauffeur professionnel',
-        'transfert aeroport bruxelles',
-        'excursion touristique belgique',
-        'minibus avec chauffeur',
-        'voyage entreprise',
-        'transport premium bruxelles',
-        'location autocar belgique',
-        'bus 50 places'
-      ]
+      keywords: getPageKeywords('/', ['transfert', 'excursion', 'entreprise', 'flotte', 'prix'])
     });
 
     const breadcrumbData = {
@@ -160,22 +151,25 @@ const HomePage: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Location Bus <span className="block text-teal-400">Bruxelles</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto px-4">
-              <strong>Location de bus et autocar avec chauffeur professionnel à Bruxelles</strong> - Spécialiste du transport de groupes en Belgique. Service premium pour <em>transferts aéroport</em>, <em>excursions touristiques</em> et <em>voyages d'entreprise</em>. Minibus 19 places, bus 50 places et autocars 60 places : flotte moderne, tarifs compétitifs, disponibilité 24/7.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-6 leading-relaxed max-w-2xl mx-auto px-4">
+              <strong>Location de bus et autocar avec chauffeur professionnel à Bruxelles</strong> — Spécialiste du transport de groupes en Belgique. Service premium pour <em>transferts aéroport</em>, <em>excursions touristiques</em> et <em>voyages d'entreprise</em>. Minibus 19 places, bus 50 places et autocars 60 places : flotte moderne, tarifs transparents, disponibilité 24/7.
+            </p>
+            <p className="text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto px-4">
+              Prise en charge dans toute la Région : {sampleCommunesForCopy.join(', ')} — {sampleQuartiersForCopy.join(', ')}.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contactez-nous"
                 className="bg-teal-400 hover:bg-teal-500 text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg flex items-center justify-center min-h-[48px]"
               >
-                Devis Gratuit Immédiat
+                Devis gratuit sous 24h
                 <ArrowRight className="ml-2" size={20} />
               </Link>
               <Link
                 to="/flotte"
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 flex items-center justify-center min-h-[48px]"
               >
-                Voir Notre Flotte
+                Voir notre flotte minibus et bus avec chauffeur
               </Link>
             </div>
           </div>
@@ -212,14 +206,14 @@ const HomePage: React.FC = () => {
                 </h3>
                 <p className="mb-4">
                   ✨ <strong>Service personnalisé</strong> adapté à vos besoins exacts<br/>
-                  💰 <strong>Tarifs transparents</strong> sans surprise<br/>
-                  ⚡ <strong>Réponse sous 2h</strong> garantie
+                  💰 <strong>Tarifs transparents</strong>, aucun frais caché<br/>
+                  ⚡ <strong>Réponse sous 24h</strong> garantie
                 </p>
                 <Link
                   to="/services"
                   className="inline-flex items-center text-gray-900 font-bold hover:underline text-lg"
                 >
-                  Découvrir Nos Tarifs Exclusifs
+                  Services transport bus Bruxelles : transferts et entreprise
                   <ArrowRight className="ml-2" size={18} />
                 </Link>
               </div>
@@ -328,7 +322,7 @@ const HomePage: React.FC = () => {
                     to="/contactez-nous"
                     className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2"
                   >
-                    Réserver ce véhicule
+                    Demander un devis personnalisé pour ce véhicule
                     <ArrowRight className="ml-2" size={18} />
                   </Link>
                 </div>
@@ -367,7 +361,7 @@ const HomePage: React.FC = () => {
               to="/flotte"
               className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105"
             >
-              Explorer Notre Flotte Complète
+              Voir notre flotte minibus et bus avec chauffeur
               <ArrowRight className="ml-2" size={20} />
             </Link>
           </div>
@@ -465,7 +459,7 @@ const HomePage: React.FC = () => {
                 to="/blog"
                 className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold underline decoration-teal-700/50 underline-offset-2"
               >
-                Lire nos articles
+                Blog et conseils transport
                 <ArrowRight className="ml-2" size={18} />
               </Link>
             </div>
@@ -524,7 +518,7 @@ const HomePage: React.FC = () => {
                 to="/contactez-nous"
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 inline-flex items-center justify-center"
               >
-                ✉️ Poser une Question
+                Demander un devis personnalisé gratuit
               </Link>
             </div>
           </div>

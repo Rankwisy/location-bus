@@ -18,14 +18,14 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: 'Accueil', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Flotte', href: '/flotte' },
-    { name: 'LEZ', href: '/lez-bruxelles', badge: true },
-    { name: 'Excursions', href: '/excursions' },
-    { name: 'À Propos', href: '/qui-sommes-nous' },
-    { name: 'Contact', href: '/contactez-nous' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Accueil', href: '/', title: 'Location bus et minibus avec chauffeur à Bruxelles' },
+    { name: 'Services', href: '/services', title: 'Services transport bus Bruxelles' },
+    { name: 'Flotte', href: '/flotte', title: 'Minibus et bus avec chauffeur' },
+    { name: 'LEZ', href: '/lez-bruxelles', badge: true, title: 'Normes LEZ Bruxelles 2026' },
+    { name: 'Excursions', href: '/excursions', title: 'Excursions touristiques en bus Belgique et Europe' },
+    { name: 'À Propos', href: '/qui-sommes-nous', title: 'Qui sommes-nous : expertise transport Bruxelles' },
+    { name: 'Contact', href: '/contactez-nous', title: 'Demander un devis personnalisé gratuit' },
+    { name: 'Blog', href: '/blog', title: 'Blog et conseils transport' },
   ];
 
   const toggleSubMenu = (menuName: string) => {
@@ -104,6 +104,7 @@ const Header = () => {
                   // Regular menu item
                   <Link
                     to={item.href}
+                    title={'title' in item ? item.title : undefined}
                     className={`text-sm font-medium transition-colors duration-200 hover:text-teal-600 flex items-center whitespace-nowrap ${
                       location.pathname === item.href
                         ? 'text-teal-600 border-b-2 border-teal-600'
@@ -158,6 +159,7 @@ const Header = () => {
                       <div className="flex items-center justify-between px-4 py-3">
                         <Link
                           to={item.href}
+                          title={'title' in item ? item.title : undefined}
                           className={`font-medium transition-colors hover:text-teal-600 ${
                             isActiveRoute(item.href, item.children) ? 'text-teal-600' : 'text-gray-900'
                           }`}
@@ -203,6 +205,7 @@ const Header = () => {
                     // Regular menu item
                     <Link
                       to={item.href}
+                      title={'title' in item ? item.title : undefined}
                       className={`block px-4 py-4 font-medium transition-colors hover:bg-gray-50 hover:text-teal-600 min-h-[44px] flex items-center ${
                         location.pathname === item.href ? 'text-teal-600 bg-gray-50' : 'text-gray-900'
                       } ${item.badge ? 'bg-green-50' : ''}`}

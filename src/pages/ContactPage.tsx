@@ -18,6 +18,21 @@ import {
   Leaf,
   TrendingUp
 } from 'lucide-react';
+import { sampleCommunesForCopy } from '../data/brusselsLocal';
+
+/** FAQ générale + FAQ Tarifs & Devis (pour schema FAQPage et affichage) */
+const contactFaqData = [
+  { question: "Combien de temps à l'avance dois-je réserver ?", answer: "Nous recommandons de réserver au moins 48h à l'avance pour garantir la disponibilité. Pour les services d'urgence, contactez-nous directement par téléphone." },
+  { question: "Vos tarifs incluent-ils les frais de carburant ?", answer: "Oui, nos tarifs sont tout compris : carburant, péages, assurances, chauffeur professionnel. Aucun supplément caché. Consultez nos conditions générales de vente pour plus de détails." },
+  { question: "Puis-je modifier ma réservation ?", answer: "Les modifications sont possibles jusqu'à 24h avant le départ, sous réserve de disponibilité et sans frais supplémentaires. Voir notre politique de modification dans les CGV." },
+  { question: "Vos véhicules respectent-ils les normes environnementales ?", answer: "Absolument ! Toute notre flotte est conforme aux normes LEZ Bruxelles 2026 et aux standards européens." },
+  { question: "Quel est le prix d'une location de bus avec chauffeur à Bruxelles ?", answer: "Le tarif dépend du type de véhicule (minibus 19 places, bus 50 ou 60 places), de la durée et du trajet. Demandez un devis gratuit pour un prix personnalisé." },
+  { question: "Comment est calculé le tarif d'un transfert en minibus ?", answer: "Nous prenons en compte la distance, la durée, le nombre de passagers et les options (aéroport, nuit, week-end). Le devis détaille tout ; aucun frais caché." },
+  { question: "Le devis est-il gratuit et sans engagement ?", answer: "Oui. Votre devis est gratuit et sans engagement. Vous ne payez qu'après acceptation du devis et confirmation de réservation." },
+  { question: "Qu'est-ce qui est inclus dans le prix (carburant, péages, chauffeur) ?", answer: "Sont inclus : véhicule, chauffeur professionnel, carburant, péages et assurances. Les suppléments éventuels (nuit, aéroport) sont indiqués sur le devis." },
+  { question: "Comment obtenir un devis rapidement ?", answer: "Remplissez le formulaire sur cette page ou appelez-nous. Nous vous répondons sous 24h avec un devis personnalisé." },
+  { question: "Y a-t-il des suppléments (nuit, week-end, aéroport) ?", answer: "Certains créneaux (départ très tôt, nuit, aéroport) peuvent donner lieu à un supplément indiqué clairement sur le devis. Nos CGV détaillent les cas." }
+];
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -47,6 +62,23 @@ const ContactPage = () => {
       document.head.appendChild(canonical);
     }
     canonical.setAttribute('href', 'https://location-bus.be/contactez-nous');
+  }, []);
+
+  useEffect(() => {
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: contactFaqData.map(faq => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer }
+      }))
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => { document.head.removeChild(script); };
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -170,8 +202,8 @@ const ContactPage = () => {
               Contactez-nous
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-teal-100 mb-8 max-w-3xl mx-auto leading-relaxed px-4">
-              Notre équipe est à votre disposition pour vous accompagner dans vos projets 
-              de transport. Devis gratuit et conseils personnalisés garantis !
+              Devis gratuit sans engagement, réponse sous 24h. Tarifs transparents, aucun frais caché. 
+              Service dans toute la Région : {sampleCommunesForCopy.join(', ')}.
             </p>
           </div>
         </div>
@@ -220,7 +252,7 @@ const ContactPage = () => {
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
                 Remplissez ce formulaire pour recevoir votre devis personnalisé sous 24h. 
-                Tous les champs marqués * sont obligatoires. Consultez nos <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">différents services</Link> pour mieux définir vos besoins.
+                Tous les champs marqués * sont obligatoires. Consultez nos <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">services transport bus Bruxelles</Link> pour mieux définir vos besoins.
               </p>
 
               {formStatus === 'success' && (
@@ -510,35 +542,53 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      {/* FAQ Section (générale + Tarifs & Devis) */}
+      <section className="py-20 bg-gray-50" aria-labelledby="faq-heading">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 id="faq-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Questions Fréquentes Bruxelles
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              Retrouvez les réponses aux questions les plus courantes sur nos services
+              Retrouvez les réponses aux questions les plus courantes sur nos services et nos tarifs
             </p>
           </div>
 
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+            {contactFaqData.slice(0, 4).map((faq, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-lg">
+                <h3 className="font-bold text-gray-900 mb-3">{faq.question}</h3>
+                {index === 1 ? (
+                  <p className="text-gray-600 leading-relaxed">Oui, nos tarifs sont tout compris : carburant, péages, assurances, chauffeur professionnel. Aucun supplément caché. Consultez nos <Link to="/conditions-generales-vente" className="text-teal-600 hover:text-teal-700 font-semibold">conditions générales de vente</Link> pour plus de détails.</p>
+                ) : index === 2 ? (
+                  <p className="text-gray-600 leading-relaxed">Les modifications sont possibles jusqu'à 24h avant le départ, sous réserve de disponibilité et sans frais supplémentaires. Voir notre <Link to="/conditions-generales-vente" className="text-teal-600 hover:text-teal-700 font-semibold">politique de modification</Link>.</p>
+                ) : index === 3 ? (
+                  <p className="text-gray-600 leading-relaxed">Absolument ! Toute notre <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">flotte moderne</Link> est conforme aux <Link to="/lez-bruxelles" className="text-teal-600 hover:text-teal-700 font-semibold">normes LEZ Bruxelles 2026</Link> et aux standards environnementaux européens.</p>
+                ) : (
+                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <h3 className="text-xl font-bold text-gray-900 mb-6 text-center max-w-4xl mx-auto">FAQ Tarifs & Devis</h3>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h4 className="font-bold text-gray-900 mb-3">Combien de temps à l'avance dois-je réserver ?</h4>
-              <p className="text-gray-600 leading-relaxed">Nous recommandons de réserver au moins 48h à l'avance pour garantir la disponibilité. Pour les services d'urgence, contactez-nous directement par téléphone.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h4 className="font-bold text-gray-900 mb-3">Vos tarifs incluent-ils les frais de carburant ?</h4>
-              <p className="text-gray-600 leading-relaxed">Oui, nos tarifs sont tout compris : carburant, péages, assurances, chauffeur professionnel. Aucun supplément caché. Consultez nos <Link to="/conditions-generales-vente" className="text-teal-600 hover:text-teal-700 font-semibold">conditions générales de vente</Link> pour plus de détails.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h4 className="font-bold text-gray-900 mb-3">Puis-je modifier ma réservation ?</h4>
-              <p className="text-gray-600 leading-relaxed">Les modifications sont possibles jusqu'à 24h avant le départ, sous réserve de disponibilité et sans frais supplémentaires. Voir notre <Link to="/conditions-generales-vente" className="text-teal-600 hover:text-teal-700 font-semibold">politique de modification</Link>.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h4 className="font-bold text-gray-900 mb-3">Vos véhicules respectent-ils les normes environnementales ?</h4>
-              <p className="text-gray-600 leading-relaxed">Absolument ! Toute notre <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">flotte moderne</Link> est conforme aux <Link to="/lez-bruxelles" className="text-teal-600 hover:text-teal-700 font-semibold">normes LEZ Bruxelles 2026</Link> et aux standards environnementaux européens.</p>
-            </div>
+            {contactFaqData.slice(4).map((faq, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-lg">
+                <h3 className="font-bold text-gray-900 mb-3">{faq.question}</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {faq.question.includes('Qu\'est-ce qui est inclus') ? (
+                    <>Sont inclus : véhicule, chauffeur professionnel, carburant, péages et assurances. Les suppléments éventuels sont indiqués sur le devis. Consultez nos <Link to="/conditions-generales-vente" className="text-teal-600 hover:text-teal-700 font-semibold">conditions générales de vente</Link> pour le détail.</>
+                  ) : faq.question.includes('Comment obtenir un devis') ? (
+                    <>Remplissez le <Link to="/contactez-nous" className="text-teal-600 hover:text-teal-700 font-semibold">formulaire de demande de devis</Link> sur cette page ou appelez-nous. Nous vous répondons sous 24h avec un devis personnalisé.</>
+                  ) : faq.question.includes('suppléments') ? (
+                    <>Certains créneaux (départ très tôt, nuit, aéroport) peuvent donner lieu à un supplément indiqué clairement sur le devis. Nos <Link to="/conditions-generales-vente" className="text-teal-600 hover:text-teal-700 font-semibold">CGV</Link> détaillent les cas.</>
+                  ) : (
+                    faq.answer
+                  )}
+                </p>
+              </div>
+            ))}
           </div>
 
           {/* Resources Links */}
@@ -577,7 +627,7 @@ const ContactPage = () => {
                   <ul className="space-y-2 ml-7">
                     <li>
                       <Link to="/qui-sommes-nous" className="text-teal-600 hover:text-teal-700 hover:underline">
-                        Notre entreprise et nos valeurs
+                        Qui sommes-nous : expertise transport Bruxelles
                       </Link>
                     </li>
                     <li>

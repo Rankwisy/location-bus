@@ -83,30 +83,27 @@ const Footer = () => {
               <Link to="/" className="block text-gray-300 hover:text-teal-400 transition-colors">
                 Accueil
               </Link>
-              <Link to="/services" className="block text-gray-300 hover:text-teal-400 transition-colors">
-                Services de Transport
+              <Link to="/services" className="block text-gray-300 hover:text-teal-400 transition-colors" title="Services transport bus Bruxelles">
+                Services transport bus Bruxelles
               </Link>
-              <Link to="/excursions" className="block text-gray-300 hover:text-teal-400 transition-colors">
-                Excursions Touristiques
+              <Link to="/excursions" className="block text-gray-300 hover:text-teal-400 transition-colors" title="Excursions touristiques en bus Belgique et Europe">
+                Excursions touristiques
               </Link>
-              <Link to="/services" className="block text-gray-300 hover:text-teal-400 transition-colors">
-                Solutions Entreprise
-              </Link>
-              <Link to="/flotte" className="block text-gray-300 hover:text-teal-400 transition-colors">
-                Notre Flotte
+              <Link to="/flotte" className="block text-gray-300 hover:text-teal-400 transition-colors" title="Minibus et bus avec chauffeur">
+                Minibus et bus avec chauffeur
               </Link>
               <Link to="/lez-bruxelles" className="flex items-center text-green-400 hover:text-green-300 transition-colors font-medium">
                 <Leaf size={16} className="mr-2" />
                 Conformité LEZ Bruxelles
               </Link>
-              <Link to="/qui-sommes-nous" className="block text-gray-300 hover:text-teal-400 transition-colors">
-                Notre Expertise
+              <Link to="/qui-sommes-nous" className="block text-gray-300 hover:text-teal-400 transition-colors" title="Qui sommes-nous : expertise transport Bruxelles">
+                Qui sommes-nous
               </Link>
-              <Link to="/blog" className="block text-gray-300 hover:text-teal-400 transition-colors">
+              <Link to="/blog" className="block text-gray-300 hover:text-teal-400 transition-colors" title="Blog et conseils transport">
                 Blog
               </Link>
-              <Link to="/contactez-nous" className="block text-gray-300 hover:text-teal-400 transition-colors">
-                Devis Gratuit
+              <Link to="/contactez-nous" className="block text-gray-300 hover:text-teal-400 transition-colors" title="Demander un devis personnalisé gratuit">
+                Devis gratuit
               </Link>
             </nav>
           </div>
@@ -126,7 +123,7 @@ const Footer = () => {
               Politique de Confidentialité
             </Link>
             <span className="text-gray-600" aria-hidden="true">|</span>
-            <Link to="/conditions-generales-vente" className="text-gray-300 hover:text-teal-400 transition-colors text-sm">
+            <Link to="/conditions-generales-vente" className="text-gray-300 hover:text-teal-400 transition-colors text-sm" title="Tarifs et conditions générales de vente">
               Conditions Générales de Vente
             </Link>
             <span className="text-gray-600" aria-hidden="true">|</span>

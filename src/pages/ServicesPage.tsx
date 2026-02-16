@@ -13,6 +13,7 @@ import {
   Shield,
   Star
 } from 'lucide-react';
+import { sampleCommunesForCopy } from '../data/brusselsLocal';
 
 const ServicesPage = () => {
   useEffect(() => {
@@ -88,8 +89,8 @@ const ServicesPage = () => {
       ],
       image: 'https://ik.imagekit.io/by733ltn6/location-bus/Afbeelding-van-WhatsApp-op-2024-03-05-om-15.24.35_2f27af2b.jpg?updatedAt=1757933904450',
       relatedLinks: [
-        { text: 'Voir notre flotte premium', url: '/flotte' },
-        { text: 'Demander un devis', url: '/contactez-nous' }
+        { text: 'Notre flotte minibus et bus avec chauffeur', url: '/flotte' },
+        { text: 'Demander un devis personnalisé gratuit', url: '/contactez-nous' }
       ]
     },
     {
@@ -104,7 +105,7 @@ const ServicesPage = () => {
       ],
       image: 'https://ik.imagekit.io/by733ltn6/location-bus/volvo-bus-in-the-road.jpg?updatedAt=1757936496400',
       relatedLinks: [
-        { text: 'Découvrir nos excursions', url: '/excursions' }
+        { text: 'Excursions touristiques en bus Belgique et Europe', url: '/excursions' }
       ]
     },
     {
@@ -119,7 +120,7 @@ const ServicesPage = () => {
       ],
       image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       relatedLinks: [
-        { text: 'En savoir plus sur notre équipe', url: '/qui-sommes-nous' }
+        { text: 'Qui sommes-nous : expertise transport Bruxelles', url: '/qui-sommes-nous' }
       ]
     },
     {
@@ -134,7 +135,7 @@ const ServicesPage = () => {
       ],
       image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2099&q=80',
       relatedLinks: [
-        { text: 'Planifier votre événement', url: '/contactez-nous' }
+        { text: 'Demander un devis personnalisé gratuit', url: '/contactez-nous' }
       ]
     },
     {
@@ -149,7 +150,7 @@ const ServicesPage = () => {
       ],
       image: 'https://ik.imagekit.io/by733ltn6/location-bus/DM_03242016_0160-scaled.jpg?updatedAt=1757936713631',
       relatedLinks: [
-        { text: 'Voir toutes nos excursions', url: '/excursions' }
+        { text: 'Excursions touristiques en bus Belgique et Europe', url: '/excursions' }
       ]
     },
     {
@@ -164,7 +165,7 @@ const ServicesPage = () => {
       ],
       image: 'https://ik.imagekit.io/by733ltn6/location-bus/1888944-scaled.jpg?updatedAt=1757936645948',
       relatedLinks: [
-        { text: 'Contact urgence 24h/24', url: '/contactez-nous' }
+        { text: 'Demander un devis personnalisé gratuit', url: '/contactez-nous' }
       ]
     }
   ];
@@ -207,7 +208,7 @@ const ServicesPage = () => {
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed px-4">
               Des solutions de transport personnalisées pour tous vos besoins professionnels 
-              et privés avec un service d'excellence reconnu à Bruxelles.
+              et privés avec un service d'excellence reconnu à Bruxelles. Prise en charge dans toute la Région : {sampleCommunesForCopy.join(', ')}.
             </p>
           </div>
         </div>
@@ -306,14 +307,14 @@ const ServicesPage = () => {
             </h3>
             <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
               Notre équipe est toujours prête à répondre à vos demandes, même en urgence. 
-              Contactez-nous pour un devis personnalisé et gratuit.
+              Devis gratuit sans engagement, réponse sous 24h. Tarifs transparents, aucun frais caché.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contactez-nous"
                 className="bg-white text-teal-600 hover:bg-gray-100 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center min-h-[48px]"
               >
-                Demander un Devis
+                Devis gratuit sous 24h
                 <ArrowRight className="ml-2" size={20} />
               </Link>
               <a

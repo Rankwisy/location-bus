@@ -1,3 +1,6 @@
+import { coreKeywords } from '../data/seoKeywords';
+import { areaServedForSchema } from '../data/brusselsLocal';
+
 export interface SEOConfig {
   title: string;
   description: string;
@@ -21,16 +24,7 @@ export const defaultSEO: SEOConfig = {
   ogType: 'website',
   ogImage: 'https://ik.imagekit.io/by733ltn6/location-bus/cropped-Logo-Location_bus-1.png?updatedAt=1757933964171',
   twitterCard: 'summary_large_image',
-  keywords: [
-    'location bus belgique',
-    'transport bus bruxelles',
-    'chauffeur professionnel',
-    'transfert aeroport',
-    'excursion touristique',
-    'minibus avec chauffeur',
-    'voyage entreprise',
-    'transport premium'
-  ]
+  keywords: [...coreKeywords]
 };
 
 export const setPageSEO = (config: Partial<SEOConfig>) => {
@@ -241,6 +235,11 @@ export const localBusinessStructuredData = {
   },
   url: 'https://location-bus.be',
   priceRange: '€€',
+  areaServed: areaServedForSchema.map(name => ({
+    '@type': 'City' as const,
+    name,
+    containedInPlace: { '@type': 'AdministrativeArea' as const, name: 'Brussels-Capital' }
+  })),
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Shield, Leaf, Info, ExternalLink, ArrowRight } from 'lucide-react';
 import { setPageSEO } from '../utils/seo';
+import { sampleQuartiersForCopy } from '../data/brusselsLocal';
 
 const faqData = [
     {
@@ -130,7 +131,7 @@ const LEZBruxellesPage = () => {
             <div className="prose prose-lg max-w-none text-gray-600">
               <p className="mb-4">
                 La <strong>Low Emission Zone (LEZ)</strong> de Bruxelles est une zone environnementale qui couvre l'ensemble
-                de la Région de Bruxelles-Capitale, soit les 19 communes bruxelloises. Cette mesure vise à améliorer
+                de la Région de Bruxelles-Capitale, soit les 19 communes (dont {sampleQuartiersForCopy.join(', ')}). Cette mesure vise à améliorer
                 significativement la qualité de l'air en limitant l'accès aux véhicules les plus polluants.
               </p>
               <p className="mb-4">

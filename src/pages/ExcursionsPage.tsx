@@ -11,6 +11,7 @@ import {
   Info,
   CheckCircle
 } from 'lucide-react';
+import { sampleQuartiersForCopy } from '../data/brusselsLocal';
 
 const ExcursionsPage = () => {
   useEffect(() => {
@@ -186,7 +187,7 @@ const ExcursionsPage = () => {
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
               Découvrez les merveilles de la Belgique et de l'Europe avec nos circuits 
-              guidés en bus confortable. Des expériences inoubliables vous attendent !
+              guidés en bus confortable. Départs depuis Bruxelles : {sampleQuartiersForCopy.join(', ')}. Devis gratuit sous 24h.
             </p>
           </div>
         </div>
@@ -453,15 +454,14 @@ const ExcursionsPage = () => {
             Réservez Votre Prochaine Aventure Bruxelles
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Ne manquez pas nos offres spéciales ! Réservez dès maintenant et découvrez 
-            les plus beaux sites d'Europe en toute sérénité.
+            Devis gratuit sans engagement, tarifs transparents. Réponse sous 24h.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contactez-nous"
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center"
             >
-              Réserver une Excursion
+              Demander un devis personnalisé pour une excursion
               <ArrowRight className="ml-2" size={20} />
             </Link>
             <a

@@ -17,6 +17,7 @@ import {
   Leaf,
   TrendingUp
 } from 'lucide-react';
+import { sampleCommunesForCopy } from '../data/brusselsLocal';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -189,7 +190,7 @@ const AboutPage = () => {
             </h1>
             <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
               Depuis plus de 15 ans, nous sommes votre partenaire de confiance pour tous 
-              vos besoins de transport en Belgique et en Europe.
+              vos besoins de transport en Belgique et en Europe. Basés à Bruxelles, nous intervenons dans toute la Région : {sampleCommunesForCopy.join(', ')}.
             </p>
           </div>
         </div>
@@ -211,7 +212,7 @@ const AboutPage = () => {
                   Notre croissance s'est construite sur des valeurs solides : la sécurité, 
                   la ponctualité, le confort et un service personnalisé. Chaque client est 
                   unique, et nous adaptons nos prestations à ses besoins spécifiques, 
-                  qu'il s'agisse d'un <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">transfert aéroport</Link>, d'une <Link to="/excursions" className="text-teal-600 hover:text-teal-700 font-semibold">excursion touristique</Link> ou d'un voyage d'entreprise.
+                  qu'il s'agisse d'un <Link to="/services" className="text-teal-600 hover:text-teal-700 font-semibold">transfert aéroport</Link>, d'une <Link to="/excursions" className="text-teal-600 hover:text-teal-700 font-semibold">excursion touristique en bus Belgique et Europe</Link> ou d'un voyage d'entreprise.
                 </p>
                 <p>
                   Aujourd'hui, avec plus de <Link to="/flotte" className="text-teal-600 hover:text-teal-700 font-semibold">50 véhicules dans notre flotte</Link> et une équipe 
