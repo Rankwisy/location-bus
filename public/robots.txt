@@ -94,7 +94,7 @@ Disallow: /
 # AhrefsBot allowed for site verification (Ahrefs Webmaster Tools)
 User-agent: AhrefsBot
 Allow: /
-Allow: /g2y7m7aaz85rbaxtewxmj8962s73x5aw.txt
+Allow: /x9bp9x7ps39kzwkn4sh41y3pcp8sb6d5.txt
 
 User-agent: SemrushBot
 Disallow: /
