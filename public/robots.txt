@@ -91,8 +91,10 @@ Allow: /
 User-agent: MJ12bot
 Disallow: /
 
+# AhrefsBot allowed for site verification (Ahrefs Webmaster Tools)
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
+Allow: /g2y7m7aaz85rbaxtewxmj8962s73x5aw.txt
 
 User-agent: SemrushBot
 Disallow: /
