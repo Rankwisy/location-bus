@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, Users, Shield, Clock, Star } from 'lucide-reac
 import { updatePageSEO, addStructuredData, organizationStructuredData, localBusinessStructuredData } from '../utils/seo';
 import { sampleCommunesForCopy, sampleQuartiersForCopy } from '../data/brusselsLocal';
 import { getPageKeywords } from '../data/seoKeywords';
+import { blogPosts as blogPostsData } from '../data/blogData';
 
 const HomePage: React.FC = () => {
   useEffect(() => {
@@ -444,6 +445,20 @@ const HomePage: React.FC = () => {
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Découvrez nos articles spécialisés, conseils professionnels et guides complets pour optimiser vos déplacements en bus et organiser des voyages de groupe réussis.
             </p>
+          </div>
+
+          {/* Derniers articles: internal links so blog posts are not orphan pages */}
+          <div className="mb-12">
+            <h3 className="text-lg font-bold text-gray-900 mb-4">Derniers articles</h3>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-gray-600">
+              {blogPostsData.filter(p => p.is_published).slice(0, 5).map((post) => (
+                <li key={post.id}>
+                  <Link to={`/blog/${post.slug}`} className="text-teal-600 hover:text-teal-700 font-medium hover:underline">
+                    {post.title.length > 55 ? `${post.title.slice(0, 55)}…` : post.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">

@@ -219,6 +219,10 @@ const AboutPage = () => {
                   de professionnels dévoués, nous continuons à innover pour vous offrir 
                   le meilleur du transport premium.
                 </p>
+                <p className="text-gray-600 mt-4">
+                  Pour les informations légales de notre société, consultez nos{' '}
+                  <Link to="/mentions-legales" className="text-teal-600 hover:text-teal-700 font-semibold hover:underline">mentions légales</Link>.
+                </p>
               </div>
             </div>
             <div className="relative">

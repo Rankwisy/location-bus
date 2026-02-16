@@ -402,7 +402,10 @@ const ContactPage = () => {
 
               <p className="text-gray-500 text-sm mt-4">
                 En soumettant ce formulaire, vous acceptez d'être recontacté par notre équipe 
-                concernant votre demande de transport.
+                concernant votre demande de transport. Vous acceptez également notre{' '}
+                <Link to="/politique-confidentialite" className="text-teal-600 hover:text-teal-700 font-medium hover:underline">Politique de confidentialité</Link>
+                {' '}et nos{' '}
+                <Link to="/conditions-generales-vente" className="text-teal-600 hover:text-teal-700 font-medium hover:underline">Conditions générales de vente</Link>.
               </p>
             </div>
 
