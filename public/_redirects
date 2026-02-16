@@ -1,3 +1,6 @@
+# Ahrefs verification: serve key via serverless function (SPA would otherwise serve index.html)
+/x9bp9x7ps39kzwkn4sh41y3pcp8sb6d5.txt  /.netlify/functions/serve-ahrefs  200
+
 # 301 permanent redirects: alternate URLs -> canonical (avoid duplicate content)
 /fleet          /flotte                       301
 /about          /qui-sommes-nous              301

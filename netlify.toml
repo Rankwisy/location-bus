@@ -5,6 +5,13 @@ publish = "dist"
 [build.environment]
 NODE_VERSION = "18"
 
+# Ahrefs verification: serve key via serverless function
+[[redirects]]
+from = "/x9bp9x7ps39kzwkn4sh41y3pcp8sb6d5.txt"
+to = "/.netlify/functions/serve-ahrefs"
+status = 200
+
+# SPA fallback: all other routes -> index.html
 [[redirects]]
 from = "/*"
 to = "/index.html"
