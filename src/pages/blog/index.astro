@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/astro/Header.astro';
+import Footer from '../../components/astro/Footer.astro';
+import { createBlogCollectionStructuredData } from '../../utils/seo';
+import { blogPosts } from '../../data/blogData';
+
+const publishedPosts = blogPosts.filter(p => p.is_published);
+const structuredData = createBlogCollectionStructuredData(
+  publishedPosts.slice(0, 10).map(p => ({
+    title: p.title,
+    url: `https://location-bus.be/blog/${p.slug}`,
+    publishedAt: p.published_at
+  }))
+);
+---
+
+<BaseLayout
+  title="Blog Transport Bruxelles | Conseils Location Bus & Destinations"
+  description="Blog Location Bus Belgique : conseils transport de groupe, destinations excursions, actualités tourisme Bruxelles. Guides pratiques transferts aéroport, LEZ 2026."
+  canonical="https://location-bus.be/blog"
+  structuredData={structuredData}
+>
+  <Header />
+  <main id="main-content" class="min-h-screen bg-white pt-24" tabindex="-1">
+    <article class="container mx-auto px-4 py-16">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Blog Transport Bruxelles</h1>
+      <p class="text-xl text-gray-600 mb-12">Conseils transport de groupe, destinations et actualités du secteur.</p>
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Derniers articles</h2>
+        <ul class="space-y-6">
+          {publishedPosts.map((post) => (
+            <li>
+              <article>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  <a href={`/blog/${post.slug}`} class="text-teal-600 hover:text-teal-700 hover:underline">{post.title}</a>
+                </h3>
+                <p class="text-gray-600 mb-2">{post.excerpt}</p>
+                <p class="text-sm text-gray-500">
+                  <time datetime={post.published_at}>{new Date(post.published_at).toLocaleDateString('fr-BE')}</time>
+                  {post.category && <span> — {post.category.name}</span>}
+                </p>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

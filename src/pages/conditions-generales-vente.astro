@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/astro/Header.astro';
+import Footer from '../components/astro/Footer.astro';
+---
+
+<BaseLayout
+  title="Conditions Générales de Vente | Location Bus Belgique"
+  description="Conditions générales de vente pour la location de bus et minibus avec chauffeur à Bruxelles."
+  canonical="https://location-bus.be/conditions-generales-vente"
+>
+  <Header />
+  <main id="main-content" class="min-h-screen bg-white pt-24" tabindex="-1">
+    <article class="container mx-auto px-4 py-16 max-w-3xl">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8">Conditions Générales de Vente</h1>
+      <p class="text-gray-600 mb-8">Tarifs et conditions générales applicables aux prestations de transport Location Bus Belgique.</p>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

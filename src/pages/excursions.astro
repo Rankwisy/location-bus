@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/astro/Header.astro';
+import Footer from '../components/astro/Footer.astro';
+import { getPageKeywords } from '../data/seoKeywords';
+---
+
+<BaseLayout
+  title="Excursions Touristiques en Bus Belgique & Europe | Bruges, Gand"
+  description="Excursions touristiques en bus avec chauffeur. Circuits Bruges, Gand, Amsterdam. Groupes et scolaires. Devis gratuit."
+  canonical="https://location-bus.be/excursions"
+  keywords={getPageKeywords('/excursions', ['excursion'])}
+>
+  <Header />
+  <main id="main-content" class="min-h-screen bg-white pt-24" tabindex="-1">
+    <article class="container mx-auto px-4 py-16">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Excursions Touristiques en Bus Belgique & Europe</h1>
+      <p class="text-xl text-gray-600 mb-12">Découvrez Bruges, Gand, Amsterdam et plus avec nos circuits personnalisés.</p>
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Destinations populaires</h2>
+        <p class="text-gray-600 mb-8">Circuits sur-mesure pour groupes et scolaires. Chauffeur-guide disponible.</p>
+        <a href="/contactez-nous" class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold inline-block">Demander un devis excursion</a>
+      </section>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/astro/Header.astro';
+import Footer from '../components/astro/Footer.astro';
+import { organizationStructuredData, localBusinessStructuredData } from '../utils/seo';
+import { sampleCommunesForCopy, sampleQuartiersForCopy } from '../data/brusselsLocal';
+import { getPageKeywords } from '../data/seoKeywords';
+import { blogPosts as blogPostsData } from '../data/blogData';
+
+const breadcrumbData = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://location-bus.be/' }]
+};
+
+const serviceData = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Location de Bus avec Chauffeur',
+  provider: { '@type': 'Organization', name: 'Location Bus Belgique', telephone: '+32-2-342-07-34', address: { '@type': 'PostalAddress', streetAddress: 'Avenue Herrmann Debroux 54', addressLocality: 'Brussels', postalCode: '1160', addressCountry: 'BE' } },
+  areaServed: { '@type': 'Country', name: 'Belgium' },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Services de Transport',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Transferts Aéroport', description: 'Service de transfert professionnel vers tous les aéroports belges et européens' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Transport d\'Entreprise', description: 'Solutions de transport pour vos événements professionnels et déplacements d\'équipe' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Excursions Touristiques', description: 'Découvrez la Belgique et l\'Europe avec nos circuits personnalisés' } }
+    ]
+  }
+};
+
+const structuredData = [organizationStructuredData, localBusinessStructuredData, breadcrumbData, serviceData];
+const publishedPosts = blogPostsData.filter(p => p.is_published).slice(0, 5);
+---
+
+<BaseLayout
+  title="Location Bus Bruxelles | Transfert Aéroport & Excursions"
+  description="Location de bus avec chauffeur à Bruxelles. Service professionnel pour transferts aéroport (Zaventem, Charleroi) et excursions touristiques. Flotte moderne, tarifs compétitifs. Devis gratuit sous 24h."
+  canonical="https://location-bus.be/"
+  ogType="website"
+  ogImage="https://ik.imagekit.io/by733ltn6/location-bus/slider4-1-1024x683-1.jpg?updatedAt=1757936830002"
+  keywords={getPageKeywords('/', ['transfert', 'excursion', 'entreprise', 'flotte', 'prix'])}
+  structuredData={structuredData}
+>
+  <Header />
+  <main id="main-content" class="min-h-screen bg-white pt-20" tabindex="-1">
+    <article>
+      <header class="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" style="background-image: url('https://ik.imagekit.io/by733ltn6/location-bus/slider4-1-1024x683-1.jpg?updatedAt=1757936830002')"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900/20 to-gray-900/10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Location Bus <span class="block text-teal-400">Bruxelles</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-6 leading-relaxed max-w-2xl mx-auto px-4">
+              <strong>Location de bus et autocar avec chauffeur professionnel à Bruxelles</strong> — Spécialiste du transport de groupes en Belgique. Service premium pour <em>transferts aéroport</em>, <em>excursions touristiques</em> et <em>voyages d'entreprise</em>. Minibus 19 places, bus 50 places et autocars 60 places : flotte moderne, tarifs transparents, disponibilité 24/7.
+            </p>
+            <p class="text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto px-4">
+              Prise en charge dans toute la Région : {sampleCommunesForCopy.join(', ')} — {sampleQuartiersForCopy.join(', ')}.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/contactez-nous" class="bg-teal-400 hover:bg-teal-500 text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center min-h-[48px]">
+                Devis gratuit sous 24h
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </a>
+              <a href="/flotte" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-200 flex items-center justify-center min-h-[48px]">
+                Voir notre flotte minibus et bus avec chauffeur
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="py-20 bg-white" aria-labelledby="excellence-heading">
+        <div class="container mx-auto px-4">
+          <div class="grid lg:grid-cols-3 gap-12 items-start">
+            <div class="lg:col-span-2">
+              <h2 id="excellence-heading" class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Excellence & Confiance : Votre Partenaire Transport Premium à Bruxelles
+              </h2>
+              <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                <strong>Plus de 15 ans d'expertise</strong> au service de votre mobilité. Découvrez pourquoi <strong>98% de nos clients</strong> nous recommandent.
+              </p>
+              <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                  <div class="bg-teal-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-4"><svg class="w-8 h-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Professionnalisme</h3>
+                  <p class="text-gray-600 leading-relaxed">Équipe qualifiée avec une expérience significative dans la conduite de bus.</p>
+                </div>
+                <div>
+                  <div class="bg-teal-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-4"><svg class="w-8 h-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Sécurité</h3>
+                  <p class="text-gray-600 leading-relaxed">Bus modernes aux meilleurs standards, entretien régulier et minutieux.</p>
+                </div>
+                <div>
+                  <div class="bg-teal-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-4"><svg class="w-8 h-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Ponctualité</h3>
+                  <p class="text-gray-600 leading-relaxed">Respect absolu des horaires pour ne pas perturber vos engagements.</p>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-1">
+              <div class="bg-teal-400 p-6 sm:p-8 rounded-2xl text-gray-900">
+                <h3 class="text-xl sm:text-2xl font-bold mb-4">Transport Sur-Mesure & Tarifs Imbattables</h3>
+                <p class="mb-4">Service personnalisé, tarifs transparents, réponse sous 24h garantie.</p>
+                <a href="/services" class="inline-flex items-center text-gray-900 font-bold hover:underline text-lg">Services transport bus Bruxelles <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 bg-gray-50" aria-labelledby="flotte-heading">
+        <div class="container mx-auto px-4">
+          <h2 id="flotte-heading" class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Votre Flotte Premium Bruxelles</h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Minibus 19 places, bus 50 places, autocars 60 places. Flotte moderne Euro 6.</p>
+          <div class="grid lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+              <img src="https://ik.imagekit.io/by733ltn6/location-bus/sp6.jpg" alt="Minibus 19 places Bruxelles" class="w-full h-48 object-cover" width="400" height="192" loading="lazy" />
+              <div class="p-8 text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Minibus 19 Places</h3>
+                <p class="text-gray-600 mb-6">Climatisation, sièges inclinables. Parfait pour les groupes moyens.</p>
+                <a href="/contactez-nous" class="text-teal-700 hover:text-teal-800 font-semibold underline">Demander un devis</a>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg lg:scale-105 border-2 border-teal-400">
+              <img src="https://ik.imagekit.io/by733ltn6/location-bus/70.png" alt="Bus 50 places Bruxelles" class="w-full h-48 object-cover" width="400" height="192" loading="lazy" />
+              <div class="p-8 text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Bus 50 Places</h3>
+                <p class="text-gray-600 mb-6">Prises USB, micro, frigo. Idéal pour excursions et voyages de groupe.</p>
+                <a href="/contactez-nous" class="text-teal-700 hover:text-teal-800 font-semibold underline">Demander un devis</a>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+              <img src="https://ik.imagekit.io/by733ltn6/location-bus/volvo-bus.png" alt="Autocar 60 places Bruxelles" class="w-full h-48 object-cover" width="400" height="192" loading="lazy" />
+              <div class="p-8 text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Autocar 60 Places</h3>
+                <p class="text-gray-600 mb-6">Équipement premium pour grands groupes avec confort exceptionnel.</p>
+                <a href="/contactez-nous" class="text-teal-700 hover:text-teal-800 font-semibold underline">Demander un devis</a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-12">
+            <a href="/flotte" class="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-bold transition-all duration-200">Voir notre flotte <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 bg-white" aria-labelledby="blog-heading">
+        <div class="container mx-auto px-4">
+          <h2 id="blog-heading" class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">Guides Pratiques & Conseils Bruxelles</h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Articles spécialisés et conseils pour optimiser vos déplacements en bus.</p>
+          {publishedPosts.length > 0 && (
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Derniers articles</h3>
+          )}
+          <ul class="flex flex-wrap gap-x-6 gap-y-2 text-gray-600 mb-12">
+            {publishedPosts.map((post) => (
+              <li><a href={`/blog/${post.slug}`} class="text-teal-600 hover:text-teal-700 font-medium hover:underline">{post.title.length > 55 ? `${post.title.slice(0, 55)}…` : post.title}</a></li>
+            ))}
+          </ul>
+          <div class="text-center">
+            <a href="/blog" class="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold">Accéder au Blog <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 bg-gradient-to-r from-teal-500 to-teal-600" aria-labelledby="cta-heading">
+        <div class="container mx-auto px-4 text-center">
+          <h2 id="cta-heading" class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">Votre Voyage Exceptionnel Commence Ici Bruxelles</h2>
+          <p class="text-lg text-teal-100 mb-8 max-w-2xl mx-auto">Rejoignez les 10,000+ clients satisfaits. Devis sur-mesure en moins de 2 minutes.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contactez-nous" class="bg-white text-teal-700 hover:bg-gray-100 px-6 sm:px-8 py-4 rounded-lg font-bold transition-all duration-200 inline-flex items-center justify-center min-h-[48px]">
+              Mon Devis Gratuit & Immédiat
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+            <a href="tel:+3223420734" class="border-2 border-white text-white hover:bg-white hover:text-teal-800 px-6 sm:px-8 py-4 rounded-lg font-bold transition-all duration-200 inline-flex items-center justify-center min-h-[48px]">
+              Conseil Expert Immédiat
+            </a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

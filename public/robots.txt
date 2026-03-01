@@ -108,6 +108,9 @@ Disallow: /
 # Sitemap reference
 Sitemap: https://location-bus.be/sitemap.xml
 
+# LLM / AI crawlers (AEO)
+# llms.txt for AI search engines: https://location-bus.be/llms.txt
+
 # Crawl delay for general bots (helps prevent server overload)
 # Google and Bing ignore this, but other bots respect it
 Crawl-delay: 1

@@ -1,0 +1,117 @@
+---
+import '../index.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  keywords?: string | string[];
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  noindex?: boolean;
+  structuredData?: object | object[];
+}
+
+const { 
+  title, 
+  description, 
+  canonical, 
+  ogType = 'website', 
+  ogImage = 'https://ik.imagekit.io/by733ltn6/location-bus/cropped-Logo-Location_bus-1.png?updatedAt=1757933964171',
+  keywords = [],
+  author = 'Location Bus Belgique',
+  publishedTime,
+  modifiedTime,
+  noindex = false,
+  structuredData 
+} = Astro.props;
+
+const baseUrl = 'https://location-bus.be';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonicalUrl = canonical || `${baseUrl}${path}`;
+const keywordsStr = Array.isArray(keywords) ? keywords.join(', ') : (keywords || 'location bus Bruxelles, minibus chauffeur, transport bus Bruxelles');
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywordsStr} />
+    <meta name="author" content={author} />
+    <meta name="language" content="French" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'} />
+
+    <!-- Geo / Local SEO -->
+    <meta name="geo.region" content="BE-BRU" />
+    <meta name="geo.placename" content="Brussels" />
+    <meta name="geo.position" content="50.828611;4.407723" />
+    <meta name="ICBM" content="50.828611, 4.407723" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_BE" />
+    <meta property="og:site_name" content="Location Bus Belgique" />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+    {publishedTime && <meta property="article:author" content={author} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={title} />
+
+    <!-- Dublin Core -->
+    <meta name="DC.title" content={title} />
+    <meta name="DC.description" content={description} />
+    <meta name="DC.language" content="fr-BE" />
+    <meta name="DC.creator" content="Location Bus Belgique" />
+    <meta name="DC.publisher" content="Location Bus Belgique" />
+    <meta name="DC.rights" content={`Copyright ${new Date().getFullYear()} Location Bus Belgique`} />
+
+    <!-- Mobile / PWA -->
+    <meta name="theme-color" content="#14b8a6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Location Bus" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="fr-BE" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+
+    <link rel="icon" type="image/png" sizes="16x16" href="https://ik.imagekit.io/by733ltn6/location-bus/favicon-16x16.png?updatedAt=1757981513278" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/by733ltn6/location-bus/favicon-32x32.png?updatedAt=1757981513280" />
+    <link rel="icon" type="image/png" sizes="192x192" href="https://ik.imagekit.io/by733ltn6/location-bus/android-chrome-192x192.png?updatedAt=1757981513345" />
+    <link rel="icon" type="image/png" sizes="512x512" href="https://ik.imagekit.io/by733ltn6/location-bus/android-chrome-512x512.png?updatedAt=1757981513323" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://ik.imagekit.io/by733ltn6/location-bus/apple-touch-icon.png?updatedAt=1757981513287" />
+
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(
+        Array.isArray(structuredData) ? { '@context': 'https://schema.org', '@graph': structuredData } : (structuredData as object)
+      )} />
+    )}
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-teal-500 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-300"
+    >
+      Aller au contenu principal
+    </a>
+    <slot />
+  </body>
+</html>

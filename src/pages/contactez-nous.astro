@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/astro/Header.astro';
+import Footer from '../components/astro/Footer.astro';
+import { localBusinessStructuredData } from '../utils/seo';
+---
+
+<BaseLayout
+  title="Contactez-Nous | Devis Gratuit Location Bus Bruxelles"
+  description="Demandez votre devis gratuit pour location de bus avec chauffeur à Bruxelles. Réponse sous 24h. Tél: +32 2 342 07 34."
+  canonical="https://location-bus.be/contactez-nous"
+  structuredData={localBusinessStructuredData}
+>
+  <Header />
+  <main id="main-content" class="min-h-screen bg-white pt-24" tabindex="-1">
+    <article class="container mx-auto px-4 py-16">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Contactez-Nous : Devis Gratuit</h1>
+      <p class="text-xl text-gray-600 mb-12">Demandez votre devis personnalisé pour location de bus avec chauffeur. Réponse sous 24h garantie.</p>
+      <section class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Coordonnées</h2>
+          <address class="not-italic text-gray-600">
+            <p><strong>Adresse :</strong> Avenue Herrmann Debroux 54, 1160 Brussels</p>
+            <p><a href="tel:+3223420734" class="text-teal-600 hover:underline">+32 2 342 07 34</a></p>
+            <p><a href="mailto:info@location-bus.be" class="text-teal-600 hover:underline">info@location-bus.be</a></p>
+          </address>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Horaires</h2>
+          <p class="text-gray-600">Lundi - Dimanche : 09:00 - 19:00</p>
+        </div>
+      </section>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

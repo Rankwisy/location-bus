@@ -8,6 +8,8 @@ package-lock.json
 # Production builds
 dist/
 build/
+.astro/
+.netlify/
 
 # Environment variables
 .env

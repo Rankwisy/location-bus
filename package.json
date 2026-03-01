@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "astro dev",
+    "build": "astro build",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "astro preview",
     "type-check": "tsc --noEmit",
     "build:prod": "npm run type-check && npm run build"
   },
@@ -41,6 +41,10 @@
     "react-router-dom": "^7.9.1"
   },
   "devDependencies": {
+    "@astrojs/netlify": "^6.0.0",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^5.0.3",
     "@eslint/js": "^9.9.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",

@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/astro/Header.astro';
+import Footer from '../../components/astro/Footer.astro';
+import { createBlogPostStructuredData, createBreadcrumbStructuredData } from '../../utils/seo';
+import { blogPosts } from '../../data/blogData';
+
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect('/404');
+const post = blogPosts.find(p => p.slug === slug && p.is_published);
+if (!post) return Astro.redirect('/404');
+
+const blogPostSchema = createBlogPostStructuredData({
+  title: post.title,
+  excerpt: post.excerpt,
+  content: post.content,
+  featuredImage: post.featured_image,
+  authorName: post.author?.name || 'Location Bus Belgique',
+  publishedAt: post.published_at,
+  updatedAt: post.updated_at,
+  slug: post.slug,
+  categoryName: post.category?.name,
+  readTime: post.read_time
+});
+
+const breadcrumbSchema = createBreadcrumbStructuredData([
+  { name: 'Accueil', url: 'https://location-bus.be/' },
+  { name: 'Blog', url: 'https://location-bus.be/blog' },
+  { name: post.category?.name || 'Articles', url: `https://location-bus.be/blog` },
+  { name: post.title, url: `https://location-bus.be/blog/${post.slug}` }
+]);
+
+const structuredData = { '@context': 'https://schema.org', '@graph': [blogPostSchema, breadcrumbSchema] };
+---
+
+<BaseLayout
+  title={`${post.title} | Location Bus Belgique`}
+  description={post.excerpt}
+  canonical={`https://location-bus.be/blog/${post.slug}`}
+  ogType="article"
+  ogImage={post.featured_image}
+  author={post.author?.name || 'Location Bus Belgique'}
+  publishedTime={post.published_at}
+  modifiedTime={post.updated_at}
+  structuredData={structuredData}
+>
+  <Header />
+  <main id="main-content" class="min-h-screen bg-white pt-24" tabindex="-1">
+    <article class="container mx-auto px-4 py-16 max-w-3xl">
+      <header class="mb-12">
+        <nav aria-label="Fil d'Ariane">
+          <ol class="flex text-sm text-gray-600 mb-4 flex-wrap">
+            <li><a href="/" class="hover:text-teal-600">Accueil</a></li>
+            <li class="mx-2">/</li>
+            <li><a href="/blog" class="hover:text-teal-600">Blog</a></li>
+            <li class="mx-2">/</li>
+            <li class="text-gray-900 font-medium truncate max-w-[200px]">{post.title}</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
+        <p class="text-xl text-gray-600 mb-4">{post.excerpt}</p>
+        <p class="text-sm text-gray-500">
+          <time datetime={post.published_at}>{new Date(post.published_at).toLocaleDateString('fr-BE')}</time>
+          {post.category && <span> — {post.category.name}</span>}
+          {post.author && <span> — {post.author.name}</span>}
+        </p>
+      </header>
+      <div class="blog-content prose prose-lg max-w-none" set:html={post.content} />
+      <footer class="mt-12 pt-8 border-t border-gray-200">
+        <a href="/blog" class="text-teal-600 hover:text-teal-700 font-semibold hover:underline">← Retour au blog</a>
+      </footer>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

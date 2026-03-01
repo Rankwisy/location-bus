@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/astro/Header.astro';
+import Footer from '../components/astro/Footer.astro';
+import { organizationStructuredData } from '../utils/seo';
+---
+
+<BaseLayout
+  title="Qui Sommes-Nous | Location Bus Belgique - Expertise Transport Bruxelles"
+  description="Plus de 15 ans d'expertise en location de bus avec chauffeur à Bruxelles. Équipe professionnelle, flotte moderne, engagement qualité."
+  canonical="https://location-bus.be/qui-sommes-nous"
+  structuredData={organizationStructuredData}
+>
+  <Header />
+  <main id="main-content" class="min-h-screen bg-white pt-24" tabindex="-1">
+    <article class="container mx-auto px-4 py-16">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Qui Sommes-Nous : Expertise Transport Bruxelles</h1>
+      <p class="text-xl text-gray-600 mb-12">Location Bus Belgique, votre partenaire transport premium depuis plus de 15 ans.</p>
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Notre histoire</h2>
+        <p class="text-gray-600 mb-8">Spécialistes du transport de groupe à Bruxelles et en Belgique. Flotte moderne Euro 6, chauffeurs professionnels.</p>
+        <a href="/contactez-nous" class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold inline-block">Nous contacter</a>
+      </section>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
